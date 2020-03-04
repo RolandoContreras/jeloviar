@@ -10,7 +10,7 @@
                   <h5 class="m-b-10">Formulario de Facturas</h5>
                 </div>
                 <ul class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/videos';?>">Listado de Facturas</a></li>
+                  <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/facturas';?>">Listado de Facturas</a></li>
                   <li class="breadcrumb-item"><a>Facturas</a></li>
                 </ul>
               </div>
@@ -111,4 +111,4 @@
       </div>
     </div>
   </div>
-<script src="<?php echo site_url().'static/cms/js/invoices.js'?>"></script>
+<script src="<?php echo site_url().'assets/cms/js/invoices.js'?>"></script>

@@ -77,10 +77,10 @@ class D_customer extends CI_Controller{
     public function delete(){
          if ($this->input->is_ajax_request()) {
              //OBETENER customer_id
-             $ccustomer_id = $this->input->post("customer_id");
+             $customer_id = $this->input->post("customer_id");
             //VERIFY IF ISSET CUSTOMER_ID
-            if ($ccustomer_id != ""){
-                $this->obj_customer->delete($ccustomer_id);
+            if ($customer_id != ""){
+                $this->obj_customer->delete($customer_id);
             }
             $data['status'] = true;
             echo json_encode($data);

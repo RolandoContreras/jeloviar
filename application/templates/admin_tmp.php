@@ -88,7 +88,7 @@
             <ul class="pcoded-submenu">
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/categorias";?>"><i class="icon-large icon-th"></i>Categórías</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/clientes";?>"><i class="icon-large icon-th"></i>Clientes</a></li>
-                <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comentarios";?>"><i class="icon-large icon-th"></i>Comentarios</a></li>
+                <!--<li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/comentarios";?>"><i class="icon-large icon-th"></i>Comentarios</a></li>-->
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/cursos";?>"><i class="icon-large icon-th"></i>Cursos</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/facturas";?>"><i class="icon-large icon-th"></i>Facturas</a></li>
                 <li class="pcoded-hasmenu"><a href="<?php echo site_url()."dashboard/preguntas";?>"><i class="icon-large icon-th"></i>Preguntas</a></li>

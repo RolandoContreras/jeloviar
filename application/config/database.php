@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'admin_academy';
-$db['default']['password'] = 'Dni45887343.';
-$db['default']['database'] = 'academy';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
+$db['default']['database'] = 'jeloviar';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

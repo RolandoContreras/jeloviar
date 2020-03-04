@@ -1,5 +1,5 @@
-<script src="<?php echo site_url().'static/cms/js/core/bootbox.locales.min.js';?>"></script>
-<script src="<?php echo site_url().'static/cms/js/core/bootbox.min.js';?>"></script>
+<script src="<?php echo site_url().'assets/cms/js/core/bootbox.locales.min.js';?>"></script>
+<script src="<?php echo site_url().'assets/cms/js/core/bootbox.min.js';?>"></script>
 <section class="pcoded-main-container">
   <div class="pcoded-wrapper">
     <div class="pcoded-content">
@@ -119,4 +119,4 @@
           </div>
         </div>
 </section>
-<script src="<?php echo site_url();?>static/cms/js/preguntas.js"></script>
+<script src="<?php echo site_url();?>assets/cms/js/preguntas.js"></script>

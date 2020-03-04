@@ -76,4 +76,4 @@
     </div>
   </div>
 </div>
-<script src="<?php echo site_url();?>static/cms/js/categoria.js"></script>
+<script src="<?php echo site_url();?>assets/cms/js/categoria.js"></script>

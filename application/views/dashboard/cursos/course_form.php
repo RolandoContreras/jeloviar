@@ -81,12 +81,12 @@
                                   if(isset($obj_courses)){ ?>
                                       <div class="form-group">
                                           <label>Imagen 1</label><br/>
-                                          <img src='<?php echo site_url()."static/cms/img/cursos/$obj_courses->img";?>' width="100" />
+                                          <img src='<?php echo site_url()."assets/cms/img/cursos/$obj_courses->img";?>' width="100" />
                                           <input class="form-control" type="hidden" name="img2" id="img2" value="<?php echo isset($obj_courses)?$obj_courses->img:"";?>">
                                       </div>
                             <?php } ?>
                               <div class="form-group">
-                                    <label>Imagen 1 (Tamaño 365 x 405)</label>
+                                    <label>Imagen 1 (Tamaño 480 x 360)</label>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="validatedCustomFile" value="Upload Imagen de Envio" name="image_file" id="image_file">
                                         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
@@ -96,7 +96,7 @@
                                   if(isset($obj_courses->img2)){ ?>
                                       <div class="form-group">
                                           <label>Imagen 2</label><br/>
-                                          <img src='<?php echo site_url()."static/cms/img/cursos/$obj_courses->img2";?>' width="100"/>
+                                          <img src='<?php echo site_url()."assets/cms/img/cursos/$obj_courses->img2";?>' width="100"/>
                                           <input class="form-control" type="hidden" name="img3" id="img3" value="<?php echo isset($obj_courses)?$obj_courses->img2:"";?>">
                                       </div>
                             <?php } ?>
@@ -144,4 +144,4 @@
     </div>
   </div>
 </div>
-<script src="<?php echo site_url().'static/cms/js/cursos.js'?>"></script>
+<script src="<?php echo site_url().'assets/cms/js/cursos.js'?>"></script>
