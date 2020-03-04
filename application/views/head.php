@@ -19,6 +19,12 @@
   <script>
     var lpCourseSettings = [];
   </script>
+  <!--start favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'assets/page_front/images/logo/favico/apple-touch-icon.png';?>">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'assets/page_front/images/logo/favico/favicon-32x32.png';?>">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'assets/page_front/images/logo/favico/favicon-16x16.png';?>">
+  <link rel="manifest" href="<?php echo site_url().'assets/page_front/images/logo/favico/site.webmanifest';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'assets/cms/css/style.css';?>">
     <?php 
    if(isset($meta_description_og)){ ?>
         <meta property="og:type" content="article"/>
