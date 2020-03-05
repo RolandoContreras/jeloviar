@@ -29,12 +29,12 @@
   <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 </head>
 
-<body class="layout-6" style="background-image: url('<?php echo site_url().'assets/cms/img/fondo_header.jpg';?>'); background-size: cover;">
+<body class="layout-6" style="background-color: black;">
   <nav class="pcoded-navbar menu-light brand-lightblue menupos-static">
     <div class="navbar-wrapper">
       <div class="navbar-brand header-logo">
           <a href="<?php echo site_url().'course';?>" class="b-brand">
-              <img src="<?php echo site_url().'assets/page_front/images/logo/logo-h-b.png';?>" alt="Logo" width="180"/>
+              <img src="<?php echo site_url().'assets/page_front/images/logo/logo_b.png';?>" alt="Logo" width="190"/>
           </a>
           <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
       <div class="navbar-content scroll-div">
@@ -125,7 +125,7 @@
   <header class="navbar pcoded-header navbar-expand-lg navbar-light">
     <div class="m-header"><a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
         <a href="<?php echo site_url().'course';?>" class="b-brand">
-            <img src="<?php echo site_url().'static/page_front/images/logo/logo-h-b.png';?>" alt="Logo" width="180"/>
+            <img src="<?php echo site_url().'assets/page_front/images/logo/logo_b.png';?>" alt="Logo" width="190"/>
         </a>
     </div>
       <a class="mobile-menu" id="mobile-header" href="#!">
@@ -147,7 +147,6 @@
               </a>
             <div class="dropdown-menu dropdown-menu-right profile-notification">
               <div class="pro-head">
-                  <img src="<?php echo site_url().'static/backoffice/images/avatar.png';?>" class="img-radius" alt="User-Profile-Image">
                   <span><?php echo $_SESSION['usercms']['name'];?></span>
               </div>
               <ul class="pro-body">
@@ -161,12 +160,6 @@
       </ul>
     </div>
   </header>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-      </ul>
   <?php echo $body;?>
   <!--[if lt IE 11]> <div class="ie-warning"> <h1>Warning!!</h1> <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website. </p> <div class="iew-container"> <ul class="iew-download"> <li> <a href="http://www.google.com/chrome/"> <img src="../assets/images/browser/chrome.png" alt="Chrome"> <div>Chrome</div> </a> </li> <li> <a href="https://www.mozilla.org/en-US/firefox/new/"> <img src="../assets/images/browser/firefox.png" alt="Firefox"> <div>Firefox</div> </a> </li> <li> <a href="http://www.opera.com"> <img src="../assets/images/browser/opera.png" alt="Opera"> <div>Opera</div> </a> </li> <li> <a href="https://www.apple.com/safari/"> <img src="../assets/images/browser/safari.png" alt="Safari"> <div>Safari</div> </a> </li> <li> <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie"> <img src="../assets/images/browser/ie.png" alt=""> <div>IE (11 & above)</div> </a> </li> </ul> </div> <p>Sorry for the inconvenience!</p> </div> <![endif]-->
 <script src="<?php echo site_url().'assets/cms/js/core/vendor-all.min.js';?>"></script>
