@@ -77,12 +77,12 @@
             </div>
             <div class="width-logo">
                 <a class=no-sticky-logo href="<?php echo site_url(); ?>" title="Bievenido a Jeloviar Academy">
-                    <img class=logo src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" alt="logo" width="300">
-                    <img class=retina-logo src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" alt="logo" width="300">
-                    <img class=mobile-logo src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" alt="logo" width="300"></a>
+                    <img class=logo src="<?php echo site_url() . 'assets/page_front/images/logo/logo_color-white.png'; ?>" alt="logo" width="300">
+                    <img class=retina-logo src="<?php echo site_url() . 'assets/page_front/images/logo/logo_color-white.png'; ?>" alt="logo" width="300">
+                    <img class=mobile-logo src="<?php echo site_url() . 'assets/page_front/images/logo/logo_color-white.png'; ?>" alt="logo" width="300"></a>
                 <a href="<?php echo site_url(); ?>"  class="sticky-logo">
-                    <img src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" alt="Logo" width="250">
-                    <img class=retina-logo-sticky src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" alt="Logo" width="695"></a>
+                    <img src="<?php echo site_url() . 'assets/page_front/images/logo/logo_color-white.png';?>" alt="Logo" width="250">
+                    <img class=retina-logo-sticky src="<?php echo site_url() . 'assets/page_front/images/logo/logo_color-white.png'; ?>" alt="Logo" width="695"></a>
             </div>
             <div class=width-navigation>
                 <ul class=main-menu>

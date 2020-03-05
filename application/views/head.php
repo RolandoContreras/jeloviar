@@ -11,7 +11,7 @@
   <link rel=stylesheet href="<?php echo site_url().'assets/page_front/css/asset/bootstrap.css';?>" type="text/css" media="all">
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   <link rel=stylesheet href="<?php echo site_url().'assets/page_front/css/asset/owl.carousel.css';?>" type=text/css media=all>
-  <link rel=stylesheet href=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/style.css type=text/css media=all>
+  <link rel=stylesheet href="<?php echo site_url().'assets/page_front/css/style.css';?>" type=text/css media=all>
   <link rel=stylesheet href="<?php echo site_url().'assets/page_front/css/wordpress-lms.demo.css';?>" type=text/css media=all>
   <link rel=stylesheet href="<?php echo site_url().'assets/page_front/css/my_style.css';?>" type=text/css media=all>
   <script src="<?php echo site_url().'assets/page_front/js/jquery.js';?>"></script>

@@ -28,30 +28,15 @@ class Home extends CI_Controller {
 	{
             //get category
             $data['obj_category'] = $this->nav_category();
-//            
-//            
-            $params_course_principal = array(
-                                    "select" =>"courses.course_id,
-                                                courses.category_id,
-                                                courses.name,
-                                                courses.slug,
-                                                courses.img2,
-                                                courses.description,
-                                                category.name as category_name,
-                                                category.slug as category_slug",
-                                    "join" => array( 'category, courses.category_id = category.category_id'),
-                                    "where" => "courses.active = 1",
-                                    "order" => "courses.course_id ASC", 
-                                );  
-            $data['obj_courses_principal'] = $this->obj_courses->get_search_row($params_course_principal);
-            $course_id = $data['obj_courses_principal']->course_id;
-//            
+
             //obtener todos los cursos DESC
             $params_course = array(
                                     "select" =>"courses.course_id,
                                                 courses.category_id,
                                                 courses.name,
                                                 courses.slug,
+                                                courses.top,
+                                                courses.type,
                                                 courses.img,
                                                 courses.price,
                                                 courses.price_del,
@@ -60,7 +45,7 @@ class Home extends CI_Controller {
                                     "join" => array( 'category, courses.category_id = category.category_id'),
                                     "where" => "courses.active = 1",
                                     "order" => "courses.course_id DESC",
-                                    "limit" => "8",
+                                    "limit" => "12",
                                 );  
             $data['obj_courses'] = $this->obj_courses->search($params_course); 
 

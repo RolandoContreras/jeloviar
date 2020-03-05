@@ -63,7 +63,7 @@
                                 <td><b><?php echo $value->name;?></b></td>
                                 <td><span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->category_name;?></span></td>
                                 <td><b>S/. <?php echo $value->price;?></b></td>
-                                <td><img src="<?php echo site_url()."static/cms/img/cursos/$value->img";?>" width="50"></td>
+                                <td><img src="<?php echo site_url()."assets/cms/img/cursos/$value->img";?>" width="50"></td>
                                 <td>
                                     <?php if ($value->active == 0) {
                                         $valor = "No Activo";
