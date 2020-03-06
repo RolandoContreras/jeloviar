@@ -138,7 +138,9 @@
                                                                 <img src="<?php echo site_url()."assets/cms/img/cursos/$value->img"; ?>" alt="<?php echo $value->name; ?>">
                                                                 <a href="<?php echo site_url()."cursos/$value->category_slug/$value->slug";?>" class=img-link></a>
                                                                 <div class="course-meta">
-                                                                    <div class="price"><span class="course-origin-price line-price">$<?php echo $value->price_del; ?></span><span class="course-price">$<?php echo $value->price; ?></span></div>
+                                                                    <div class="price">
+                                                                        <span class="course-origin-price line-price">$<?php echo $value->price_del; ?></span><span class="course-price">$<?php echo $value->price; ?></span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <h4 class="course-title">
