@@ -16,10 +16,9 @@
             <?php $this->load->view("header"); ?>
             <?php $this->load->view("nav"); ?>
             <div id=main-content>
-                <div id=home-main-content class="home-content home-page container" role=main>
-                    <div data-vc-full-width=true data-vc-full-width-init=false data-vc-parallax=1.5 data-vc-parallax-image=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/uploads/sites/5/2017/06/portfolio-course-3-e1503546966525.jpg
-                         class="vc_row wpb_row vc_row-fluid thim-header-slider-3 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
-                        <div class=overlay style="background-color: rgba(10,10,10,0.5)"></div>
+                <div id=home-main-content class="home-content home-page container" role="main">
+                    <div data-vc-full-width=true data-vc-full-width-init=false data-vc-parallax=1.5 data-vc-parallax-image="<?php echo site_url().'assets/page_front/images/bg.jpg';?>" class="vc_row wpb_row vc_row-fluid thim-header-slider-3 thim-background-overlay vc_row-has-fill vc_row-o-full-height vc_row-o-columns-stretch vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving">
+                        <div class=overlay style="background-color: rgba(10,10,10,0.4)"></div>
                         <div class="wpb_column vc_column_container vc_col-sm-12">
                             <div class=vc_column-inner>
                                 <div class=wpb_wrapper>
@@ -43,8 +42,8 @@
                                 <div class=wpb_wrapper>
                                     <div class="thim-course-block-3 ">
                                         <div class=wrapper-title>
-                                            <h3 class="title">Más Vendidos</h3>
-                                            <a href="<?php echo site_url() . 'cursos'; ?>" class=view-courses-button>Ver todos</a>
+                                            <h3 class="title white">Más Vendidos</h3>
+                                            <a href="<?php echo site_url().'cursos';?>" class="view-courses-button white">Ver todos</a>
                                         </div>
                                         <div class="masonry-items">
                                             <div class="row">
@@ -68,8 +67,11 @@
                                                                         </div>
                                                                 </div>
                                                                 <h4 class="course-title">
-                                                                    <a href="<?php echo site_url()."cursos/$value->category_slug/$value->slug";?>"><?php echo $value->name;?></a>
+                                                                    <a class="aaa" href="<?php echo site_url()."cursos/$value->category_slug/$value->slug";?>"><?php echo $value->name;?></a>
                                                                 </h4>
+                                                                <div class="conocer_mas">
+                                                                    <span class="date">Conoce Más <ion-icon name="arrow-redo-outline"></ion-icon></span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     <?php } ?>
@@ -146,6 +148,9 @@
                                                             <h4 class="course-title">
                                                                 <a href="<?php echo site_url()."cursos/$value->category_slug/$value->slug";?>"><?php echo $value->name; ?></a>
                                                             </h4>
+                                                            <div class="conocer_mas">
+                                                                <span class="date">Conoce Más <ion-icon name="arrow-redo-outline"></ion-icon></span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 <?php } ?>

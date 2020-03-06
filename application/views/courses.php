@@ -18,15 +18,15 @@
             <div id=main-content>
                 <section class=content-area>
                     <div class="page-title layout-1">
-                        <div class="main-top parallax" style=background-image:url(http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/uploads/sites/5/2018/10/page_title_7.jpg);><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
+                        <div class="main-top parallax" style="background-image:url(<?php echo site_url().'assets/page_front/images/background.jpg';?>);"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
                             <div class="content container">
                                 <div class=row>
                                     <div class="text-title col-md-6">
-                                        <h1>Courses</h1>
+                                        <h1>Cursos</h1>
                                     </div>
                                     <div class="text-description col-md-6">
                                         <div class=banner-description>
-                                            <p><strong class=br>The best demo education </strong> Be successful with Course Builder theme.</p>
+                                            <p><strong class=br>La mejor plataforma de educación </strong> Mejora tu perfil profesional.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -50,9 +50,6 @@
                     </div>
                     <div id=top-sidebar-courses>
                         <div class=container>
-                            <style>
-                                .vc_custom_1502273625937{padding-top: 31px !important;background-color: #1ea69a !important;}
-                            </style>
                             <div data-vc-full-width=true data-vc-full-width-init=false data-vc-stretch-content=true class="vc_row wpb_row vc_row-fluid overflow top-courses-overflow vc_custom_1502273625937 vc_row-has-fill vc_row-no-padding">
                                 <div class="wpb_column vc_column_container vc_col-sm-12">
                                     <div class=vc_column-inner>
@@ -79,8 +76,8 @@
                                                                         <div class="title">
                                                                             <a href="<?php echo site_url() . "cursos/$value->category_slug/$value->slug"; ?>"><?php echo $value->name; ?></a>
                                                                         </div>
-                                                                        <div class="data-comment">
-                                                                            <span class="date"><?php echo formato_fecha_barras($value->date); ?></span>
+                                                                        <div class="conocer_mas">
+                                                                            <span class="date">Conoce Más <ion-icon name="arrow-redo-outline"></ion-icon></span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -140,9 +137,9 @@
                                                                 <h3 class="title">
                                                                     <a href="<?php echo site_url()."cursos/$value->category_slug/$value->slug";?>"><?php echo $value->name;?></a>
                                                                 </h3>
-                                                                <div class="date-comment">
-                                                                    <span class="date-meta"><?php echo formato_fecha_barras($value->date);?></span>
-                                                                </div>
+                                                                <div class="conocer_mas">
+                                                                <span class="date">Conoce Más <ion-icon name="arrow-redo-outline"></ion-icon></span>
+                                                            </div>
                                                                 <div class="content-list">
                                                                     <div class="course-description">
                                                                         <p><?php echo corta_texto($value->description, 300);?></p>
