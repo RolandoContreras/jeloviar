@@ -187,13 +187,13 @@
         <script src="<?php echo site_url().'assets/page_front/js/plugins/owl.carousel.min.js';?>"></script>
         <script src="<?php echo site_url().'assets/page_front/js/plugins/jquery.magnific-popup.min.js';?>"></script>
         <script src="<?php echo site_url().'assets/page_front/js/plugins/theia-sticky-sidebar.js';?>"></script>
+        <script src="<?php echo site_url().'assets/page_front/js/plugins/thim-loadmore.js';?>"></script>
         <script src="<?php echo site_url().'assets/page_front/js/plugins/imagesloaded.min.js';?>"></script>
         <script src="<?php echo site_url().'assets/page_front/js/main.min.js';?>"></script>
         <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
         <script>
             WebFont.load({google: {families: ['Roboto:300,400']}});
         </script>
-        <script src="<?php echo site_url() . 'assets/page_front/js/plugins/js_composer_front.min.js'; ?>"></script>
+        <script src="<?php echo site_url().'assets/page_front/js/plugins/js_composer_front.min.js';?>"></script>
     </body>
-
 </html>
