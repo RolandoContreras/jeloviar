@@ -191,6 +191,7 @@ class Courses extends CI_Controller {
 	}
         public function detail($slug)
 	{
+            
             //get category
             $data['obj_category'] = $this->nav_category();
             //GET COURSE
@@ -227,8 +228,7 @@ class Courses extends CI_Controller {
                             "select" =>"videos.video_id,
                                         videos.name,
                                         videos.slug,
-                                        videos.time,
-                                        (SELECT video FROM (videos) WHERE course_id = $course_id and type = 1) as link_video",
+                                        videos.time",
                             "where" => "videos.course_id = $course_id and videos.active = 1");
             $data['obj_videos'] = $this->obj_videos->search($params);
             $data['total_videos'] = count($data['obj_videos']);

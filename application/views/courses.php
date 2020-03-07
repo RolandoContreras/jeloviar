@@ -184,61 +184,16 @@
             <?php $this->load->view("footer"); ?>
         </div>
         <div id=back-to-top><i class="fa fa-angle-up" aria-hidden=true></i></div>
-        <link rel=stylesheet id=js_composer_front-css href=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/js_composer/assets/css/js_composer.min.css type=text/css media=all>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-includes/js/jquery/ui/core.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-includes/js/wp-util.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-includes/js/backbone.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/wp-events-manager/assets//js/frontend/events.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/buddypress/bp-templates/bp-nouveau/js/buddypress-nouveau.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/wp-smushit/app/assets/js/smush-lazy-load.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/owl.carousel.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/brands/assets/js/brands-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/google-map/assets/js/google-map-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/circle-progress.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/skills-bar/assets/js/skills-bar-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/count-down/assets/js/libs/jquery.countdown.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/count-down/assets/js/count-down.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/scroll-heading/assets/js/scroll-heading.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/testimonials/assets/js/testimonials.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/jquery.waypoints.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/counter-box/assets/js/counter-box.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/video-box/assets/js/video-box-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/photo-wall/assets/js/photo-wall.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/gallery-carousel/assets/js/gallery-carousel-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/pricing/assets/js/pricing-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/jquery.magnific-popup.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/gallery/assets/js/gallery-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/posts/assets/js/post-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/courses-carousel/assets/js/courses-carousel-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/course-search/assets/js/course-search.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/courses-block-1/assets/js/courses-block-1-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/courses-block-3/assets/js/courses-block-3-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/courses-block-4/assets/js/course-block-4-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/instructors/assets/js/instructors-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/events/assets/js/events-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/sly.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/courses-collection/assets/js/courses-collection-custom.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/portfolio/assets/js/jquery.appear.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/thim-course-builder/portfolio/assets/js/portfolio.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/1_tether.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/change-layout.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/jquery.cookie.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/js_composer/assets/lib/bower/flexslider/jquery.flexslider-min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/jquery.thim-content-slider.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/theia-sticky-sidebar.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/toggle-tabs.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/bootstrap.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/thim-loadmore.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-includes/js/imagesloaded.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/main.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms/assets/js/libs/smoothscroll.min.js></script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-includes/js/wp-embed.min.js></script>
+        <script src="<?php echo site_url().'assets/page_front/js/plugins/owl.carousel.min.js';?>"></script>
+        <script src="<?php echo site_url().'assets/page_front/js/plugins/jquery.magnific-popup.min.js';?>"></script>
+        <script src="<?php echo site_url().'assets/page_front/js/plugins/theia-sticky-sidebar.js';?>"></script>
+        <script src="<?php echo site_url().'assets/page_front/js/plugins/imagesloaded.min.js';?>"></script>
+        <script src="<?php echo site_url().'assets/page_front/js/main.min.js';?>"></script>
         <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
         <script>
             WebFont.load({google: {families: ['Roboto:300,400']}});
         </script>
-        <script src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js></script>
+        <script src="<?php echo site_url() . 'assets/page_front/js/plugins/js_composer_front.min.js'; ?>"></script>
     </body>
 
 </html>

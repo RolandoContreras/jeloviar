@@ -193,22 +193,10 @@
         </div>
         <div id=back-to-top><i class="fa fa-angle-up" aria-hidden=true></i></div>
         <div id=tp_chameleon_list_google_fonts></div>
-        <div class=gallery-slider-content></div>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/smush-lazy-load.min.js';?>"></script>
         <script src="<?php echo site_url().'assets/page_front/js/plugins/owl.carousel.min.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/jquery.waypoints.min.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/video-box-custom.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/gallery-carousel-custom.js';?>"></script>
         <script src="<?php echo site_url().'assets/page_front/js/plugins/jquery.magnific-popup.min.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/gallery-custom.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/courses-carousel-custom.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/course-search.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/sly.min.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/bootstrap.min.js';?>"></script>
         <script src="<?php echo site_url().'assets/page_front/js/plugins/imagesloaded.min.js';?>"></script>
         <script src="<?php echo site_url().'assets/page_front/js/main.min.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/smoothscroll.min.js';?>"></script>
-        <script src="<?php echo site_url().'assets/page_front/js/plugins/wp-embed.min.js';?>"></script>
         <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
         <script>
             WebFont.load({google: {families: ['Roboto:300,400']}});
