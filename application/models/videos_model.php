@@ -17,8 +17,7 @@ BITSHARE S.A.C
 
 class videos_model_atributos{	
     var $video_id='';
-    var $category_id='';
-    var $module='';
+    var $module_id='';
     var $name='';
     var $summary='';
     var $video='';
@@ -39,8 +38,7 @@ class Videos_Model extends CI_Model{
         $this->table = 'videos';
 	$this->table_id = 'video_id';
         $this->video_id='';
-        $this->category_id='';
-        $this->module='';
+        $this->module_id='';
         $this->name='';
         $this->summary='';
         $this->video='';
