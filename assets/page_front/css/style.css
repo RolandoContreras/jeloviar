@@ -18083,26 +18083,20 @@ body.learnpress-v3.course-item-popup .course-curriculum>.learn-press-course-butt
     justify-content: space-evenly
 }
 .course-author .teacher .author-avatar ul.social-link li a:before {
-    content: "\f3a0";
     font-family: Ionicons;
     font-size: 19px;
     color: #bfbfbf
 }
 .course-author .teacher .author-avatar ul.social-link li a[href*="facebook.com"]:before {
-    content: "\f231"
 }
 .course-author .teacher .author-avatar ul.social-link li a[href*="twitter.com"]:before {
-    content: "\f243"
 }
 .course-author .teacher .author-avatar ul.social-link li a.lp_info_skype:before,
 .course-author .teacher .author-avatar ul.social-link li a[href*="skype:"]:before {
-    content: "\f23f"
 }
 .course-author .teacher .author-avatar ul.social-link li a[href*="pinterest.com"]:before {
-    content: "\f2b1"
 }
 .course-author .teacher .author-avatar ul.social-link li a[href*="plus.google.com"]:before {
-    content: "\f235"
 }
 .course-author .teacher .author-bio {
     font-style: normal;

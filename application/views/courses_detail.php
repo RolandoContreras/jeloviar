@@ -52,8 +52,11 @@
                                                                 <li class="list-inline-item item-author">
                                                                     <div class="author">
                                                                         <span class="avatar">
-                                                                            <img width=60 height=60 alt="Maxine Waters" data-src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/uploads/sites/5/2017/07/1-e1503481962715-150x150.jpg class="avatar avatar-60 wp-user-avatar wp-user-avatar-60 alignnone photo lazyload"></span>
-                                                                        <div class=info><label>Profesor</label><a href=http://wordpresslms.thimpress.com/demo-elearning-2/lp-profile/admin2/>Maxine Waters</a>
+                                                                            <img width=60 height=60 alt="<?php echo $obj_courses->teacher;?>" src="<?php echo site_url()."assets/cms/img/profesores/$obj_courses->teacher_img";?>" class="avatar avatar-60 wp-user-avatar wp-user-avatar-60 alignnone photo">
+                                                                        </span>
+                                                                        <div class="info">
+                                                                            <label>Profesor</label>
+                                                                            <a><?php echo $obj_courses->teacher;?></a>
                                                                         </div>
                                                                     </div>
                                                                 </li>
@@ -166,26 +169,31 @@
                                                                 <h3>Profesor</h3>
                                                                 <div class="thim-course-author teacher">
                                                                     <div class=author-avatar>
-                                                                        <img width=150 height=150 alt="Maxine Waters" src=http://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/uploads/sites/5/2017/07/1-e1503481962715-150x150.jpg class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo">
+                                                                        <img alt="<?php $obj_courses->teacher;?>" src="<?php echo site_url()."assets/cms/img/profesores/$obj_courses->teacher_img";?>" class="avatar avatar-150 wp-user-avatar wp-user-avatar-150 alignnone photo">
                                                                         <ul class="social-link">
                                                                             <li>
-                                                                                <a class="lp_info_facebook" href="https://facebook.com"></a>
+                                                                                <a class="social_color" target="_blank" href="<?php echo $obj_courses->twiter;?>">
+                                                                                    <i class="fa fa-twitter"></i>
+                                                                                </a>
                                                                             </li>
                                                                             <li>
-                                                                                <a class=lp_info_twitter href="https://twitter.com"></a>
+                                                                                <a class="social_color" target="_blank" href="<?php echo $obj_courses->facebook;?>">
+                                                                                    <i class="fa fa-facebook"></i>
+                                                                                </a>
                                                                             </li>
                                                                             <li>
-                                                                                <a class=lp_info_google_plus href="https://plus.google.com"></a>
+                                                                                <a class="social_color" target="_blank" href="<?php echo $obj_courses->instagram;?>">
+                                                                                    <i class="fa fa-instagram"></i>
+                                                                                </a>
                                                                             </li>
                                                                         </ul>
                                                                     </div>
                                                                     <div class=author-bio>
                                                                         <div class=name>
-                                                                            <a href=http://wordpresslms.thimpress.com/demo-elearning-2/lp-profile/admin2/>Maxine Waters</a>
+                                                                            <a><?php echo $obj_courses->teacher;?></a>
                                                                         </div>
-                                                                        <div class=major>University Professor</div>
-                                                                        <p class=description>I was well-trained with skills and abilities to provides all kind of services in my teaching. Making my students happy is
-                                                                            also my happiness.</p>
+                                                                        <div class=major><?php echo $obj_courses->profetion;?></div>
+                                                                        <p class=description><?php echo $obj_courses->teacher_description;?></p>
                                                                     </div>
                                                                 </div>
                                                             </div>

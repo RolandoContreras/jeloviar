@@ -210,8 +210,16 @@ class Courses extends CI_Controller {
                                         courses.price_del,
                                         courses.date,
                                         category.name as category_name,
-                                        category.slug as category_slug",
-                            "join" => array( 'category, courses.category_id = category.category_id'),
+                                        category.slug as category_slug,
+                                        teachers.name as teacher,
+                                        teachers.img as teacher_img,
+                                        teachers.profetion,
+                                        teachers.description as teacher_description,
+                                        teachers.facebook,
+                                        teachers.twiter,
+                                        teachers.instagram",
+                            "join" => array('category, courses.category_id = category.category_id',
+                                            'teachers, courses.teacher_id = teachers.teacher_id'),
                             "where" => "courses.slug = '$slug_2'");
             $data['obj_courses'] = $this->obj_courses->get_search_row($params);
             $obj_courses_meta = $data['obj_courses'];
