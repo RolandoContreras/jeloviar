@@ -75,6 +75,29 @@
                                     <?php endforeach; ?>
                             </select>
                               </div>
+                              
+                              
+                              <div class="form-group">
+                                <label for="inputState">Profesor</label>
+                                <select name="teacher_id" id="teacher_id" class="form-control">
+                                <option value="">[ Seleccionar ]</option>
+                                    <?php foreach ($obj_teachers as $value ): ?>
+                                <option value="<?php echo $value->teacher_id;?>"
+                                    <?php 
+                                            if(isset($obj_courses)){
+                                                    if($obj_courses->teacher_id == $value->teacher_id){
+                                                        echo "selected";
+                                                    }
+                                            }else{
+                                                      echo "";
+                                            }
+
+                                    ?>><?php echo $value->name;?>
+                                </option>
+                                    <?php endforeach; ?>
+                            </select>
+                              </div>
+                              
                           </div>
                           <div class="form-group col-md-6">
                               <?php 

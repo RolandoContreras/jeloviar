@@ -125,6 +125,12 @@ $route['dashboard/preguntas'] = "d_preguntas";
 $route['dashboard/preguntas/save'] = "d_preguntas/save";
 $route['dashboard/preguntas/delete'] = "d_preguntas/delete";
 
+$route['dashboard/profesores'] = "d_teachers";
+$route['dashboard/profesores/load'] = "d_teachers/load";
+$route['dashboard/profesores/load/([0-9]+)'] = "d_teachers/load/$1";
+$route['dashboard/profesores/validate'] = "d_teachers/validate";
+$route['dashboard/profesores/delete'] = "d_teachers/delete";
+
 $route['dashboard/comentarios'] = "d_comments";
 $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
 $route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";

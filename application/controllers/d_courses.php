@@ -7,6 +7,7 @@ class D_courses extends CI_Controller{
         $this->load->model("category_model","obj_category");
         $this->load->model("courses_model","obj_courses");
         $this->load->model("modules_model","obj_modules");
+        $this->load->model("teachers_model","obj_teachers");
     }   
                 
     public function index(){  
@@ -21,12 +22,14 @@ class D_courses extends CI_Controller{
                                     courses.price,
                                     courses.date,
                                     courses.active,
-                                    category.name as category_name",
-                        "join" => array( 'category, courses.category_id = category.category_id'),            
+                                    category.name as category_name,
+                                    teachers.teacher_id,
+                                    teachers.name as teacher",
+                        "join" => array('category, courses.category_id = category.category_id',
+                                        'teachers, courses.teacher_id = teachers.teacher_id'),            
             );
             //GET DATA COMMENTS
             $obj_courses = $this->obj_courses->search($params);
-            
             /// VISTA
             $this->tmp_mastercms->set("obj_courses",$obj_courses);
             $this->tmp_mastercms->render("dashboard/cursos/course_list");
@@ -49,11 +52,14 @@ class D_courses extends CI_Controller{
                                     courses.price_del,
                                     courses.active,
                                     category.name as category_name,
+                                    teachers.teacher_id
                                     ",
-                        "join" => array('category, courses.category_id = category.category_id'),    
+                        "join" => array('category, courses.category_id = category.category_id',
+                                        'teachers, courses.teacher_id = teachers.teacher_id'),    
                         "where" => $where,
             ); 
             $obj_courses  = $this->obj_courses->get_search_row($params); 
+           
             //verificar si tiene modulos
             $param_module = array(
                         "select" =>"module_id,
@@ -67,13 +73,22 @@ class D_courses extends CI_Controller{
             //RENDER
             $this->tmp_mastercms->set("obj_courses",$obj_courses);
           }
+          
+           //obtener profesores
+            $param_teacher = array(
+                        "select" =>"teacher_id,
+                                    name",    
+                        "where" => "active = 1",
+            ); 
+            $obj_teachers  = $this->obj_teachers->search($param_teacher); 
           //GET CATEGORIES
             $params = array(
                         "select" =>"*",
                          "where" => "active = 1",
             ); 
             $obj_category = $this->obj_category->search($params); 
-            
+         
+         $this->tmp_mastercms->set("obj_teachers",$obj_teachers); 
          $this->tmp_mastercms->set("obj_category",$obj_category); 
          $this->tmp_mastercms->render("dashboard/cursos/course_form");    
     }
@@ -127,6 +142,7 @@ class D_courses extends CI_Controller{
                 'price_del' => $this->input->post('price_del'),
                 'category_id' => $this->input->post('category_id'),
                 'description' => $this->input->post('description'),
+                'teacher_id' => $this->input->post('teacher_id'), 
                 'img' => $img,
                 'img2' => $img2,
                 'date' => date("Y-m-d H:i:s"),  
@@ -180,6 +196,7 @@ class D_courses extends CI_Controller{
                 'price_del' => $this->input->post('price_del'),
                 'category_id' => $this->input->post('category_id'),
                 'description' => $this->input->post('description'),
+                'teacher_id' => $this->input->post('teacher_id'), 
                 'img' => $img,
                 'img2' => $img2,
                 'date' => date("Y-m-d H:i:s"),  
