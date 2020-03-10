@@ -11331,7 +11331,6 @@ body #course-curriculum-popup #popup-header .popup-close:before {
     height: 113px;
     line-height: 113px;
     color: #fff;
-    background-color: rgba(61, 61, 61, .6);
     text-align: center;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -11339,7 +11338,6 @@ body #course-curriculum-popup #popup-header .popup-close:before {
 }
 .single .course-thumbnail .play-button .video-thumbnail:before {
     position: absolute;
-    content: "\f215";
     font-family: Ionicons;
     font-size: 62px;
     -webkit-font-smoothing: antialiased;

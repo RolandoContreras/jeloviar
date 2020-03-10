@@ -61,7 +61,7 @@
                                                                                     </div>
                                                                             <?php }else{ ?>
                                                                                     <div class="price">
-                                                                                        <span class="course-origin-price line-price">$<?php echo $value->price_del;?></span><span class="course-price">$<?php echo $value->price;?></span>
+                                                                                        <span class="course-origin-price line-price">€<?php echo $value->price_del;?></span><span class="course-price">€<?php echo $value->price;?></span>
                                                                                     </div>
                                                                             <?php } ?>
                                                                         </div>
@@ -141,7 +141,7 @@
                                                                 <a href="<?php echo site_url()."cursos/$value->category_slug/$value->slug";?>" class=img-link></a>
                                                                 <div class="course-meta">
                                                                     <div class="price">
-                                                                        <span class="course-origin-price line-price">$<?php echo $value->price_del; ?></span><span class="course-price">$<?php echo $value->price; ?></span>
+                                                                        <span class="course-origin-price line-price">€<?php echo $value->price_del; ?></span><span class="course-price">€<?php echo $value->price; ?></span>
                                                                     </div>
                                                                 </div>
                                                             </div>

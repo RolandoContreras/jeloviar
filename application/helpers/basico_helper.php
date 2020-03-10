@@ -60,6 +60,12 @@ function quitar_coma_number($number){
     return $number;
 }
 
+function eliminar_ultimo_caracter($string){    
+    $new_value = substr($string, 0, -1);    
+    return $new_value;
+}
+
+
 function format_number_moneda_soles($number){
     $decimals ="2";
     $number = number_format($number, $decimals);

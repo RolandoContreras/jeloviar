@@ -69,7 +69,7 @@
                                                                             <img alt="<?php echo $value->name; ?>" src="<?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?>">
                                                                         </a>
                                                                         <span class=price>
-                                                                            <span class="course-origin-price">$<?php echo $value->price_del; ?></span><span class="course-price">$<?php echo $value->price; ?></span>
+                                                                            <span class="course-origin-price">€<?php echo $value->price_del; ?></span><span class="course-price">€<?php echo $value->price; ?></span>
                                                                         </span>
                                                                     </div>
                                                                     <div class="sub-content">
