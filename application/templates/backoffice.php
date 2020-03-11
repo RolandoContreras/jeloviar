@@ -18,6 +18,7 @@
     <!--//END FAVICON-->
   <link rel="stylesheet" href="<?php echo site_url().'assets/backoffice/css/style.css';?>">
   <link rel="stylesheet" href="<?php echo site_url().'assets/backoffice/css/gallery.css';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'assets/backoffice/css/my_style.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
   <script type="text/javascript">
     var site = '<?php echo site_url();?>';

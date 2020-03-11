@@ -33,9 +33,18 @@
                                 <div class="card-body">
                                   <div class="row justify-content-center">
                                     <div class="col-md-12">
-                                      <div class="embed-responsive embed-responsive-16by9">
-                                          <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/<?php echo $video_link; ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                      </div>
+                                        
+                                      <?php foreach ($obj_videos as $value) {
+                                              if($value->type == 1){ 
+                                                  $video = $value->video;
+                                                  $explo_video = explode("=", $video);
+                                                  $video_link = $explo_video[1];
+                                                  ?>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $video_link; ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                                      </div>
+                                               <?php }
+                                      } ?>  
                                     </div>
                                   </div>
                                 </div>
@@ -71,29 +80,43 @@
                                       <div class="table-responsive">
                                         <table class="table table-hover">
                                           <tbody>
-                                            <?php 
-                                            foreach ($obj_videos as $value) { ?>
-                                                  <tr class="unread">
-                                                      <td>
-                                                          <span class="pcoded-micon text-c-purple"><i data-feather="video"></i></span>
-                                                      </td>
-                                                      <td>
-                                                        <h6 class="mb-1">Vídeo</h6>
-                                                        <p class="m-0"><?php echo $value->name;?></p>
-                                                      </td>
-                                                      <td>
-                                                          <h6 class="text-muted"><span class="pcoded-micon text-c-grey"><i data-feather="calendar"></i></span><?php echo formato_fecha_dia_mes_ano($value->date);?></h6>
-                                                      </td>
-                                                      <td>
-                                                          <h6 class="text-muted"><span class="pcoded-micon text-c-grey"><i data-feather="watch"></i></span><?php echo $value->time."min";?></h6>
-                                                      </td>
-                                                      <td>
-                                                          <a href="#!" class="label theme-bg text-white f-12">
-                                                              <span class="pcoded-micon text-c-black"><i data-feather="check"></i></span>
-                                                          </a>
+                                              <?php 
+                                            foreach ($obj_modules as $value) { ?>
+                                              <tr class="unread" style="background: linear-gradient(-135deg,#3f4d67 0%,#3f4d67 100%);">
+                                                  <td>
+                                                      <span class="pcoded-micon text-c-purple"><i data-feather="check"></i></span>
+                                                  </td>
+                                                  <td colspan="4">
+                                                        <h6 class="mb-1 aaa">Módulo</h6>
+                                                        <p class="m-0 white"><?php echo str_to_mayusculas($value->name);?></p>
                                                       </td>
                                                 </tr>
-                                            <?php } ?>  
+                                                <?php 
+                                                    foreach ($obj_videos as $videos) { 
+                                                        if($videos->module_id == $value->module_id){ ?>
+                                                            <tr class="unread">
+                                                              <td>
+                                                                  <span class="pcoded-micon text-c-purple"><i data-feather="video"></i></span>
+                                                              </td>
+                                                              <td>
+                                                                <h6 class="mb-1">Vídeo</h6>
+                                                                <p class="m-0"><?php echo $videos->name;?></p>
+                                                              </td>
+                                                              <td>
+                                                                  <h6 class="text-muted"><span class="pcoded-micon text-c-grey"><i data-feather="calendar"></i></span><?php echo formato_fecha_dia_mes_ano($videos->date);?></h6>
+                                                              </td>
+                                                              <td>
+                                                                  <h6 class="text-muted"><span class="pcoded-micon text-c-grey"><i data-feather="watch"></i></span><?php echo $videos->time."min";?></h6>
+                                                              </td>
+                                                              <td>
+                                                                  <a href="#!" class="label theme-bg text-white f-12">
+                                                                      <span class="pcoded-micon text-c-black"><i data-feather="check"></i></span>
+                                                                  </a>
+                                                              </td>
+                                                        </tr>
+                                                       <?php }  ?>
+                                                    <?php } ?> 
+                                             <?php } ?>  
                                           </tbody>
                                         </table>
                                       </div>
@@ -109,7 +132,7 @@
                                             <?php
                                             foreach ($obj_courses_related as $value) { ?>
                                               <figure class="effect-apollo">
-                                                  <img width="365" height="340" src="<?php echo site_url()."static/cms/img/cursos/$value->img";?>" alt="<?php echo $value->name?>">
+                                                  <img src="<?php echo site_url()."assets/cms/img/cursos/$value->img";?>" alt="<?php echo $value->name?>">
                                                 <figcaption>
                                                     <h2><span style="font-size: 32px !important;font-weight: 300 !important;"><?php echo $value->name;?></span></h2>
                                                   <p><?php echo corta_texto($value->description, 100);?></p>
