@@ -31,7 +31,7 @@ class B_home extends CI_Controller {
         }else{
                 $where = "courses.active = 1";
         }
-        $category_name = "Todos los videos";
+        $category_name = "Todos los cursos";
         
             //get all courses
             $params_course = array(

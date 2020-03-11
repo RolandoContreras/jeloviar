@@ -16,14 +16,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'assets/page_front/images/logo/favico/favicon-16x16.png';?>">
     <link rel="manifest" href="<?php echo site_url().'assets/page_front/images/logo/favico/site.webmanifest';?>">
     <!--//END FAVICON-->
-  <link rel="stylesheet" href="<?php echo site_url().'assets/course/css/style.css';?>">
-  <link rel="stylesheet" href="<?php echo site_url().'assets/course/css/gallery.css';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'assets/backoffice/css/style.css';?>">
+  <link rel="stylesheet" href="<?php echo site_url().'assets/backoffice/css/gallery.css';?>">
   <script src="https://unpkg.com/feather-icons"></script>
   <script type="text/javascript">
     var site = '<?php echo site_url();?>';
   </script>
-  <script src="<?php echo site_url().'assets/cms/js/core/jquery-1.11.1.min.js';?>"></script>
-  <script src="<?php echo site_url().'assets/cms/js/core/bootstrap.min.js';?>"></script>
+  <script src="<?php echo site_url().'assets/backoffice/js/core/jquery-1.11.1.min.js';?>"></script>
+  <script src="<?php echo site_url().'assets/backoffice/js/core/bootstrap.min.js';?>"></script>
   <!--culqi-->
   <script src="https://checkout.culqi.com/js/v3"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -180,18 +180,18 @@
     </div>
   </header>
   <?php echo $body;?>
-  <script src="<?php echo site_url().'static/course/js/vendor-all.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/cms/js/core/datatables.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/cms/js/core/tbl-datatable-custom.js';?>"></script>
-  <script src="<?php echo site_url().'static/course/js/bootstrap.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/course/js/pcoded.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/course/js/ekko-lightbox.min.js';?>"></script>
-  <script src="<?php echo site_url().'static/course/js/ac-lightbox.js';?>"></script>
+  <script src="<?php echo site_url().'assets/backoffice/js/core/vendor-all.min.js';?>"></script>
+  <script src="<?php echo site_url().'assets/backoffice/js/core/datatables.min.js';?>"></script>
+  <script src="<?php echo site_url().'assets/backoffice/js/core/tbl-datatable-custom.js';?>"></script>
+  <script src="<?php echo site_url().'assets/backoffice/js/core/pcoded.min.js';?>"></script>
+  <script src="<?php echo site_url().'assets/backoffice/js/core/ekko-lightbox.min.js';?>"></script>
+  <script src="<?php echo site_url().'assets/backoffice/js/core/ac-lightbox.js';?>"></script>
+  <script src="<?php // echo site_url().'assets/backoffice/js/core/ac-alert.js';?>"></script>
+  <script src="<?php echo site_url().'assets/backoffice/js/core/sweetalert.min.js';?>"></script>
       <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
       <script>
         WebFont.load({google:{families:['Roboto:400,300']}});
       </script>
-      <script defer src="<?php echo site_url().'static/page_front/js/autoptimize_282.js';?>"></script>
   <script>
       feather.replace()
   </script>
