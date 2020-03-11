@@ -216,10 +216,10 @@
                                                                                     <h2 class="title">
                                                                                         <a href="<?php echo site_url() . "cursos/$value->slug"; ?>"><?php echo $value->name; ?></a>
                                                                                     </h2>
+                                                                                    <div class="conocer_mas">
+                                                                                        <span class="date">Conoce Más <ion-icon name="arrow-redo-outline"></ion-icon></span>
+                                                                                    </div>
                                                                                 </div>
-                                                                                <span class="date-comment">
-                                                                                    <span class="date"><?php echo formato_fecha_dia_mes_ano($value->date); ?></span>
-                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     <?php } ?>  

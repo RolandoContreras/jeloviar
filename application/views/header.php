@@ -23,8 +23,8 @@
                             <div class=wpb_wrapper>
                                 <div class="thim-sc-login ">
                                     <div class="widget widget_thim-login">
-                                        <div class="thim-link-login thim-login-popup">
-                                            <a class=register href="#">Registro</a><span class=slash>/</span><a href="#" class=login>Login</a>
+                                        <div class="thim-link-login">
+                                            <a class=register href="<?php echo site_url().'registro';?>">Registro</a><span class=slash>/</span><a href="<?php echo site_url().'login';?>" class=login>Ingresar</a>
                                         </div>
                                         <div id=thim-popup-login>
                                             <div class=thim-login-container>

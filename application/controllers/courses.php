@@ -279,7 +279,7 @@ class Courses extends CI_Controller {
             //SEND DATA META OG: FACEBOOK
             $data['title'] = "Cursos | $obj_courses_meta->category_name | $obj_courses_meta->name";      
             $data['meta_description_og'] = "$obj_courses_meta->description";
-            $data['meta_img_og'] = site_url()."static/cms/img/cursos/$obj_courses_meta->img";
+            $data['meta_img_og'] = site_url()."assets/cms/img/cursos/$obj_courses_meta->img";
             //view
             $this->load->view('courses_detail',$data);
 	}

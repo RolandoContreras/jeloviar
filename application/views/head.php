@@ -16,8 +16,8 @@
   <link rel=stylesheet href="<?php echo site_url().'assets/page_front/css/my_style.css';?>" type=text/css media=all>
   <link rel="stylesheet" id="learn-press-css" href="<?php echo site_url().'assets/page_front/css/learnpress.css?nocache=1583683592.7226&amp;ver=3.2.6.5';?>" type="text/css" media="all">
   <link rel="stylesheet" id="magnific-popup-css" href="<?php echo site_url().'assets/page_front/css/asset/main.css';?>" type="text/css" media="all">
-  <script src="<?php echo site_url().'assets/page_front/js/jquery.js';?>"></script>
-  <script src=<?php echo site_url().'assets/page_front/js/jquery-migrate.min.js';?>></script>
+  <!--<script src="<?php echo site_url().'assets/page_front/js/jquery.js';?>"></script>-->
+  <script src="<?php echo site_url().'assets/page_front/js/jquery-migrate.min.js';?>"></script>
   <!--start favicon-->
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'assets/page_front/images/logo/favico/apple-touch-icon.png';?>">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'assets/page_front/images/logo/favico/favicon-32x32.png';?>">
@@ -31,4 +31,7 @@
         <meta property="og:description" content="<?php echo $meta_description_og;?>" />
         <meta property="og:image" content="<?php echo $meta_img_og;?>" />
    <?php  } ?>
+  <script>
+    var site = '<?php echo site_url();?>';
+  </script>
 </head>
