@@ -110,11 +110,11 @@ class Register extends CI_Controller {
                       <tr>
                         <td style='padding:0;background-color:#fff;border-radius:0 0 5px 5px;padding:32px'>
                           <p style='margin:0;padding-bottom:20px;color:#333333;line-height:22px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
-                          Bienvenido a U-LINEX nos da gusto que seas parte de nuestra comunidad, accede a tu oficina virtual a través del siguiente enlace  <a href='https://u-linex.com/login' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://u-linex.com/login&amp;source=gmail&amp;ust=1575431368630000&amp;usg=AFQjCNE2bxZM6aRU9Ckhj6hvz9ZXHzwzyA'>u-linex.com/login</a> <br/>Encuentra aquí tus credenciales de ingreso. </p>
+                          Bienvenido a JELOVIARONLINE.COM nos da gusto que seas parte de nuestra comunidad, accede a tu oficina virtual a través del siguiente enlace  <a href='https://jeloviaronline.com/login' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://http://jeloviaronline.com/login&amp;source=gmail&amp;ust=1575431368630000&amp;usg=AFQjCNE2bxZM6aRU9Ckhj6hvz9ZXHzwzyA'>jeloviaronline.com/login</a> <br/>Encuentra aquí tus credenciales de ingreso. </p>
                           <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
                           <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Usuario: </span><strong>$email</strong></span>
                           </p> 
-                          <a href='https://u-linex.com/login' style='background:#2d6ced;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px;display:inline-block;padding:12px 17px;text-decoration:none;border-radius:5px'
+                          <a href='https://jeloviaronline.com/login' style='background:#2d6ced;color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px;display:inline-block;padding:12px 17px;text-decoration:none;border-radius:5px'
                             target='_blank'>Iniciar Sesión</a>                          
                           </td>
                       </tr>
@@ -124,13 +124,12 @@ class Register extends CI_Controller {
               </tr>
               <tr>
                 <td style='padding:30px 30px 0;display:block;background:#fafafa'>
-                  <table style='width:100%;border-collapse:collapse;padding:0;text-align:center' width='100%' height='100%' cellspacing='0' cellpadding='0'
-                    border='0' align='center'>
+                  <table style='width:100%;border-collapse:collapse;padding:0;text-align:center' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0' align='center'>
                     <tbody>
                       <tr>
                         <td style='max-width:290px;display:inline-block;padding:0 19px 30px;box-sizing:border-box;text-align:left'>
                           <p style='margin:0;text-align:center;line-height:20px;color:#888888;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:12px'>
-                          Visítanos en  <a href='https://u-linex.com' style='color:#2d6ced;text-decoration:none' target='_blank'>www.u-linex.com</a></p>
+                          Visítanos en  <a href='https://jeloviaronline.com' style='color:#2d6ced;text-decoration:none' target='_blank'>www.jeloviaronline.com</a></p>
                         </td>
                       </tr>
                     </tbody>
@@ -145,10 +144,10 @@ class Register extends CI_Controller {
   </table>
   </div>
                             .</html>", 70, "\n", true);
-                    $titulo = "Bienvenido - [U-LINEX]";
+                    $titulo = "Bienvenido - [JELOVIAR ONLINE]";
                     $headers = "MIME-Version: 1.0\r\n"; 
                     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-                    $headers .= "From: U-LINEX <contacto@u-linex.com>\r\n";
+                    $headers .= "From: JELOVIAR ONLINE <contacto@jeloviaronline.com>\r\n";
                     $bool = mail("$email",$titulo,$mensaje,$headers);
     }
         

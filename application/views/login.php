@@ -52,21 +52,7 @@
                                 <article id=post-522 class="post-522 page type-page status-publish hentry pmpro-has-access">
                                     <div class=entry-content>
                                         <div class="vc_row wpb_row vc_row-fluid account-login-page">
-                                            <div class="social-login-form wpb_column vc_column_container vc_col-sm-6">
-                                                <div class=vc_column-inner>
-                                                    <div class=wpb_wrapper>
-                                                        <div class="wpb_text_column wpb_content_element ">
-                                                            <div class=wpb_wrapper>
-                                                                <div class=wp-social-login-widget>
-                                                                    <div class="wp-social-login-connect-with aaa">Bienvenido a</div>
-                                                                    <img src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" alt="logo"/>
-                                                                    <div class=wp-social-login-widget-clearing></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <div class="social-login-form wpb_column vc_column_container vc_col-sm-3"></div>
                                             <div class="thim-form-login wpb_column vc_column_container vc_col-sm-6">
                                                 <div class="vc_column-inner vc_custom_1503993564602">
                                                     <div class=wpb_wrapper>
@@ -103,6 +89,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="social-login-form wpb_column vc_column_container vc_col-sm-3"></div>
                                         </div>
                                     </div>
                                 </article>
