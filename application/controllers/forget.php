@@ -96,7 +96,7 @@ class Forget extends CI_Controller {
                       <tr>
                         <td style='padding:0;background-color:#fff;border-radius:0 0 5px 5px;padding:32px'>
                           <p style='margin:0;padding-bottom:20px;color:#333333;line-height:22px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
-                          Aquí te dejamos la contraseña que ingresaste a la hora de tu registroAquí te dejamos la contraseña que ingresaste a la hora de tu registro, si deseas cambiar tu contraseña lo puedes hacer desde tu oficina virtual.</p> 
+                          Aquí te dejamos la contraseña que ingresaste a la hora de tu registro, si deseas cambiar tu contraseña lo puedes hacer desde tu oficina virtual.</p> 
                           <p style='margin:0;padding-bottom:20px;color:#333333;line-height:22px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
                           Accede a tu oficina virtual a través del siguiente enlace  <a href='https://jeloviaronline.com/login' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://http://jeloviaronline.com/login&amp;source=gmail&amp;ust=1575431368630000&amp;usg=AFQjCNE2bxZM6aRU9Ckhj6hvz9ZXHzwzyA'>jeloviaronline.com/login</a></p>
                           <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
@@ -132,7 +132,7 @@ class Forget extends CI_Controller {
   </table>
   </div>
                             .</html>", 70, "\n", true);
-                    $titulo = "Bienvenido - [JELOVIAR ONLINE]";
+                    $titulo = "Recuperar Contraseña - [JELOVIAR ONLINE]";
                     $headers = "MIME-Version: 1.0\r\n"; 
                     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
                     $headers .= "From: JELOVIAR ONLINE <contacto@jeloviaronline.com>\r\n";
