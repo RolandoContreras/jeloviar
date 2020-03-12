@@ -1,241 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php $this->load->view("head");?>
-<body class="home-page bp-legacy home page-template page-template-templates page-template-home-page page-template-templateshome-page-php page page-id-36 wp-embed-responsive theme-wordpress-lms pmpro-body-has-access woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr home1-section learnpress-v3 header-template-default wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
-  <div id=thim-preloading>
-    <div class=thim-loading-icon>
-      <div class=sk-chasing-dots>
-        <div class="sk-child sk-dot1"></div>
-        <div class="sk-child sk-dot2"></div>
-      </div>
-    </div>
-  </div>
-  <div id=wrapper-container class="content-pusher creative-left bg-type-color">
-    <div class=overlay-close-menu></div>
-   <?php $this->load->view("header");?> 
-   <?php $this->load->view("nav");?> 
-    <div id=main-content>
-      <section class=content-area>
-        <div class="page-title layout-1">
-            <div class="main-top parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/bg_header.jpg';?>);">
-                <span class=overlay-top-header style="background-color: rgba(0,0,0,0.5);"></span>
-            <div class="content container">
-              <div class=row>
-                <div class="text-title col-md-12">
-                    <h1 style="text-align: center;">Términos y condiciones</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="breadcrumb-content ">
-            <div class="breadcrumbs-wrapper container">
-              <ul id=breadcrumbs class=breadcrumbs>
-                <li>
-                    <a href="<?php echo site_url();?>" title="Inicio">
-                        <span>Inicio</span></a>
-                    <span class="breadcrum-icon"><i class="fa fa-angle-right" aria-hidden=true></i></span>
-                </li>
-                <li><span title="Terminos y Condiciones">Términos y condiciones</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="container site-content no-padding">
-          <div class=row>
-                <div class="container site-content ">
-                      <div class="row">
-                        <div id="main" class="site-main col-sm-12 full-width">
-                          <article class="post-0 forum type-forum status-publish hentry pmpro-no-access page type-page">
-                            <div class="entry-content">
-                              <div id="bbpress-forums" class="bbpress-wrapper">
-                                <div class="bbp-breadcrumb">
-                                </div>
-                                <ul id="forums-list-0" class="bbp-forums">
-                                  <li class="bbp-header">
-                                    <ul class="forum-titles">
-                                        <li class="bbp-forum-info"><h5>Información</h5></li>
-                                    </ul>
-                                  </li>
-                                  <li class="bbp-body">
-                                    <ul class="loop-item-0 bbp-forum-status-open bbp-forum-visibility-publish odd post-4289 forum type-forum status-publish hentry pmpro-has-access">
-                                        <li class="bbp-forum-info" style="width: 100%;">
-                                          <a class="bbp-forum-title"><b>1. Condiciones Generales y su Aceptacion</b></a>
-                                          <div class="bbp-forum-content">Las siguientes son las condiciones que regulan el uso de la información en formato digital y servicios de www.u-linex.com (en adelante el "Sitio de Internet") pone gratuitamente a disposición de los usuarios de internet.
-                                        La utilización del sitio confiere la condición de usuario y conlleva la aceptación plena y sin reservas de todas y cada una de las Condiciones Generales de Uso, desde el momento mismo del acceso al sitio. En consecuencia, el hecho de hacer uso de esta página web constituye la aceptación a las presentes condiciones de uso.
-                                        La utilización de ciertos servicios ofrecidos a los Usuarios a través del sitio está sometida a condiciones particulares, propias que, según los casos, sustituyen, completan y/o modifican las Condiciones Generales (en adelante las "Condiciones Particulares"), por lo que su uso constituye la aceptación a las condiciones particulares.
-                                        Estas condiciones constituyen un acuerdo completo entre el usuario y U-Linex respecto al uso de esta página web, y prevalece y reemplaza a otras comunicaciones acuerdos o propuestas verbales o escritas entre el usuario y la página web respecto únicamente del tema en cuestión.
-                                        U-Linex se reserva el derecho de modificar los Términos y Condiciones generales de Uso del Sitio en cualquier momento, notificando al usuario la nueva versión con las modificatorias insertas mediante la publicación en la página web, presumiéndose la aceptación de estas condiciones, en caso de continuar el usuario con la utilización del servicio.
-                                        </div>
-                                     </li>
-                                    </ul>
-                                </li>
-                                <li class="bbp-body">
-                                    <ul class="loop-item-0 bbp-forum-status-open bbp-forum-visibility-publish odd post-4289 forum type-forum status-publish hentry pmpro-has-access">
-                                        <li class="bbp-forum-info" style="width: 100%;">
-                                          <a class="bbp-forum-title"><b>2.- Objeto</b></a>
-                                          <div class="bbp-forum-content">A través del sitio, U-Linex facilita a los usuarios el acceso y la utilización de diversos servicios y contenidos puestos a su disposición nuestra, o por terceros usuarios del sitio y/o terceros proveedores de servicios y contenidos.
-                                            U-Linex se reserva el derecho a dar término o modificar unilateralmente la configuración, presentación y condiciones de uso del sitio o de sus servicios.
-
-                                        </div>
-                                     </li>
-                                    </ul>
-                                </li>
-                                <li class="bbp-body">
-                                    <ul class="loop-item-0 bbp-forum-status-open bbp-forum-visibility-publish odd post-4289 forum type-forum status-publish hentry pmpro-has-access">
-                                        <li class="bbp-forum-info" style="width: 100%;">
-                                          <a class="bbp-forum-title"><b>3.- Condiciones de Acceso y Utilización del Sitio</b></a>
-                                          <div class="bbp-forum-content"><b>3.1.- Sobre el Acceso y Uso</b><br/>
-                                                  Esta página web es para uso personal, por lo que el usuario no se encuentra autorizado a modificar, copiar, distribuir, divulgar, transmitir, utilizar, reproducir, publicar, ceder, vender la información, el software, los productos o servicios que pueda obtener de la página web.
-                                                La prestación del servicio de sitio por parte de U-Linex tiene carácter de gratuito para los usuarios y no exige la previa suscripción o registro del usuario, salvo indicación en contrario.
-                                                El Usuario se compromete a utilizar el sitio y los servicios de conformidad con la ley, la moral y las buenas costumbres.
-                                                El Usuario se obliga a abstenerse de utilizar el sitio y los servicios con fines o efectos ilícitos, contrarios a lo establecido en estas Condiciones Generales, lesivos de los derechos e intereses de terceros, que de cualquier forma puedan dañar, inutilizar, sobrecargar o deteriorar el sitio y los servicios o impedir la normal utilización o disfrute del sitio y de los servicios por parte de los usuarios.
-                                                <br/><br/>
-                                                <b>3.2.- Sobre el Contenido</b><br/>
-                                                 Si desea obtener información sobre cómo obtener el permiso de U-Linex para la utilización de los Contenidos, el Usuario deberá contactarse con nosotros
-                                                    En caso de producirse violación a cualquiera de estos términos, el permiso para la utilización de los contenidos terminará automáticamente, debiendo el Usuario proceder inmediatamente a destruir las copias que haya realizado del material obtenido.
-                                                    El Usuario se compromete a usar los contenidos de forma diligente, correcta y licita, absteniéndose de utilizarlos con fines contrarios a la ley, el orden público, la moral y las buenas costumbres.
-                                                 <br/><br/>
-                                                <b>3.3.- Propiedad Intelectual</b><br/>
-                                                 Los derechos de propiedad intelectual respecto de los servicios, contenidos, signos distintivos y dominio del sitio, así como los derechos de uso y explotación de los mismos, incluyendo su divulgación, publicación, reproducción, distribución y transformación, son propiedad exclusiva de U-Linex. El Usuario no adquiere ningún derecho por el simple uso de los servicios y contenidos del sitio, y en ningún momento dicho uso será considerado como una autorización y/o licencia para la utilización de los mismos con fines distintos de los que se contemplan en los presentes términos y condiciones de uso.
-                                                 <br/><br/>
-                                                 <b>3.4.- Propiedad Intelectual de Terceros</b><br/>
-                                                 El Usuario acuerda que las disposiciones establecidas en el párrafo anterior, respecto a la titularidad de los derechos de U-Linex, también son aplicables a los derechos de terceros, respecto de los servicios y contenidos de las páginas enlazadas al sitio.
-                                                 <br/><br/>
-                                                 <b>3.5.- Uso de Servicios</b><br/>
-                                                 El Usuario acuerda que las disposiciones establecidas en el párrafo anterior, respecto a la titularidad de los derechos de U-Linex, también son aplicables a los derechos de terceros, respecto de los servicios y contenidos de las páginas enlazadas al sitio.
-                                                 <br/><br/>
-                                                 <b>3.6.- Asignación de las Claves de Acceso</b><br/>
-                                                 U-Linex asignará las claves de acceso, las que serán comunicadas a través de e-mails a sus respectivos usuarios. El Usuario podrá en cualquier momento cambiarlas por cualesquiera otras; sin embargo no podrá elegir palabras, expresiones o conjunto grafico-denominativos malsonantes, injuriosos, coincidentes con marcas, nombres comerciales, rótulos de establecimientos, denominaciones sociales, expresiones publicitarias, nombres y seudónimos de personajes de relevancia pública o famosos para cuya utilización no esté autorizado y en general, contrarios a la ley, el orden público, la moral y las buenas costumbres.
-                                                 <br/><br/>
-                                                 <b>3.7.- Uso y Custodia</b><br/>
-                                                 El usuario se compromete a hacer un uso diligente de las claves de acceso, así como a no poner a disposición de terceros sus claves de acceso.
-                                                 El usuario se compromete a comunicar a U-Linex, a la brevedad posible la pérdida o robo de las claves de acceso, así como cualquier riesgo de acceso a las claves por un tercero.
-                                                 <br/><br/>
-                                                 <b>3.8.- Uso de los servicios ofrecidos en el sitio de conformidad con la política Anti Spamming de U-Linex</b><br/>
-                                                 El usuario se compromete a hacer un uso de los servicios conforme a la Política Anti Spamming de U-Linex y en particular, se compromete a título a abstenerse de lo siguiente:
-                                                 <ol><li>Remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial a una pluralidad de personas sin que medie su previa solicitud o consentimiento.</li></ol>
-                                                 <ol><li>Remitir cualesquiera otros mensajes no solicitados ni consentidos previamente a una pluralidad de personas.</li></ol>
-                                                 <ol><li>Enviar cadenas de mensajes electrónicos no solicitados ni previamente consentidos.</li></ol>
-                                                 <ol><li>Utilizar listas de distribución a las que pueda accederse a través del sitio o de los servicios para la realización de las actividades señaladas en los ítems anteriores.</li></ol>
-                                                 <ol><li>Poner a disposición de terceros, con cualquier finalidad, datos captados a partir de listas de distribución.</li></ol>
-                                                 <ol><li>Los usuarios perjudicados por la recepción de mensajes no solicitados, dirigidos a una pluralidad de personas podrán comunicarlo a U-Linex remitiendo un mensaje a la cuenta de correo contacto@u-linex.com</li></ol>
-                                                 <br/><br/>
-                                                 <b>3.9.- Hiperenlaces</b><br/>
-                                                 El sitio de Internet contiene enlaces a otros sitios de Internet que son mantenidos por terceros.
-                                                 Los Usuarios y en general, aquellas personas que se propongan establecer un hiperenlace entre su página web y el Sitio (en adelante el "Hiperenlace"), deberán cumplir las condiciones siguientes
-                                                 <ol><li>El Hiperenlace únicamente permitirá el acceso a las páginas web del sitio, pero no podrá reproducirlas de ninguna forma.</li></ol>
-                                                 <ol><li>No se realizarán manifestaciones o indicaciones falsas, inexactas o incorrectas sobre las páginas web del Sitio, del Servicios y en particular no se declarará ni dará a entender que U-Linex ha autorizado el Hiperenlace o que ha supervisado o asumido de cualquier forma los contenidos o servicios ofrecidos o puestos a disposición de la página web en la que se establece el hiperenlace.</li></ol>
-                                                 <ol><li>A excepción de aquellos signos que formen parte del mismo hiperenlace, la página web en la que se establezca el hiperenlace no contendrá ninguna marca, nombre comercial, rótulo de establecimiento, denominación, logotipo, eslogan u otros signos distintivos pertenecientes a U-Linex.</li></ol>
-                                                 <ol><li>La página web en la que se establezca el hiperenlace no contendrá informaciones o contenidos ilícitos, contrarios al orden público, la moral y las buenas costumbres, así como tampoco contendrá contenidos contrarios a cualesquiera derechos de terceros.</li></ol>
-                                                 El establecimiento del hiperenlace no implica en ningún caso, la existencia de relaciones entre U-Linex y el sitio de Internet de Terceros en la que se establezca, ni la aceptación y aprobación por parte de U-Linex de sus contenidos o servicios.
-                                                 <br/><br/>
-                                                 <b>3.10.- Enlaces que permitan el acceso a otras páginas web desde el Sitio</b><br/>
-                                                 El Sitio, podrá proporcionar enlaces a otros Sitios o recursos en la World Wide Web. Debido a que U-Linex no tiene control sobre dichos sitios y recursos, el usuario acepta y acuerda que U-Linex no sea responsable por la disponibilidad de dichos sitios y recursos externos, y no los respalda ni es responsable o tiene obligación por el contenido, comercialización, productos u otros materiales en los sitios o recursos, o disponibles desde esos sitios. Además, el Usuario acepta y acuerda que U-Linex no será responsable ni estará obligado, directa o indirectamente, por ningún daño o pérdida causada, por o en conexión con el uso o confianza en cualquier Contenido, bienes o servicios disponibles a través de cualquier sitio.
-                                          </div>
-                                     </li>
-                                    </ul>
-                                </li>
-                                <li class="bbp-body">
-                                    <ul class="loop-item-0 bbp-forum-status-open bbp-forum-visibility-publish odd post-4289 forum type-forum status-publish hentry pmpro-has-access">
-                                        <li class="bbp-forum-info" style="width: 100%;">
-                                          <a class="bbp-forum-title"><b>4.- Datos de Caracter Personal</b></a>
-                                          <div class="bbp-forum-content">
-                                              Para utilizar algunos de los Servicios, los Usuarios deben proporcionar previamente a PromPerú ciertos datos de carácter personal (en adelante, los "Datos Personales").
-                                        </div>
-                                     </li>
-                                    </ul>
-                                </li>
-                                <li class="bbp-body">
-                                    <ul class="loop-item-0 bbp-forum-status-open bbp-forum-visibility-publish odd post-4289 forum type-forum status-publish hentry pmpro-has-access">
-                                        <li class="bbp-forum-info" style="width: 100%;">
-                                          <a class="bbp-forum-title"><b>5.- Utilización del Sitio, de los Servicos y de los Contenidos Bajo la Exclusiva Responsabilidad del Usario</b></a>
-                                          <div class="bbp-forum-content">
-                                              El Usuario se encuentra consciente y acepta voluntariamente que el uso del Sitio, de los Servicios y de los Contenidos tiene lugar, en todo caso, bajo su única y exclusiva responsabilidad.
-                                        </div>
-                                     </li>
-                                    </ul>
-                                </li>
-                                <li class="bbp-body">
-                                    <ul class="loop-item-0 bbp-forum-status-open bbp-forum-visibility-publish odd post-4289 forum type-forum status-publish hentry pmpro-has-access">
-                                        <li class="bbp-forum-info" style="width: 100%;">
-                                            <a class="bbp-forum-title"><b>6.- Exclusión Dde Garantías y Responsabilidad</b></a>
-                                          <div class="bbp-forum-content">
-                                              <b>6.1.- Disponibilidad y continuidad, utilidad y falibilidad</b><br/>
-                                              U-Linex no garantiza la disponibilidad y continuidad del funcionamiento del Sitio y de los Servicios. Cuando ello sea razonablemente posible, U-Linex advertirá previamente las interrupciones en el funcionamiento del Sitio y de los Servicios. U-Linex tampoco garantiza la utilidad del sitio y de los servicios para la realización de ninguna actividad en particular, ni de su infalibilidad del mismo se exime de responsabilidad, respecto de la accesibilidad por parte de los usuarios a las distintas páginas web con hiperenlace al sitio.
-                                              U-Linex excluye cualquier responsabilidad por los daños y perjuicios de toda naturaleza que puedan deberse a la falta de disponibilidad o de continuidad del funcionamiento del Sitio y de los Servicios, a la defraudación de la utilidad que los usuarios hubieren podido atribuir al sitio y a los servicios, a la falibilidad del sitio y de los servicios, y en particular, aunque no de modo exclusivo, a los fallos en el acceso a las distintas páginas web del sitio o a aquellas desde las que se prestan los servicios.
-                                              <br/><br/>
-                                              <b>6.2.- Daños en sistemas informáticos</b><br/>
-                                              U-Linex no controla ni garantiza la ausencia de virus ni de otros elementos en los Contenidos que puedan producir alteraciones en su sistema informático (software y hardware) o en los documentos electrónicos y ficheros almacenados en su sistema informático.
-                                              U-Linex excluye cualquier responsabilidad por los daños y perjuicios de toda naturaleza que puedan deberse a la presencia de virus o a la presencia de otros elementos en los contenidos, que puedan producir alteraciones en el sistema informático, documentos electrónicos o ficheros de los usuarios.
-                                              <br/><br/>
-                                              <b>6.3.- Licitud, Fiabilidad y Utilidad</b><br/>
-                                              U-Linex excluye cualquier responsabilidad por los daños y perjuicios de toda naturaleza que puedan deberse a la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos, y en particular, aunque no de modo exclusivo, por los daños y perjuicios ocasionados por:
-                                              <ol><li>El incumplimiento de la ley, el orden público, la moral y las buenas costumbres como consecuencia de la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos.</li></ol>
-                                              <ol><li>La infracción de los derechos de propiedad intelectual e industrial de los secretos empresariales, de compromisos contractuales de cualquier clase, de los derechos al honor, a la intimidad personal y familiar y a la imagen de las personas, de los derechos de propiedad y de toda otra naturaleza pertenecientes a un tercero como consecuencia de la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos.</li></ol>
-                                              <ol><li>La realización de actos de competencia desleal y publicidad engañosa como consecuencia de la transmisión, difusión, almacenamiento, puesta a disposición, recepción, obtención o acceso a los contenidos.</li></ol>
-                                              <ol><li>La falta de veracidad, exactitud, exhaustividad, pertinencia y/o actualidad de los contenidos.</li></ol>
-                                              <ol><li>La inadecuación para cualquier clase de propósito y la defraudación de las expectativas generadas por los contenidos.</li></ol>
-                                              <ol><li>El incumplimiento, retraso en el cumplimiento, cumplimiento defectuoso o terminación por cualquier causa de las obligaciones contraídas por terceros y contratos realizados con terceros a través de los contenidos o con motivo del acceso a los contenidos.</li></ol>
-                                              <ol><li>Los vicios y defectos de toda clase de los contenidos transmitidos, difundidos, almacenados, puestos a disposición o de otra forma transmitidos o puestos a disposición, recibidos, obtenidos o a los que se haya accedido a través del sitio o de los servicios.</li></ol>
-                                        </div>
-                                     </li>
-                                    </ul>
-                                </li>
-                                <li class="bbp-body">
-                                    <ul class="loop-item-0 bbp-forum-status-open bbp-forum-visibility-publish odd post-4289 forum type-forum status-publish hentry pmpro-has-access">
-                                        <li class="bbp-forum-info" style="width: 100%;">
-                                            <a class="bbp-forum-title"><b>7.- Denegación y Retirada del Acceso al Sitio y/o los Servicios</b></a>
-                                          <div class="bbp-forum-content">
-                                              U-Linex se reserva el derecho a denegar o retirar el acceso al Sitio y/o a los Servicios, en cualquier momento y sin necesidad de preaviso a aquellos Usuarios que incumplan estas Condiciones Generales o las Condiciones Particulares que resulten de aplicación.
-                                        </div>
-                                     </li>
-                                    </ul>
-                                </li>
-                                <li class="bbp-body">
-                                    <ul class="loop-item-0 bbp-forum-status-open bbp-forum-visibility-publish odd post-4289 forum type-forum status-publish hentry pmpro-has-access">
-                                        <li class="bbp-forum-info" style="width: 100%;">
-                                            <a class="bbp-forum-title"><b>8.- Procedimiento en Caso de Realización de actividades de Carácter Ilícito</b></a>
-                                          <div class="bbp-forum-content">
-                                              En el caso de que cualquier Usuario o un tercero considere que existen hechos o circunstancias que revelen el carácter ilícito de la utilización de cualquier contenido y/o de la realización de cualquier actividad en las páginas web incluidas en o accesibles a través del Sitio y, en particular, de la violación de derechos de propiedad intelectual o industrial (patentes, modelos y dibujos industriales, marcas y nombres comerciales, etc.) u otros derechos, deberán enviar una notificación a U-Linex en la que se contengan los siguientes extremos:
-                                              <ol><li>Datos Personales: nombre, dirección, número de teléfono y dirección de correo electrónicos del reclamante</li></ol>
-                                              <ol><li>Especificación de la supuesta actividad ilícita llevada a cabo en el Sitio y, en particular, cuando se trate de una supuesta violación de derechos, indicación precisa y concreta de los contenidos protegidos, así como de su localización en las páginas web.</li></ol>
-                                              <ol><li>Violación de derechos, firma auténtica o equivalente, con los datos personales del titular de los derechos supuestamente infringidos o de la persona autorizada para actuar en nombre y por cuenta de ésta.</li></ol>
-                                              <ol><li>Declaración expresa, clara y bajo la responsabilidad del reclamante de que la información proporcionada en la notificación es exacta y del carácter ilícito de la utilización de los contenidos o de la realización de las actividades descritas.</li></ol>
-                                              <ol><li>Estas notificaciones deberán ser enviadas a contacto@u-linex.com</li></ol>
-                                        </div>
-                                     </li>
-                                    </ul>
-                                </li>
-                                <li class="bbp-body">
-                                    <ul class="loop-item-0 bbp-forum-status-open bbp-forum-visibility-publish odd post-4289 forum type-forum status-publish hentry pmpro-has-access">
-                                        <li class="bbp-forum-info" style="width: 100%;">
-                                            <a class="bbp-forum-title"><b>9.- Ley Aplicable y Jurisdicción</b></a>
-                                          <div class="bbp-forum-content">
-                                              U-Linex tiene su sede en la ciudad de Lima, Perú. Todos los asuntos legales que surjan o estén relacionados con el sitio, deberán ser atendidos con y según lo determinado por la legislación peruana. El Usuario acepta someterse a la jurisdicción de los tribunales peruanos, en cualquier proceso o acción legal. Si alguna disposición de este acuerdo es declarada nula o no ejecutable por alguna autoridad pertinente, la invalidación de dicha disposición no afectará la validez de las disposiciones restantes de éste acuerdo, y las demás disposiciones se mantendrán con plena vigencia.
-                                        </div>
-                                     </li>
-                                    </ul>
-                                </li>
-                                </ul>
+    <?php $this->load->view("head"); ?>
+    <body class="bp-nouveau page-template-default page page-id-522 wp-embed-responsive theme-wordpress-lms pmpro-body-has-access woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr learnpress-v3 header-template-overlay wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
+        <div id=wrapper-container class="content-pusher creative-right bg-type-color">
+            <div class=overlay-close-menu></div>
+            <?php $this->load->view("header"); ?>
+            <?php $this->load->view("nav"); ?>
+            <div id=main-content>
+                <section class=content-area>
+                    <div class="page-title layout-1">
+                        <div class="main-top parallax" style="background-image:url(<?php echo site_url() . 'assets/page_front/images/background.jpg'; ?>);"><span class=overlay-top-header style="background-color: rgba(0,0,0,0.6);"></span>
+                            <div class="content container">
+                                <div class=row>
+                                    <div class="text-title col-md-6">
+                                        <h1>Términos y condiciones</h1>
+                                    </div>
+                                    <div class="text-description col-md-6">
+                                        <div class=banner-description><strong class=br>La mejor plataforma de educación en español. </strong> Obtén un curso con el 70% de descuento.</div>
+                                    </div>
                                 </div>
                             </div>
-                            </article>
-                       </div>
-                </div>
+                        </div>
+                        <div class="breadcrumb-content breadcrumb-plus">
+                            <div class="breadcrumbs-wrapper container">
+                                <ul id="breadcrumbs" class="breadcrumbs">
+                                    <li>
+                                        <a href="<?php echo site_url(); ?>" title="Inicio">
+                                            <span>Inicio</span>
+                                        </a>
+                                        <span class=breadcrum-icon><i class="fa fa-angle-right" aria-hidden=true></i></span>
+                                    </li>
+                                    <li>
+                                        <span title="Terminos y condiciones">Términos y condiciones</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container site-content ">
+                        <div class=row>
+                            <main id=main class="site-main col-sm-12 full-width">
+                                <div class="right-content">
+                                    <div class="entry-content">
+                                        <p>Hemos puesto todo nuestro esfuerzo en el diseño de un sitio Web útil, informativo, fácil de usar, honesto y divertido.</p>
+                                        <p>Esperamos haberlo conseguido, y le pedimos que no dude en hacernos llegar cualquier comentario acerca de mejoras o cambios que considere que pudieran hacer que sea aún más fácil encontrar la información que desea.</p>
+                                        <p>Le rogamos se atenga a las siguientes Condiciones de Uso. Tómese un tiempo para revisarlas, porque al usar nuestro sitio Web, se compromete a cumplirlas. Obviamente, si no está de acuerdo con ellas, simplemente no acceda a nuestra Web. Nos reservamos el derecho a realizar en un futuro cualquier cambio que consideremos necesario. Venga de forma regular a esta página para comprobar si ha habido algún cambio. Si tras un cambio, usted sigue utilizando este Sitio Web, se entenderá que está de acuerdo con las modificaciones realizadas en estas Condiciones de Uso.</p>
+                                        <p>¡MUCHAS GRACIAS POR VISITARNOS!</p>
+                                        <p><b>Restricciones de uso de nuestros contenidos en línea</b></p>
+                                        <p>Todos los contenidos de este Sitio Web, incluyendo el texto, software, nombres, logotipos, marcas comerciales, marcas registradas, nombres comerciales, imágenes, fotografías, dibujos, música y vídeos son propiedad intelectual que está protegida por copyright. Todos los derechos de uso son propiedad de, y están controlados por, el/los propietarios de este Sitio Web. Usted, el visitante, puede descargar el contenido en línea únicamente para su uso personal, nunca para uso comercial, siempre y cuando: 1) conserve todos los mensajes de copyright, propiedad intelectual y marcas comerciales, 2) no realice modificaciones a los mismos, 3) no haga uso de los contenidos de forma que pudiera parecer que está vinculado con alguno de nuestros productos, servicios, eventos o marcas, y 4) no descargue grandes cantidades de contenidos para almacenarlos en una base de datos, servidor, u ordenador personal para su uso con fines comerciales. No obstante, usted no está autorizado, bajo ningún concepto, a copiar, reproducir, publicar, tanto físicamente como en la Web, transmitir o distribuir los contenidos en línea, a no ser que haya solicitado y obtenido, por escrito, nuestra autorización expresa. Tampoco podrá añadir, eliminar, alterar o tergiversar cualquier contenido de esta Web. Se prohíbe expresamente cualquier intento de modificar cualquier material en línea, o de forzar o evadir nuestras medidas de seguridad.</p>
+                                        <p>Los derechos de uso de todo aquello que descargue, cualquier software, incluyendo todos sus ficheros, las imágenes incorporadas o generadas por dicho software, así como todos los datos que incluyen, le son cedidos por este Sitio Web, o por los propietarios de los mismos. para su uso personal, no para fines comerciales. Esto no quiere decir que le cedamos la propiedad de los mismos; es decir, que nos reservamos la propiedad del software y todos sus derechos de propiedad intelectual asociados. Usted no está autorizado a revender o vender el material ni a utilizar técnicas de ingeniería inversa, descompilar o desensamblar el software, o convertirlo a cualquier otro formato que permitiera su uso por parte de terceros.</p>
+                                        <p><b>Envío de sus propios contenidos a este Sitio Web</b></p>
+                                        <p>Usted acepta que todas aquellas observaciones, sugerencias, ideas, gráficos, observaciones o cualquier otra información que nos envíe a través de nuestra Web, excepto aquella información que nos comprometemos a proteger bajo nuestra política de privacidad, pasarán a ser propiedad nuestra, incluso en el caso de que el presente acuerdo se extinga en el futuro.</p>
+                                        <p>Esto quiere decir que no tendremos la obligación de tratar ningún envío de material como confidencial. Usted declina todo derecho a denunciarnos por el uso que podamos hacer de las ideas que nos pueda haber enviado. El uso de estas ideas, o unas similares, no nos obligará, de manera alguna, al pago de cantidad alguna, ni a usted, ni a terceras personas. Por el simple hecho de habernos enviado cualquier información, usted nos cede los plenos derechos de propiedad, en exclusividad, presentes y futuros, sobre los mismos, sean del tipo que sean. Los podremos usar para cualquier propósito que consideremos apropiado, sin necesidad de compensación económica alguna, ni a usted ni a terceros, por ello.</p>
+                                        <p>Usted reconoce ser responsable de cualquier envío que haga. Esto quiere decir que usted, y no nosotros, será el único responsable del contenido de esos mensajes, lo cual comprende, entre otros, su legalidad, fiabilidad, corrección, originalidad y los derechos de copia de los mismos.</p>
+                                        <p><b>Limitaciones de Responsabilidad</b></p>
+                                        <p>Este Sitio Web DECLINA TODA RESPONSABILIDAD POR DAÑOS O LESIONES QUE RESULTEN DEL USO QUE USTED HAGA DE CUALQUIER PÁGINA DE NUESTRA WEB.</p>
+                                        <p>ESTO INCLUYE, EXPRESA O IMPLÍCITAMENTE, DAÑOS O LESIONES CAUSADAS POR:</p>
+                                        <ul>
+                                            <li>EL USO (O IMPOSIBILIDAD DE USO) DE NUESTRA WEB</li>
+                                            <li>EL USO (O IMPOSIBILIDAD DE USO) DE CUALQUIER SITIO WEB AL CUAL ENLACEMOS DESDE NUESTRAS PÁGINAS</li>
+                                            <li>LA IMPOSIBILIDAD DE QUE NUESTRA WEB SE COMPORTE DE LA FORMA QUE USTED ESPERA O DESEA</li>
+                                            <li>CUALQUIER ERROR EN NUESTRA WEB</li>
+                                            <li>OMISIONES EN NUESTRA WEB</li>
+                                            <li>LA INTERRUPCIÓN DE LA DISPONIBILIDAD DE NUESTRO SITIO WEB</li>
+                                            <li>FALLOS EN NUESTRA WEB</li>
+                                            <li>RETRASOS EN EL FUNCIONAMIENTO O EN LA TRANSMISIÓN DE DATOS A/DESDE NUESTRA WEB</li>
+                                            <li>VIRUS INFORMÁTICOS O FALLOS EN LA LÍNEA</li>
+                                            <li>TENGA PRESENTE QUE NO NOS HACEMOS RESPONSABLES DE NINGÚN DAÑO, INCLUYENDO:</li>
+                                            <li>DAÑOS PROVOCADOS CON LA INTENCIÓN DE COMPENSAR A ALGUIEN POR UNA PÉRDIDA O LESIÓN</li>
+                                            <li>DAÑOS QUE RAZONABLEMENTE PUEDAN RESULTAR DE UNA PÉRDIDA O LESIÓN (DAÑOS RESULTANTES)</li>
+                                            <li>OTRO TIPO DE DAÑOS O GASTOS QUE SE DERIVEN DIRECTAMENTE DE UNA PÉRDIDA O LESIÓN (DAÑOS FORTUITOS)</li>
+                                        </ul>
+                                        <p>DECLINAMOS CUALQUIER RESPONSABILIDAD, INCLUSO EN EL CASO DE NEGLIGENCIA POR NUESTRA PARTE, O SI ALGUNO DE NUESTROS AGENTES OFICIALES CONOCIERA LA POSIBILIDAD DE QUE PUDIERAN PRODUCIRSE DICHOS DAÑOS, O AMBOS.</p>
+                                        <p>EXCEPCIONES: ALGUNAS LEYES PUEDEN PROHIBIR LA LIMITACIÓN O LA EXCLUSIÓN DE RESPONSABILIDADES POR ESOS DAÑOS RESULTANTES O FORTUITOS. SI VIVE EN ALGÚN LUGAR DONDE DICHAS LEYES ESTÉN EN VIGOR, OBVIAMENTE, DICHA LIMITACIÓN NO EXISTE; POR LO TANTO, USTED TENDRÍA EL DERECHO A PERCIBIR UNA INDEMNIZACIÓN EN CASO DE SUFRIR ALGUNO DE ESOS DAÑOS.</p>
+                                        <p>SIN EMBARGO, NUESTRA RESPONSABILIDAD, EN CUALQUIER CASO, POR CUALQUIER PERDIDA, DAÑO, LESIÓN Y DEMANDAS DE CUALQUIER TIPO, SEAN ÉSTOS RECLAMADOS BAJO LOS TÉRMINOS DE UN CONTRATO, A CONSECUENCIA DE UNA NEGLIGENCIA U OTRA CONDUCTA INCORRECTA, O BAJO CUALQUIER OTRO FUNDAMENTO LEGAL, NO PODRÁ SUPERAR EL IMPORTE QUE USTED HAYA SATISFECHO, EN SU CASO, PARA OBTENER EL ACCESO A NUESTRA WEB.</p>
+                                        <p><b>Enlaces a otras webs</b></p>
+                                        <p>Es posible que, en nuestra Web, hagamos recomendaciones y/o incluyamos enlaces a otras páginas de Internet. Dicho enlace no debe entenderse como una suscripción, aprobación o acuerdo alguno con la información o los recursos que sean ofrecidos en dichas páginas. En caso de duda, compruebe la URL (dirección de la página Web) que aparece en su navegador, para conocer si usted se encuentra en una página dentro de este Sitio Web, o si por el contrario, se encuentra dentro de cualquier otra Web. Este Sitio Web no se responsabiliza del contenido incluido, o los procedimientos utilizados, en webs de terceros que tengan un enlace desde este Sitio Web. El que este Sitio Web incluya enlaces a otras webs, no debe entenderse como que este Sitio Web está conectado, gestiona o controla esas webs. Cualquier enlace no representa, en ningún caso, ni explicita ni implícitamente, la aprobación, el respaldo o el apoyo de cualquier Web de este Sitio Web, ni la aprobación, el respaldo o el apoyo de este Sitio Web, incluyendo a sus respectivos empleados, representantes o directivos.</p>
+                                        <p><b>Extinción del presente Contrato</b></p>
+                                        <p>Este contrato será efectivo hasta su extinción por cualquiera de las partes. Usted puede acabar el presente contrato en cualquier momento, destruyendo cualquier material que haya descargado de la Web este Sitio Web, incluyendo cualquier documentación asociada y todas las copias e instalaciones. Este Sitio Web puede dar por finalizado el presente contrato en cualquier momento, sin necesidad de previo aviso, el caso de que, a su propio juicio, usted haya violado alguna de las condiciones del mismo. Tras la extinción, usted deberá destruir cualquier material referido en el presente contrato. Por otra parte, la publicación de contenidos en nuestra Web no implica, en modo alguno, que dichos contenidos vayan a estar disponibles en un futuro. Asimismo, este Sitio Web se reserva el derecho a suprimir, sin previo aviso, parte o la totalidad de su Web.</p>
+                                        <p><b>Jurisdicción y otras consideraciones</b></p>
+                                        <p>Usted será responsable del cumplimiento de cualquier ley que le sea aplicable por acceder a este Sitio Web desde su país.</p>
+                                        <p>Las presentes Condiciones de Uso estarán regidas, serán interpretadas y aplicadas, de acuerdo con las leyes de la Ciudad de Roma (Italia), y será de aplicación a los contratos suscritos y ejecutados en su totalidad dentro de esa jurisdicción.</p>
+                                        <p>En caso de que usted haya violado, o haya amenazado con violar, los derechos de propiedad intelectual de este Sitio Web o los de sus empresas afiliadas, este Sitio Web y/o sus empresas afiliadas podrán emprender acciones legales contra usted en cualquier tribunal estatal o federal del Estado de la Ciudad de Roma (Italia). Asimismo, usted se somete expresamente a la jurisdicción de los juzgados y tribunales antes citados.</p>
+                                        <p><b>Cualquier otro conflicto será resuelto de la siguiente forma:</b></p>
+                                        <p>Si la disputa se origina por los términos del presente contrato, ambas partes tratarán de resolverlo a través de un mediador, pactado por ambas partes, en la Ciudad de Roma (Italia). Cualquier gasto u honorario asociado con la mediación, excepto los honorarios de un abogado, serán devengados, a partes iguales, entre ambas partes.</p>
+                                        <p>Si se considera que a través de la mediación es imposible llegar a una solución satisfactoria para ambas partes, las partes acuerdan resolver el conflicto a través de un arbitraje vinculante en la Ciudad de Roma (Italia), bajo los reglamentos de la Asociación Americana de Arbitraje (American Arbitration Association). El fallo de la resolución tomada por el arbitraje puede ser apelado ante cualquier tribunal con competencias para ello.</p>
+                                        <p>Este Sitio Web se reserva el derecho de modificar sin previo aviso estas Condiciones de Uso, así como el contrato que estas suponen, mediante la sola actualización de este texto. Este es el contrato, en su TOTALIDAD, en cuanto a los temas en él tratados.</p>
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                </section>
             </div>
-          </div>
+            <?php echo $this->load->view("footer"); ?>
         </div>
-      </section>
-    </div>
-    <?php $this->load->view("footer");?>
-  </div>
-    <div id="back-to-top"><i class="fa fa-angle-up" aria-hidden=true></i></div>
-    <div class="gallery-slider-content"></div>
-      <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
-      <script>
-        WebFont.load({google:{families:['Roboto:400,300']}});
-      </script>
-      <script defer src="<?php echo site_url().'static/page_front/js/autoptimize_282.js';?>"></script>
-      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-</body>
+        <div id=back-to-top><i class="fa fa-angle-up" aria-hidden=true></i></div>
+        <script src="<?php echo site_url() . 'assets/page_front/js/plugins/owl.carousel.min.js'; ?>"></script>
+        <script src="<?php echo site_url() . 'assets/page_front/js/plugins/jquery.magnific-popup.min.js'; ?>"></script>
+        <script src="<?php echo site_url() . 'assets/page_front/js/plugins/imagesloaded.min.js'; ?>"></script>
+        <script src="<?php echo site_url() . 'assets/page_front/js/main.min.js'; ?>"></script>
+        <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
+        <script>WebFont.load({google: {families: ['Roboto:300,400']}});</script>
+        <script src="<?php echo site_url() . 'assets/page_front/js/plugins/js_composer_front.min.js'; ?>"></script>
+        <script src="<?php echo site_url() . 'assets/page_front/js/plugins/skrollr.min.js'; ?>"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src='<?php echo site_url() . 'assets/page_front/js/script/login.js'; ?>'></script>
+    </body>
 </html>

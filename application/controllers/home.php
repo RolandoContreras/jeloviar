@@ -49,33 +49,6 @@ class Home extends CI_Controller {
                                 );  
             $data['obj_courses'] = $this->obj_courses->search($params_course); 
 
-//            
-//            
-//            //set para home
-//            $params_course_related = array(
-//                                    "select" =>"courses.course_id,
-//                                                courses.category_id,
-//                                                courses.name,
-//                                                courses.slug,
-//                                                courses.img,
-//                                                courses.date,
-//                                                courses.price,
-//                                                courses.price_del,
-//                                                category.name as category_name,
-//                                                category.slug as category_slug",
-//                                    "join" => array( 'category, courses.category_id = category.category_id'),
-//                                    "where" => "courses.active = 1",
-//                                    "order" => "courses.course_id DESC",
-//                                    "limit" => "3",
-//                                );  
-//            $data['obj_courses_related'] = $this->obj_courses->search($params_course_related); 
-//            
-//            //GET principal video
-//            $params = array(
-//                            "select" =>"videos.video",
-//                            "where" => "type = 1");
-//            $data['obj_courses_overview'] = $this->obj_videos->get_search_row($params);
-            
             //set meta title
             $data['title'] = "Bienvenido";
             $this->load->view('home', $data);
@@ -93,8 +66,16 @@ class Home extends CI_Controller {
 	{
             //get category
             $data['obj_category'] = $this->nav_category();
-            $data['title'] = "Política de privacidad y cookies";
+            $data['title'] = "Política de privacidad";
             $this->load->view('policy', $data);
+	}
+        
+        public function cookies()
+	{
+            //get category
+            $data['obj_category'] = $this->nav_category();
+            $data['title'] = "Política de cookies";
+            $this->load->view('cookies', $data);
 	}
         
         

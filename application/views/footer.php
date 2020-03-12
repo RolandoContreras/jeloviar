@@ -76,10 +76,10 @@
                       <a href="<?php echo site_url().'terminos-condiciones';?>" class=tc-menu-inner>Términos y condiciones</a>
                   </li>
                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="<?php echo site_url().'politica-privacidad';?>" class=tc-menu-inner>Política De Privacidad Y Cookies</a>
+                      <a href="<?php echo site_url().'politica-privacidad';?>" class=tc-menu-inner>Política De Privacidad</a>
                   </li>
                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31 tc-menu-item tc-menu-depth-0 tc-menu-align-left tc-menu-layout-default">
-                      <a href="#" class=tc-menu-inner>Preguntas Frecuentes</a>
+                      <a href="<?php echo site_url().'politica-cookies';?>" class=tc-menu-inner>Política De Cookies</a>
                   </li>
                 </ul>
               </div>
