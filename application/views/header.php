@@ -57,17 +57,21 @@
                     </div>
                 </div>
             </div>
-            <div id=woocommerce_widget_cart-3 class="widget woocommerce widget_shopping_cart">
-                <div class=minicart_hover id=header-mini-cart>
-                    <span class=cart-items-number><span class=text>My Cart</span> 
-                        <ion-icon name="cart-outline"></ion-icon>
-                        <span class="wrapper-items-number"><span class=items-number>0</span>
+             <?php $cart = count($this->cart->contents());
+                 if($cart > 0){ ?>
+            <a href="<?php echo site_url().'backoffice/pay_order';?>">
+                <div id=woocommerce_widget_cart-3 class="widget woocommerce widget_shopping_cart">
+                    <div class=minicart_hover id=header-mini-cart>
+                        <span class=cart-items-number>
+                            <ion-icon name="cart-outline"></ion-icon>
+                            <span class="wrapper-items-number-2">
+                                <span class="items-number" style="background-color: red; padding: 0px 3px;border-radius: 8px;"><?php echo $cart;?></span>
+                            </span>
                         </span>
-                    </span>
-                    <div class=clear></div>
+                    </div>
                 </div>
-                <div class=widget_shopping_cart_content style="display: none;"></div>
-            </div>
+            </a>
+             <?php } ?>  
         </div>
     </div>
     <div class="header-wrapper header-v2 default">

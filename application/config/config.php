@@ -23,7 +23,7 @@
 |
 */
 //$config['base_url'] = 'http://cevolutionweb.com';
-$config['base_url'] = 'https://jeloviaronline.com';
+$config['base_url'] = 'http://localhost/jeloviar';
 //$config['base_url'] = 'http://jeloviaronline.com';
 
 

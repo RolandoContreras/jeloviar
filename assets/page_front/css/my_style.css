@@ -60,27 +60,47 @@
     padding-top: 31px !important;
     background-color: #1E2229 !important;
 }
-    .line-price{
-        text-decoration: line-through !important;
-    }
-    .conocer_mas{
-        font-size: 11px;
-        text-transform: uppercase;
-        line-height: 1.38;
-        letter-spacing: .3px;
-        padding: 0 20px 10px 30px;
-        margin-bottom: 0;
-        font-weight: 400;
-        cursor: pointer;
-        color: #aaa !important;
-    }   
-    .white{
-        color:whitesmoke !important;
-    }
-    .aaa{
-        color:#bbb !important;
-    }
+.line-price{
+    text-decoration: line-through !important;
+}
+.conocer_mas{
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 1.38;
+    letter-spacing: .3px;
+    padding: 0 20px 10px 30px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+    color: #aaa !important;
+}   
+.white{
+    color:whitesmoke !important;
+}
+.aaa{
+    color:#bbb !important;
+}
     /*#202121*/
-    .social_color{
-        color: #bbb !important;
-    }
+ .social_color{
+   color: #bbb !important;
+ }
+ .thim-course-block-3 .course-item .course-meta .price .course-origin-price-2 {
+    order: 2;
+    padding-right: 0;
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: .4px;
+    color: #202121;
+    font-weight: 300;
+    padding-top: 3px;
+}
+.lp-single-course .course-price-2 {
+    margin-bottom: 0px !important;
+}
+.widget_shopping_cart .minicart_hover .cart-items-number span.wrapper-items-number-2 {
+    position: absolute;
+    top: -13px;
+    font-size: 12px;
+    right: -8px;
+
+}

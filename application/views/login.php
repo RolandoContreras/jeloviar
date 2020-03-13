@@ -2,15 +2,6 @@
 <html lang="es">
     <?php $this->load->view("head"); ?>
     <body class="bp-nouveau page-template-default page page-id-522 wp-embed-responsive theme-wordpress-lms pmpro-body-has-access woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr learnpress-v3 header-template-overlay wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
-<!--        <div id=thim-preloading>
-            <div class=thim-loading-icon>
-                <div class=sk-three-bounce>
-                    <div class="sk-child sk-bounce1"></div>
-                    <div class="sk-child sk-bounce2"></div>
-                    <div class="sk-child sk-bounce3"></div>
-                </div>
-            </div>
-        </div>-->
         <div id=wrapper-container class="content-pusher creative-right bg-type-color">
             <div class=overlay-close-menu></div>
             <?php $this->load->view("header"); ?>
