@@ -112,6 +112,7 @@
         <script src="<?php echo site_url() . 'assets/page_front/js/plugins/skrollr.min.js'; ?>"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src='<?php echo site_url() . 'assets/page_front/js/script/register.js'; ?>'></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script defer src="<?php echo site_url().'assets/page_front/js/autoptimize_282.js';?>"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     </body>
 </html>
