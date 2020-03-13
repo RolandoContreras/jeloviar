@@ -42,9 +42,9 @@
                             <main id="main" class="site-main col-sm-12 full-width">
                                 <section class="error-404 not-found">
                                     <div class="page-content">
-<img src="https://c2a2v9c8.stackpathcdn.com/demo-elearning-2/wp-content/themes/wordpress-lms//assets/images/404.png" alt=">Page not found!">
-<h3 class="intro">Página no encontrada!</h3>
-<p class="404-message">Sorry, we can't find the page you are looking for. Please go to <a href="<?php echo site_url();?>">Home.</a></p>
+                                        <img src="<?php echo site_url().'assets/page_front/images/404.jpg'?>" alt="Página no encontrada">
+                                        <h3 class="intro">Página no encontrada!</h3>
+                                        <p class="404-message black">Lo sentimos, no podemos encontrar la página que estás buscando.Por favor, vaya a <a href="<?php echo site_url(); ?>" class="black">Inicio.</a></p>
                                     </div>
                                 </section>
                             </main>

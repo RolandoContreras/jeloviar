@@ -102,5 +102,7 @@
     top: -13px;
     font-size: 12px;
     right: -8px;
-
+}
+.black{
+    color: black !important;
 }
