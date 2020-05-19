@@ -30,6 +30,11 @@ function encrypt($cadena){
     return($encrypted);
 }
 
+function eliminar_ultimo_caracter($string){    
+    $new_value = substr($string, 0, -1);    
+    return $new_value;
+}
+
 function decrypt($cadena){
      $key='c7850f98Tc0150Z2191Y29abb3f9fbc9i';  // Una clave de codificacion, debe usarse la misma para encriptar y desencriptar
      $string = base64_decode($cadena); //decodifico la cadena
@@ -59,12 +64,6 @@ function quitar_coma_number($number){
     $number = str_replace(',','',$number);    
     return $number;
 }
-
-function eliminar_ultimo_caracter($string){    
-    $new_value = substr($string, 0, -1);    
-    return $new_value;
-}
-
 
 function format_number_moneda_soles($number){
     $decimals ="2";
@@ -113,13 +112,12 @@ function formato_fecha($fecha){
     $dia=substr($fecha, 8, 2);
     $mes=substr($fecha, 5, 2);
     $anio=substr($fecha, 0, 4);
-    
     $dia_semana = dia_semana($mes,$dia,$anio);
     $mostrar_mes = mostrar_mes($mes);
     return  $dia_semana." ".$dia." de ".$mostrar_mes." del ".$anio;
 }
 
-function formato_fecha_dia_mes_ano($fecha){    
+function formato_fecha_dia_de_mes_de_ano($fecha){    
     $dia=substr($fecha, 8, 2);
     $mes=substr($fecha, 5, 2);
     $anio=substr($fecha, 0, 4);
@@ -128,6 +126,23 @@ function formato_fecha_dia_mes_ano($fecha){
     $mostrar_mes = mostrar_mes($mes);
     return $dia." de ".$mostrar_mes.", ".$anio;
 }
+
+function formato_fecha_bd_to_datapicker($fecha){    
+    $dia=substr($fecha, 8, 2);
+    $mes=substr($fecha, 5, 2);
+    $anio=substr($fecha, 0, 4);
+    return $mes."/".$dia."/".$anio;
+}
+
+function formato_fecha_datapicker_to_bd($fecha){
+    
+    $array_date = explode("/", $fecha);
+    $dia=$array_date[1];
+    $mes=$array_date[0];
+    $anio=$array_date[2];
+    return $anio."/".$mes."/".$dia;
+}
+
 
 function formato_fecha_dia_mes($fecha){    
     $dia=substr($fecha, 8, 2);

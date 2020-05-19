@@ -1,200 +1,93 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <title>Jeloviar Online - Oficina Virtual</title>
-  <!--[if lt IE 10]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Somos una comunidad de desarrollo personal y emprendimiento. Estudia">
-  <meta name="author" content="U-linex">
-  <meta name="keyword" content="U-linex, plataforma de cursos, cursos de arquitectura, aprende arquitectura">
-  <meta name="robots" content="Index, Follow">
-   <!--//STAR FAVICON-->
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'assets/page_front/images/logo/favico/apple-touch-icon.png';?>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'assets/page_front/images/logo/favico/favicon-32x32.png';?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'assets/page_front/images/logo/favico/favicon-16x16.png';?>">
-    <link rel="manifest" href="<?php echo site_url().'assets/page_front/images/logo/favico/site.webmanifest';?>">
-    <!--//END FAVICON-->
-  <link rel="stylesheet" href="<?php echo site_url().'assets/backoffice/css/style.css';?>">
-  <link rel="stylesheet" href="<?php echo site_url().'assets/backoffice/css/gallery.css';?>">
-  <link rel="stylesheet" href="<?php echo site_url().'assets/backoffice/css/my_style.css';?>">
-  <script src="https://unpkg.com/feather-icons"></script>
-  <script type="text/javascript">
-    var site = '<?php echo site_url();?>';
-  </script>
-  <script src="<?php echo site_url().'assets/backoffice/js/core/jquery-1.11.1.min.js';?>"></script>
-  <script src="<?php echo site_url().'assets/backoffice/js/core/bootstrap.min.js';?>"></script>
-  <!--culqi-->
-  <script src="https://checkout.culqi.com/js/v3"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-</head>
-
-<body class="layout-6" style="background-image: url('<?php echo site_url().'assets/page_front/images/bg_header.jpg';?>'); background-size: cover;">
-  <nav class="pcoded-navbar menu-light brand-lightblue menupos-static">
-    <div class="navbar-wrapper">
-      <div class="navbar-brand header-logo">
-          <a href="<?php echo site_url().'backoffice';?>" class="b-brand">
-              <img src="<?php echo site_url().'assets/page_front/images/logo/logo.png';?>" alt="Logo" width="180"/>
-          </a>
-          <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a></div>
-      <div class="navbar-content scroll-div">
-        <ul class="nav pcoded-inner-navbar">
-          <li class="nav-item pcoded-menu-caption"><label>Navegación</label></li>
-          <?php
-          $url = explode("/",uri_string());
-            if(isset($url[1])){
-                $nav = "$url[1]";
-            }else{
-                $nav = "home";
-            }
-            
-            $course_syle = "";
-            $home_syle = "";
-            $profile_syle = "";
-            $shopping_syle = "";
-            
-            switch ($nav) {
-                case "profile":
-                    $profile_syle = "active";
-                    break;
-                case "home":
-                    $home_syle = "active";
-                    break;
-                case "shopping":
-                    $shopping_syle = "active";
-                    break;
-                default:
-                    $course_syle = "active";
-                    break;
-            }
-          ?>
-          
-          
-          <li class="nav-item">
-              <a href="<?php echo site_url().'backoffice';?>" class="nav-link <?php echo $home_syle;?>">
-                  <span class="pcoded-micon">
-                       <i data-feather="home"></i>
-                  </span>
-                  <span class="pcoded-mtext">Inicio</span>
-              </a>
-        </li>
-        <li class="nav-item">
-              <a href="<?php echo site_url().'backoffice/profile';?>" class="nav-link <?php echo $profile_syle;?>">
-                  <span class="pcoded-micon">
-                       <i data-feather="users"></i>
-                  </span>
-                  <span class="pcoded-mtext">Perfil</span>
-              </a>
-        </li>
-        <li class="nav-item pcoded-hasmenu">
-            <a href="#!" class="<?php echo $course_syle;?>">
-                <span class="pcoded-micon">
-                    <i data-feather="airplay"></i>
-                </span>
-                <span class="pcoded-mtext">Cursos</span>
-            </a>
-            <ul class="pcoded-submenu">
-                <?php 
-                    foreach ($obj_category_videos as $value) { ?>
-                        <li><a href='<?php echo site_url()."backoffice/$value->slug";?>' class=""><?php echo $value->name;?></a></li>          
-                <?php } ?>
-            </ul>
-        </li>
-        
-                <li class="nav-item pcoded-hasmenu">
-                    <a href="#!" class="">
-                        <span class="pcoded-micon text-c-green">
-                            <b><i data-feather="star"></i></b>
-                        </span>
-                        <span class="pcoded-mtext text-c-green"><b>Mis Cursos</b></span>
-                    </a>
-                    <ul class="pcoded-submenu">
-                        <?php if(isset($obj_courses_by_customer) && count($obj_courses_by_customer) > 0){ ?>
-                            <?php foreach ($obj_courses_by_customer as $value) { ?>
-                                    <li><a href='<?php echo site_url()."plataforma/$value->category_slug/$value->course_slug";?>' class=""><?php echo $value->name;?></a></li>          
-                            <?php } ?>
-                         <?php }else{ ?>
-                                    <li><a>No tiene cursos</a></li>          
-                         <?php } ?>
-                    </ul>
-                </li>
-        <li class="nav-item">
-              <a href="<?php echo site_url().'backoffice/shopping';?>" class="nav-link <?php echo $shopping_syle;?>">
-                  <span class="pcoded-micon">
-                       <i data-feather="shopping-cart"></i>
-                  </span>
-                  <span class="pcoded-mtext">Mis Compras</span>
-              </a>
-        </li>
-        <li class="nav-item">
-              <a href="<?php echo site_url().'salir';?>" class="nav-link">
-                  <span class="pcoded-micon">
-                       <i data-feather="log-out"></i>
-                  </span>
-                  <span class="pcoded-mtext">Salir</span>
-              </a>
-        </li>
-    </ul>
-    </div>
-    </div>
-  </nav>
-  <header class="navbar pcoded-header navbar-expand-lg navbar-light">
-    <div class="m-header"><a class="mobile-menu" id="mobile-collapse1" href="#!"><span></span></a>
-        <a href="<?php echo site_url().'backoffice';?>" class="b-brand">
-            <img src="<?php echo site_url().'assets/page_front/images/logo/logo.png';?>" alt="Logo" width="180"/>
-        </a>
-    </div>
-      <a class="mobile-menu" id="mobile-header" href="#!">
-          <i class="feather icon-more-horizontal"></i>
-      </a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li>
-            <a href="#!" class="full-screen" onclick="javascript:toggleFullScreen()">
-                <i data-feather="maximize"></i>
-            </a>
-        </li>
-      </ul>
-    </div>
-    <div class="collapse navbar-collapse">
-       <?php 
-        //count data cart
-        $cart = count($this->cart->contents());
-       if($cart > 0){ ?>
-            <ul class="navbar-nav ml-auto">
-                <li>
-                  <div class="dropdown drp-user">
-                      <a href="<?php echo site_url().'backoffice/pay_order';?>">
-                          <span title="Pagar Compra" data-toggle="tooltip" data-placement="bottom" data-original-title="Pagar Compra" style="padding: 10px;border-radius: 10px;">
-                              <i data-feather="shopping-cart" style="color: #00a78e;"></i>  
-                              <span class="wrapper-items-number">
-                                        <span class="items-number"></span>
-                                        <button type="button" class="btn btn-icon btn-rounded btn-danger"> <?php echo $cart;?> </button>
-                              </span>
-                          </span>
-                      </a>
-                  </div>
-                </li>
-              </ul>
-       <?php } ?>   
-    </div>
-  </header>
-  <?php echo $body;?>
-  <script src="<?php echo site_url().'assets/backoffice/js/core/vendor-all.min.js';?>"></script>
-  <script src="<?php echo site_url().'assets/backoffice/js/core/datatables.min.js';?>"></script>
-  <script src="<?php echo site_url().'assets/backoffice/js/core/tbl-datatable-custom.js';?>"></script>
-  <script src="<?php echo site_url().'assets/backoffice/js/core/pcoded.min.js';?>"></script>
-  <script src="<?php echo site_url().'assets/backoffice/js/core/ekko-lightbox.min.js';?>"></script>
-  <script src="<?php echo site_url().'assets/backoffice/js/core/ac-lightbox.js';?>"></script>
-  <script src="<?php // echo site_url().'assets/backoffice/js/core/ac-alert.js';?>"></script>
-  <script src="<?php echo site_url().'assets/backoffice/js/core/sweetalert.min.js';?>"></script>
-      <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
-      <script>
-        WebFont.load({google:{families:['Roboto:400,300']}});
-      </script>
-  <script>
-      feather.replace()
-  </script>
-</body>
+<html lang="es" class="no-js">
+    <?php $this->load->view("backoffice/head");?>
+    <body class="logged-in stm_lms_button skin_custom_color online-light stm_preloader_1 wpb-js-composer js-comp-ver-5.6 vc_responsive" ontouchstart="">
+        <div id="wrapper">
+            <?php $this->load->view("backoffice/header");?>
+            <!-- id header -->
+            <div id="main">
+                <div class="stm-lms-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-12">
+                                <div class="stm_lms_user_side">
+                                    <div class="stm-lms-user-avatar-edit "> 
+                                        <input type="file" /> <i class="lnricons-pencil"></i>
+                                        <div class="stm-lms-user_avatar"> 
+                                            <img alt='avatar' src='<?php echo site_url().'assets/backoffice/images/avatar.png';?>' class='avatar avatar-215 photo' height='215' width='215'/> 
+                                        </div>
+                                    </div>
+                                    <h3 class="stm_lms_update_field__first_name"><?php echo $_SESSION['customer']['name'];?></h3>
+                                    <div class="stm_lms_profile_buttons_set 22">
+                                        <div class="stm_lms_profile_buttons_set__inner">
+                                            <div class="stm-lms-user_message_btn"> <i class="stm-lms-user_message_btn__counter">1</i> 
+                                                <a href="#" class="btn btn-default">Mis Mensajes</a>
+                                            </div>
+                                            <div class="stm-lms-user_create_announcement_btn">
+                                                <a href="<?php echo site_url().'backoffice';?>"><i class="fa fa-home"></i><span>Inicio</span></a>
+                                            </div>
+                                            <div class="stm-lms-user_create_announcement_btn">
+                                                <a href="#"><i class="fa fa-medal"></i><span>Mis Certificados</span></a>
+                                            </div>
+                                            <div class="stm-lms-user_create_announcement_btn">
+                                                <a href="#"><i class="fa fa-shopping-cart"></i><span>Comprar Curso</span></a>
+                                            </div>
+                                            <div class="stm-lms-user_edit_profile_btn" data-container=".stm_lms_edit_account">
+                                                <a href="#"> <i class="fa fa-cog"></i> <span>Editar Perfil</span> </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php echo $body;?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--#main-->
+        </div>
+        <!--#wrapper-->
+        <?php $this->load->view("footer");?>
+        <!-- Searchform -->
+        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body heading_font">
+                        <div class="search-title">Buscar</div>
+                        <form role="search" method="get" id="searchform" action="https://stylemixthemes.com/masterstudy/white-lms/">
+                            <div class="search-wrapper"> <input placeholder="Start typing here..." type="text" class="form-control search-input" value="" name="s" id="s" /> <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <link rel='stylesheet' id='stm-lms_categories_megamenu-style_1-css' href='<?php echo site_url().'assets/backoffice/css/footer/lms_categories_megamenu?ver=3.2';?>' type='text/css' media='all' />
+        <link rel='stylesheet' id='stm-lms-lesson-css' href='<?php echo site_url().'assets/backoffice/css/footer/lesson.css?ver=75';?>' type='text/css' media='all' />
+        <link rel='stylesheet' id='stm-lms-user-css' href='<?php echo site_url().'assets/backoffice/css/footer/user.css?ver=75';?>' type='text/css' media='all' />
+        <link rel='stylesheet' id='stm-header_mobile-account-css' href='<?php echo site_url().'assets/backoffice/css/footer/account.css?ver=3.2';?>' type='text/css' media='all' />
+        <link rel='stylesheet' id='stm-lms-co_courses/list-css' href='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/assets/css/parts/co_courses/list.css?ver=75'
+              type='text/css' media='all' />
+        <link rel='stylesheet' id='stm-lms-user-courses-css' href='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/assets/css/parts/user-courses.css?ver=75'
+              type='text/css' media='all' />
+        <link rel='stylesheet' id='stm-lms-cart-css' href='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/assets/css/parts/cart.css?ver=75'
+              type='text/css' media='all' />
+        <link rel='stylesheet' id='stm-lms-datepicker-css' href='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/assets/css/parts/datepicker.css?ver=75'
+              type='text/css' media='all' />
+        <link rel='stylesheet' id='stm-lms-edit_account-css' href='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/assets/css/parts/edit_account.css?ver=75'
+              type='text/css' media='all' />
+        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.6'></script>
+        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/assets/js/bootstrap.min.js?ver=3.2'></script>
+        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/assets/js/jquery.fancybox.js?ver=3.2'></script>
+        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/assets/js/select2.full.min.js?ver=3.2'></script>
+        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/assets/js/custom.js?ver=3.2'></script>
+        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/themes/masterstudy/assets/js/vc_modules/header_js/header_2.js?ver=3.2'></script>
+        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system//wp-custom-fields-theme-options/metaboxes/assets/js/vue-resource.min.js?ver=2.0'></script>
+        <script type='text/javascript'>
+            /* <![CDATA[ */var stm_lms_co_courses = {"posts": [{"id": 1073, "time": 1582691233, "title": "How to be a DJ? Make Electronic Music", "link": "https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/courses\/how-to-be-a-dj-make-electronic-music\/", "image": "<img srcset=\"https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/wp-content\/uploads\/sites\/7\/2018\/08\/photo-1496307042754-b4aa456c4a2d-544x322.jpeg 2x\" class=\"\" src=\"https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/wp-content\/uploads\/sites\/7\/2018\/08\/photo-1496307042754-b4aa456c4a2d-272x161.jpeg\" width=\"272\" height=\"161\" alt=\"photo-1496307042754-b4aa456c4a2d\" title=\"photo-1496307042754-b4aa456c4a2d\" \/>", "image_small": "<img srcset=\"https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/wp-content\/uploads\/sites\/7\/2018\/08\/photo-1496307042754-b4aa456c4a2d-100x100.jpeg 2x\" class=\"\" src=\"https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/wp-content\/uploads\/sites\/7\/2018\/08\/photo-1496307042754-b4aa456c4a2d-50x50.jpeg\" width=\"50\" height=\"50\" alt=\"photo-1496307042754-b4aa456c4a2d\" title=\"photo-1496307042754-b4aa456c4a2d\" \/>", "terms": ["<a href='https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/course\/electronic\/' title='Electronic'>Electronic<\/a>"], "status": "publish", "status_label": "Published", "percent": 100, "is_featured": "", "average": 5, "total": 1, "views": 2877, "simple_price": "59", "price": "$59", "edit_link": "https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/lms-manage\/1073", "post_status": {"status": "special", "label": "Special"}, "sale_price": "$49"}], "pages": "1"};/* ]]> */
+        </script>
+        <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/masterstudy-lms-learning-management-system/assets/js/edit_account.js?ver=75'></script>
+        <script type='text/javascript'>
+            var stm_lms_edit_account_info = {"id": 3139, "login": "Demo Instructor", "avatar": "<img alt='' src='https:\/\/secure.gravatar.com\/avatar\/37fad8114a5e0bfca061260e332d2db2?s=215&#038;d=mm&#038;r=g' srcset='https:\/\/secure.gravatar.com\/avatar\/37fad8114a5e0bfca061260e332d2db2?s=430&#038;d=mm&#038;r=g 2x' class='avatar avatar-215 photo' height='215' width='215' \/>", "avatar_url": "https:\/\/secure.gravatar.com\/avatar\/37fad8114a5e0bfca061260e332d2db2?s=215&#038;d=mm&#038;r=g", "email": "instructor@stylemixthemes.com", "url": "https:\/\/stylemixthemes.com\/masterstudy\/white-lms\/lms-user_profile\/3139", "meta": {"facebook": "https:\/\/www.facebook.com\/", "twitter": "", "instagram": "https:\/\/www.instagram.com\/", "google-plus": "google.com\/home", "position": "Teacher", "description": "Demo Biography of Demo Instructor. \r\n\r\nTogether won't. Darkness make hath also moved dominion, they're. Don't is subdue had them sixth, cattle evening divided had fowl, kind cattle seas lesser made thing. Sea replenish doesn't it two given. Gathered life.\r\n\r\nOne blessed there thing good don't very stars thing. Kind moveth hath greater seasons Whose kind. Saying after divided that dominion. Our saw him.\r\n\r\nMeat beast. Said second. Kind, open meat beast air in behold likeness they're. Very. Seasons fourth first thing set from one one great open have two dominion fowl fourth. Cattle fish. Brought firmament our for stars without their waters. Isn't brought they're.", "first_name": "Demo", "": ""}}
+        </script>
+    </body>
 </html>
