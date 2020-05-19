@@ -1,167 +1,164 @@
 <!DOCTYPE html>
-<html lang="es">
-<?php $this->load->view("head");?>
-<body class="home-page bp-legacy home page-template page-template-templates page-template-home-page page-template-templateshome-page-php page page-id-36 wp-embed-responsive theme-wordpress-lms pmpro-body-has-access woocommerce-no-js pagetitle-show bg-type-color thim-body-visual-composer responsive box-shadow auto-login ltr home1-section learnpress-v3 header-template-default wpb-js-composer js-comp-ver-6.0.5 vc_responsive no-js">
-  <div id=thim-preloading>
-    <div class=thim-loading-icon>
-      <div class=sk-chasing-dots>
-        <div class="sk-child sk-dot1"></div>
-        <div class="sk-child sk-dot2"></div>
-      </div>
-    </div>
-  </div>
-  <div id=wrapper-container class="content-pusher creative-left bg-type-color">
-    <div class=overlay-close-menu></div>
-   <?php $this->load->view("header");?> 
-   <?php $this->load->view("nav");?>
-    <div id="main-content">
-  <section class="content-area">
-    <div class="page-title layout-1">
-      <div class="main-top parallax" style="background-image:url(<?php echo site_url().'static/page_front/images/bg_header.jpg';?>);">
-          <span class="overlay-top-header" style="background-color: rgba(0,0,0,0.5);"></span>
-        <div class="content container">
-          <div class="row">
-            <div class="text-title col-md-6">
-              <h1>Contacto</h1>
-            </div>
-            <div class="text-description col-md-6">
-              <p><strong class="br">La mejor educación en un solo lugar </strong> U-LINEX creado especialmente para ti</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="breadcrumb-content ">
-            <div class="breadcrumbs-wrapper container">
-              <ul id="breadcrumbs" class="breadcrumbs">
-                <li>
-                    <a href="<?php echo site_url();?>" title="Inicio">
-                        <span>Inicio</span>
-                    </a>
-                    <span class=breadcrum-icon><i class="fa fa-angle-right" aria-hidden=true></i></span>
-                </li>
-                <li>
-                    <span title="Contacto">Contacto</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-    </div>
-    <div class="container site-content no-padding">
-      <div class="row">
-        <div id="main" class="site-main col-sm-12 full-width">
-          <article id="post-34" class="post-34 page type-page status-publish hentry pmpro-has-access">
-              <div class=vc_empty_space style="height: 50px"><span class=vc_empty_space_inner></span></div>
-            <div class="entry-content">
-              <div class="vc_row-full-width vc_clearfix"></div>
-                <div class="vc_row wpb_row vc_row-fluid">
-                  <div class="wpb_column vc_column_container vc_col-sm-12">
-                    <div class="vc_column-inner">
-                      <div class="wpb_wrapper">
-                        <div class="thim-sc-heading text-center layout-2 ">
-                          <div class="heading-content">
-                            <h3 class="primary-heading">Gracias por elegir U-LINEX</h3>
-                          </div>
-                          <p class="secondary-heading">Su dirección de correo electrónico no será publicada. Los campos obligatorios están marcados.</p><span class="underline"></span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-    <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid" style="position: relative; left: -366.5px; box-sizing: border-box; width: 1903px; padding-left: 366.5px; padding-right: 366.5px;">
-      <div class="wpb_column vc_column_container vc_col-sm-12">
-        <div class="vc_column-inner">
-          <div class="wpb_wrapper">
-            <div class="vc_wp_text wpb_content_element">
-              <div class="widget widget_text">
-                <div class="textwidget">
-                  <div role="form" class="wpcf7">
-                    <div class="screen-reader-response"></div>
-                    <form action="javascript:void(0);" enctype="multipart/form-data" class="wpcf7-form">
-                      <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                            <span class="wpcf7-form-control-wrap your-name">
-                                <input type="text" name="your-name" id="name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Nombre">
-                            </span>
+<html lang="en-US" class="no-js">
+    <?php $this->load->view("head")?>
+    <body class="page-template-default page page-id-413 stm_lms_button pmpro-body-has-access skin_custom_color online-light stm_preloader_1 wpb-js-composer js-comp-ver-5.6 vc_responsive" ontouchstart=""> 
+        <div id="wrapper">
+            <?php $this->load->view("header");?>
+            <div id="main">
+                <div class="stm_lms_breadcrumbs stm_lms_breadcrumbs__header_2">
+                    <div class="stm_breadcrumbs_unit">
+                        <div class="container">
+                            <div class="navxtBreads"> 
+                                <span property="itemListElement">
+                                    <a property="item" title="Inicio" href="<?php echo site_url(); ?>" class="main-home">
+                                        <span property="name">Inicio</span>
+                                    </a>
+                                </span> &gt; <span property="itemListElement">
+                                    <span property="name" title="Contacto">Contacto</span>
+                                </span>
+                            </div>
                         </div>
-                        <div
-                          class="col-xs-12 col-sm-4">
-                            <span class="wpcf7-form-control-wrap your-email">
-                                <input type="email" name="your-email" id="email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" placeholder="E-mail">
-                            </span></div>
-                      <div
-                        class="col-xs-12 col-sm-4">
-                          <span class="wpcf7-form-control-wrap your-subject">
-                              <input type="text" name="your-subject" id="subject" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" placeholder="Asunto">
-                          </span></div>
+                    </div>
                 </div>
-                <div class="row">
-                  <div class="col">
-                      <span class="wpcf7-form-control-wrap your-message">
-                          <textarea name="your-message" cols="40" rows="10" id="message" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" placeholder="Mensaje"></textarea>
-                      </span>
-                  </div>
+                <div class="container">
+                    <div class="post_type_exist clearfix">
+                        <div class="vc_row wpb_row vc_row-fluid vc_custom_1435659486461">
+                            <div class="stm_icon_box_responsive wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="vc_custom_heading vc_custom_1532608688589">
+                                            <h3 style="text-align: left">Información de Contacto:</h3>
+                                        </div>
+                                        <div class="icon_box vc_custom_1435658011508 stm_icon_box_hover_h3 standart module__aa8b3d7f9806343760e1c6804712df56 clearfix">
+                                            <div class="icon_alignment_left">
+                                                <div class="icon vc_custom_1435658011507"> <i class="fa-icon-stm_icon_pin-o"></i></div>
+                                                <div class="icon_text">
+                                                    <h5 style="color:#555555"> Dirección:</h5>
+                                                    <p>Av. Alfredo Benavides #2191 Dpto 201 , Miraflores, Lima, PE.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1435139343164">
+                                            <div class="stm_sm_gutter_back wpb_column vc_column_container vc_col-sm-12 vc_col-lg-6 vc_col-md-6">
+                                                <div class="vc_column-inner vc_custom_1436791397964">
+                                                    <div class="wpb_wrapper">
+                                                         <div class="icon_box vc_custom_1435665617764 stm_icon_box_hover_h3 dark module__0c0a3d70baf224e2ccbfc8d4a1bda10d clearfix">
+                                                            <div class="icon_alignment_left">
+                                                                <div class="icon vc_custom_1435665617761"> <i class="fa-icon-stm_icon_phone-o"></i></div>
+                                                                <div class="icon_text">
+                                                                    <h5 style="color:#555555"> Teléfono:</h5>
+                                                                    <p><a>+51 995 031 006</a></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stm_sm_gutter_back wpb_column vc_column_container vc_col-sm-12 vc_col-lg-6 vc_col-md-6">
+                                                <div class="vc_column-inner vc_custom_1436790977027">
+                                                    <div class="wpb_wrapper">
+                                                        <div class="icon_box vc_custom_1435665538825 stm_icon_box_hover_h3 dark module__34cb81f88fe8563ebd21af4ed8dc05f9 clearfix">
+                                                            <div class="icon_alignment_left">
+                                                                <div class="icon vc_custom_1435657717791"> <i class="fa-icon-stm_icon_mail-o"></i></div>
+                                                                <div class="icon_text">
+                                                                    <h5 style="color:#555555"> Web:</h5>
+                                                                    <p><a href="https://edukatepro.com/">www.edukatepro.com</a></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="a34173cb38f07f89ddbebc2ac9128303f vc_empty_space" style="height: 0px"> <span class="vc_empty_space_inner"></span></div>
+                                        <div class="vc_custom_heading vc_custom_1532608697069">
+                                            <h3 style="text-align: left">Ubicación:</h3>
+                                        </div>
+                                        <div class="wpb_gmaps_widget wpb_content_element">
+                                            <div class="wpb_wrapper">
+                                                <div class="wpb_map_wraper"> 
+                                                    <div style="overflow:hidden;width: 700px;position: relative;"><iframe width="500" height="300" src="https://maps.google.com/maps?hl=en&amp;q=Av. Alfredo Benavides 2191+(Edukate Pro)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 0px;background: #fff;"> <a href="https://googlemapsembed.net/">Embed Google Map</a> </small></div><style>.nvs{position:relative;text-align:right;height:325px;width:643px;} #gmap_canvas img{max-width:none!important;background:none!important}</style></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="vc_row wpb_row vc_row-fluid">
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="multiseparator vc_custom_1435665826984"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vc_row wpb_row vc_row-fluid">
+                            <div class="custom-border wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner vc_custom_1437478190523">
+                                    <div class="wpb_wrapper">
+                                        <div class="vc_custom_heading vc_custom_1532608711151">
+                                            <h3 style="text-align: left">Envíanos un mensaje:</h3>
+                                        </div>
+                                            <div class="screen-reader-response"></div>
+                                            <form action="javascript:void(0);" method="post" class="wpcf7-form" onsubmit="send_message();">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="form-group"> 
+                                                            <span class="wpcf7-form-control-wrap name">
+                                                                <input type="text" name="name" id="name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" placeholder="Ingresa tu nombre" required=""/>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="form-group"> 
+                                                            <span class="wpcf7-form-control-wrap email">
+                                                                <input type="email" name="email" id="email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control" placeholder="Ingresa tu e-mail" required=""/>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+                                                        <div class="form-group"> 
+                                                            <span class="wpcf7-form-control-wrap email">
+                                                                <input type="text" name="subject" id="subject" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required form-control" placeholder="Ingresa tel asunto" required=""/>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="form-group"> 
+                                                            <span class="wpcf7-form-control-wrap message">
+                                                                <textarea name="message" id="message" cols="40" rows="9" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control" placeholder="Ingresa tu mensaje" required=""></textarea>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+                                                        <button type="submit" class="wpcf7-form-control wpcf7-submit btn btn-default" />Enviar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="row">
-                  <div class="col">
-                      <div class="g-recaptcha" data-sitekey="6LcXgNcUAAAAANCfGha0FezqnYAFGIWYV4gNbHou"></div>
-                  </div>
-                </div>
-                <div class="heading-button">
-                    <a onclick="send_message();" href="javascript:void(0);" class="btn btn-primary btn-md">
-                                    <span class=text>Enviar Mensaje</span>
-                                </a>
-                    <span class="ajax-loader"></span>
-                </div>
-                <br/>
-                <div id="respose"></div>
-                </form>
-              </div>
             </div>
-          </div>
         </div>
-        <div class="vc_empty_space" style="height: 92px"><span class="vc_empty_space_inner"></span></div>
-      </div>
-    </div>
-</div>
-</div>
-<div class="vc_row-full-width vc_clearfix"></div>
-<div data-vc-full-width="true" data-vc-full-width-init="true" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding"
-  style="position: relative; left: -366.5px; box-sizing: border-box; width: 1903px;">
-  <div class="wpb_column vc_column_container vc_col-sm-12">
-    <div class="vc_column-inner">
-      <div class="wpb_wrapper">
-        <div class="wpb_gmaps_widget wpb_content_element">
-          <div class="wpb_wrapper">
-            <div class="wpb_map_wraper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d76234.91055190127!2d-77.01268700378829!3d-12.152157280974192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2spe!4v1581348043337!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen=""></iframe>
-                </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="vc_row-full-width vc_clearfix"></div>
-</div>
-</article>
-</div>
-</div>
-</div>
-</section>
-</div>
-
-  <!--START FOOTER-->
-  <?php $this->load->view("footer");?>  
-  <!--END FOOTER-->
-  </div>
-  <div id="back-to-top"><i class="fa fa-angle-up" aria-hidden=true></i></div>
-    <div class="gallery-slider-content"></div>
-      <script src=https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js></script>
-      <script>
-        WebFont.load({google:{families:['Roboto:400,300']}});
-      </script>
-      <script defer src="<?php echo site_url().'static/page_front/js/autoptimize_282.js';?>"></script>
-      <script src='https://www.google.com/recaptcha/api.js'></script>
-      <script src='<?php echo site_url().'static/page_front/js/script/contact.js';?>'></script>
-      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-</body>
+        <?php $this->load->view("footer");?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="<?php echo site_url() . 'assets/page_front/js/autoptimize_667d.js'; ?>"></script>
+        <script src="<?php echo site_url() . 'assets/page_front/js/script/contact.js'; ?>"></script>
+    </body>
 </html>

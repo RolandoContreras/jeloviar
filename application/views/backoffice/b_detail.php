@@ -153,5 +153,5 @@
       </div>
     </div>
   </section>
-<script src="<?php echo site_url().'static/backoffice/js/script/pay_order.js';?>"></script>
+<script src="<?php echo site_url().'assets/backoffice/js/script/pay_order.js';?>"></script>
     

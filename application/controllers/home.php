@@ -38,6 +38,7 @@ class Home extends CI_Controller {
                                                 courses.top,
                                                 courses.type,
                                                 courses.img,
+                                                courses.description,
                                                 courses.price,
                                                 courses.price_del,
                                                 category.name as category_name,

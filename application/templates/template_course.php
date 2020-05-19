@@ -5,16 +5,16 @@ scr<!DOCTYPE html>
   <meta name=viewport content="width=device-width, initial-scale=1">
   <title>U-linex | Plataforma de Cursos</title>
    <!--start favicon-->
-  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'static/page_front/images/logo/favico/apple-touch-icon.png';?>">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-32x32.png';?>">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'static/page_front/images/logo/favico/favicon-16x16.png';?>">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url().'assets/page_front/images/logo/favico/apple-touch-icon.png';?>">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url().'assets/page_front/images/logo/favico/favicon-32x32.png';?>">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url().'assets/page_front/images/logo/favico/favicon-16x16.png';?>">
   <link rel="manifest" href="<?php echo site_url().'static/page_front/images/logo/favico/site.webmanifest';?>">
   <link type="text/css" media="all" href="<?php echo site_url().'static/course/css/autoptimize_d8.css';?>" rel="stylesheet">
   <link type="text/css" media="screen" href="<?php echo site_url().'static/course/css/autoptimize_fc6.css';?>" rel="stylesheet">
   <link type="text/css" media="only screen and (max-width: 768px)" href="<?php echo site_url().'static/course/css/autoptimize_dcb.css';?>" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/dashicons.min.css';?>" type="text/css" media="all">
-  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/autoptimize_single_cf7.css';?>" type=text/css media="all">
-  <link rel="stylesheet" href="<?php echo site_url().'static/course/css/style.css';?>" type=text/css media="all">
+  <link rel="stylesheet" href="<?php echo site_url().'assets/course/css/dashicons.min.css';?>" type="text/css" media="all">
+  <link rel="stylesheet" href="<?php echo site_url().'assets/course/css/autoptimize_single_cf7.css';?>" type=text/css media="all">
+  <link rel="stylesheet" href="<?php echo site_url().'assets/course/css/style.css';?>" type=text/css media="all">
   <!--TAB CSS-->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -124,6 +124,6 @@ scr<!DOCTYPE html>
   <script>
     WebFont.load({google:{families:['Roboto:400,300']}});
   </script>
-  <script defer src="<?php echo site_url().'static/course/js/autoptimize_ff6.js';?>"></script>
+  <script defer src="<?php echo site_url().'assets/course/js/autoptimize_ff6.js';?>"></script>
 </body>
 </html>

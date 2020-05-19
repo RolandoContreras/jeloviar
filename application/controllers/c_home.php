@@ -8,6 +8,7 @@ class C_home extends CI_Controller {
         $this->load->model("category_model","obj_category");
         $this->load->model("courses_model","obj_courses");
         $this->load->model("video_message_model","obj_video_message");
+        $this->load->model("modules_model","obj_modules");
     }
     
     public function detail($slug)
@@ -18,7 +19,8 @@ class C_home extends CI_Controller {
             //get slug
             $url = explode("/",uri_string());
             $slug_2 = $url[2];
-            $slug_3 = $url[3];
+            $slug_3 = isset($url[3]);
+            
             //get category_id
             $params_categogory_id = array(
                         "select" =>"category_id,
@@ -51,62 +53,74 @@ class C_home extends CI_Controller {
             }else{
                $where = "videos.type = 1";
             }
-             //GET videos by course
+            
+            //obtener modulos por cursos
             $params = array(
-                            "select" =>"video_id,
-                                        slug,
-                                        name,
-                                        video,
-                                        description,
-                                        time,
-                                        date",
-                            "where" => "course_id = $course_id and $where ");
-                $obj_courses_overview = $this->obj_videos->get_search_row($params);
-            //VIDEO LINK
-            $video = $obj_courses_overview->video;
-            $explo_video = explode("/", $video);
-            $video_link = $explo_video[3];
-            //get videos
+                            "select" =>"module_id,
+                                        name",
+                            "where" => "course_id = $course_id");
+            $obj_modules = $this->obj_modules->search($params);         
+            
+            $array_data = "";
+            foreach ($obj_modules as $value) {
+                $array_data .= $value->module_id.",";
+            }
+            $array_data = eliminar_ultimo_caracter($array_data);
+            //GET videos by course
             $params = array(
-                        "select" =>"videos.video_id,
-                                    videos.type,
-                                    videos.name,
-                                    videos.slug,
-                                    videos.time,
-                                    videos.video,
-                                    videos.description,
-                                    videos.date,
-                                    videos.active,
-                                    courses.slug as courses_slug,
-                                    courses.name as courses_name,
-                                    videos.date",
-                "join" => array( 'courses, courses.course_id = videos.course_id'),
-                "where" => "courses.course_id = $course_id and videos.active = 1",
-                "order" => "videos.video_id ASC",
-                );
+                            "select" =>"videos.video_id,
+                                        videos.name,
+                                        videos.module_id,
+                                        videos.video,
+                                        videos.type,
+                                        videos.slug,
+                                        videos.time",
+                            "where" => "videos.module_id in ($array_data) and videos.active = 1",
+                            "order" => "videos.video_id ASC");
             $obj_videos = $this->obj_videos->search($params);
+
+            //get videos
+//            $params = array(
+//                        "select" =>"videos.video_id,
+//                                    videos.type,
+//                                    videos.name,
+//                                    videos.slug,
+//                                    videos.time,
+//                                    videos.video,
+//                                    videos.description,
+//                                    videos.date,
+//                                    videos.active,
+//                                    courses.slug as courses_slug,
+//                                    courses.name as courses_name,
+//                                    videos.date",
+//                "join" => array( 'courses, courses.course_id = videos.course_id'),
+//                "where" => "courses.course_id = $course_id and videos.active = 1",
+//                "order" => "videos.video_id ASC",
+//                );
+//            $obj_videos = $this->obj_videos->search($params);
             //get all message
             
             
-            $params = array(
-                        "select" =>"video_message.video_message_id,
-                                    video_message.date,
-                                    video_message.message,
-                                    video_message.respose,
-                                    customer.name",
-                "join" => array('customer, video_message.customer_id = customer.customer_id'),
-                "order" => "video_message.video_id = $obj_courses_overview->video_id",
-                "order" => "video_message.video_message_id ASC",
-                );
-            $obj_video_message = $this->obj_video_message->search($params);
+//            $params = array(
+//                        "select" =>"video_message.video_message_id,
+//                                    video_message.date,
+//                                    video_message.message,
+//                                    video_message.respose,
+//                                    customer.name",
+//                "join" => array('customer, video_message.customer_id = customer.customer_id'),
+//                "order" => "video_message.video_id = $obj_courses_overview->video_id",
+//                "order" => "video_message.video_message_id ASC",
+//                );
+//            $obj_video_message = $this->obj_video_message->search($params);
+            
             //SEND DATA
             $this->tmp_course->set("slug",$slug);
             $this->tmp_course->set("course_img",$course_img);
-            $this->tmp_course->set("obj_courses_overview",$obj_courses_overview);
-            $this->tmp_course->set("obj_video_message",$obj_video_message);
+//            $this->tmp_course->set("obj_courses_overview",$obj_courses_overview);
+//            $this->tmp_course->set("obj_video_message",$obj_video_message);
             $this->tmp_course->set("obj_videos",$obj_videos);
             $this->tmp_course->set("obj_courses",$obj_courses);
-            $this->tmp_course->set("video_link",$video_link);
+//            $this->tmp_course->set("video_link",$video_link);
             $this->tmp_course->render("course/c_home");
 	}
     

@@ -47,7 +47,7 @@ $route['terminos-condiciones'] = 'home/term_condition';
 $route['politica-privacidad'] = 'home/policy';
 $route['politica-cookies'] = 'home/cookies';
 
-$route['login'] = 'login';
+$route['iniciar-sesion'] = 'login';
 $route['recuperar_contrasena'] = 'forget';
 
 $route['cursos'] = 'courses';
