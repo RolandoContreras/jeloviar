@@ -20,6 +20,7 @@
     <script type='text/javascript' src='<?php echo site_url() . 'assets/backoffice/js/jquery-migrate.min.js?ver=1.4.1'; ?>'></script>
     <script type='text/javascript' src='<?php echo site_url() . 'assets/backoffice/js/metaboxes/vue.min.js?ver=2.0'; ?>'></script>
     <script type='text/javascript' src='<?php echo site_url() . 'assets/backoffice/js/metaboxes/vue2-datepicker.min.js?ver=2.0'; ?>'></script>
+    <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/stm-post-type//theme/assets/lazysizes.min.js?ver=5.4.1'></script>
     <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
     <!-- favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo site_url() . 'assets/page_front/images/logo/favico/apple-touch-icon.png'; ?>">
