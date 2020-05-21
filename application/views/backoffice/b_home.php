@@ -11,7 +11,10 @@
         </div>
         <div class="stm_lms_user_bio">
             <h3>Biografía</h3>
-            <div class="stm_lms_update_field__description"><?php echo $obj_profile->bio; ?></div>
+            <div class="stm_lms_update_field__description">
+                <?php echo $obj_profile->bio; ?>
+                <a href="<?php echo site_url().'backoffice#settings';?>" data-container-open=".stm_lms_private_information"> Actualice su información</a>
+            </div>
         </div>
         <div class="stm_lms_instructor_courses__top">
             <a href="<?php echo site_url() . 'backoffice/cursos' ?>" class="btn btn-default"> <i class="fa fa-plus"></i>Adquirir Nuevo Curso </a>
@@ -25,7 +28,9 @@
             <div role="tabpanel" class="tab-pane vue_is_disabled active" v-bind:class="{'is_vue_loaded' : vue_loaded}" id="my-courses">
                 <div class="stm-lms-user-courses">
                     <div class="stm_lms_instructor_courses__grid">
-                        <?php foreach ($obj_courses_by_customer as $value) { ?>
+                        <?php 
+                        if(count($obj_courses_by_customer) != null){
+                             foreach ($obj_courses_by_customer as $value) { ?>
                             <div class="stm_lms_instructor_courses__single">
                                 <div class="stm_lms_instructor_courses__single__inner">
                                     <div class="stm_lms_instructor_courses__single--image">
@@ -47,10 +52,10 @@
                                         <div class="stm_lms_instructor_courses__single--progress">
                                             <div class="stm_lms_instructor_courses__single--progress_top">
                                                 <div class="stm_lms_instructor_courses__single--duration"><i class="far fa-clock"></i> 6 hours </div>
-                                                <div class="stm_lms_instructor_courses__single--completed"> 0% Complete </div>
+                                                <div class="stm_lms_instructor_courses__single--completed"> 15% Complete </div>
                                             </div>
                                             <div class="stm_lms_instructor_courses__single--progress_bar">
-                                                <div class="stm_lms_instructor_courses__single--progress_filled" style="width: 0%;"></div>
+                                                <div class="stm_lms_instructor_courses__single--progress_filled" style="width: 15%;"></div>
                                             </div>
                                         </div>
                                         <div class="stm_lms_instructor_courses__single--enroll">
@@ -62,7 +67,14 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php } 
+                        }else{ ?>
+                        <div class="stm_lms_instructor_courses__single">
+                                <div class="stm_lms_instructor_courses__single__inner no-border">
+                                    No tiene cursos, <b><a href="<?php echo site_url().'backoffice/cursos';?>"> &nbsp;¡Compre uno ahora!</a></b>
+                                </div>
+                            </div>
+                       <?php  } ?>
                     </div>
                 </div>
             </div>
@@ -75,21 +87,28 @@
                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                 <thead>
                                     <tr>
-                                        <th>Date</th>
-                                        <th>Level</th>
-                                        <th>Amount</th>
-                                        <th>Status</th>
+                                        <th>Fecha</th>
+                                        <th>Curso</th>
+                                        <th>Importe</th>
+                                        <th>Estado</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($obj_orders as $value) { ?>
+                                    <?php 
+                                    if(count($obj_orders) != null ){
+                                        foreach ($obj_orders as $value) { ?>
                                         <tr id="pmpro_account-invoice-3B9914E266">
                                             <td><?php echo formato_fecha_dia_de_mes_de_ano($value->date); ?></td>
                                             <td><?php echo $value->course_name; ?></td>
-                                            <td><sup>S/.</sup><?php echo $value->total; ?></td>
+                                            <td><sup>&#8364;</sup><?php echo $value->total; ?></td>
                                             <td><?php echo $value->active == 2 ? "Pagado" : "Pendiente"; ?></td>
                                         </tr>
-                                    <?php } ?>
+                                    <?php }
+                                    }else{ ?>
+                                        <tr>
+                                            <td colspan="4">No hay registros</td>
+                                        </tr>
+                                   <?php } ?>
                                 </tbody>
                             </table>
                         </div>

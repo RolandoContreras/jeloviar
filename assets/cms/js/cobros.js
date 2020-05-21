@@ -1,25 +1,13 @@
-function validate_customer() {
-    var customer_id = document.getElementById("customer_id").value;
-    var first_name = document.getElementById("first_name").value;
-    var last_name = document.getElementById("last_name").value;
-    var password = document.getElementById("password").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var pais = document.getElementById("pais").value;
-    var kit_id = document.getElementById("kit_id").value;
+function validate_pagos() {
+    var pay_id = document.getElementById("pay_id").value;
+    var amount = document.getElementById("amount").value;
     var status_value = document.getElementById("status_value").value;
     $.ajax({
         type: "post",
-        url: site + "dashboard/clientes/validate",
+        url: site + "dashboard/pagos/validate",
         dataType: "json",
-        data: {customer_id: customer_id,
-            first_name: first_name,
-            last_name: last_name,
-            password: password,
-            email: email,
-            phone: phone,
-            kit_id: kit_id,
-            pais: pais,
+        data: {pay_id: pay_id,
+            amount: amount,
             status_value: status_value
         },
         success: function (data) {
@@ -32,7 +20,7 @@ function validate_customer() {
                     timer: 1500
                 });
                 window.setTimeout(function () {
-                    window.location = site + "dashboard/clientes";
+                    window.location = site + "dashboard/pagos";
                 }, 1500);
             } else {
                 Swal.fire({
@@ -45,17 +33,17 @@ function validate_customer() {
         }
     });
 }
-function edit_customer(customer_id) {
-    var url = 'dashboard/clientes/load/' + customer_id;
-    location.href = site + url;
+function edit_pay(pay_id){
+        var url= 'dashboard/pagos/load/'+pay_id;
+	location.href = site+url;
 }
-function cancelar_customer() {
-    var url = 'dashboard/clientes';
-    location.href = site + url;
+function cancel_pay(){
+        var url= 'dashboard/pagos';
+	location.href = site+url;
 }
-function delete_customer(customer_id) {
+function delete_pay(pay_id) {
     bootbox.confirm({
-        message: "¿Confirma que desea eliminar al cliente?",
+        message: "¿Confirma que desea eliminar el cobro?",
         buttons: {
             confirm: {
                 label: 'Confirmar',
@@ -70,15 +58,15 @@ function delete_customer(customer_id) {
             if (result == true) {
                 $.ajax({
                     type: "post",
-                    url: site + "dashboard/clientes/delete",
+                    url: site + "dashboard/pagos/delete",
                     dataType: "json",
-                    data: {customer_id: customer_id},
+                    data: {pay_id: pay_id},
                     success: function (data) {
                         if (data.status == true) {
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Cliente fue eliminado',
+                                title: 'El Cobro fue eliminado',
                                 showConfirmButton: false,
                                 timer: 1500
                             });

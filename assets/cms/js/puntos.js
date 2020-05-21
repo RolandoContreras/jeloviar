@@ -1,25 +1,13 @@
-function validate_customer() {
-    var customer_id = document.getElementById("customer_id").value;
-    var first_name = document.getElementById("first_name").value;
-    var last_name = document.getElementById("last_name").value;
-    var password = document.getElementById("password").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var pais = document.getElementById("pais").value;
-    var kit_id = document.getElementById("kit_id").value;
+function validate_points() {
+    var point_id = document.getElementById("point_id").value;
+    var point = document.getElementById("point").value;
     var status_value = document.getElementById("status_value").value;
     $.ajax({
         type: "post",
-        url: site + "dashboard/clientes/validate",
+        url: site + "dashboard/puntos/validate",
         dataType: "json",
-        data: {customer_id: customer_id,
-            first_name: first_name,
-            last_name: last_name,
-            password: password,
-            email: email,
-            phone: phone,
-            kit_id: kit_id,
-            pais: pais,
+        data: {point_id: point_id,
+            point: point,
             status_value: status_value
         },
         success: function (data) {
@@ -32,7 +20,7 @@ function validate_customer() {
                     timer: 1500
                 });
                 window.setTimeout(function () {
-                    window.location = site + "dashboard/clientes";
+                    window.location = site + "dashboard/puntos";
                 }, 1500);
             } else {
                 Swal.fire({
@@ -45,17 +33,18 @@ function validate_customer() {
         }
     });
 }
-function edit_customer(customer_id) {
-    var url = 'dashboard/clientes/load/' + customer_id;
-    location.href = site + url;
+
+function edit_points(binaries_id){    
+     var url = 'dashboard/puntos/load/'+binaries_id;
+     location.href = site+url;   
 }
-function cancelar_customer() {
-    var url = 'dashboard/clientes';
-    location.href = site + url;
+function cancel_points(){
+	var url= 'dashboard/puntos';
+	location.href = site+url;
 }
-function delete_customer(customer_id) {
+function delete_points(point_id) {
     bootbox.confirm({
-        message: "¿Confirma que desea eliminar al cliente?",
+        message: "¿Confirma que desea eliminar los puntos?",
         buttons: {
             confirm: {
                 label: 'Confirmar',
@@ -70,15 +59,15 @@ function delete_customer(customer_id) {
             if (result == true) {
                 $.ajax({
                     type: "post",
-                    url: site + "dashboard/clientes/delete",
+                    url: site + "dashboard/puntos/delete",
                     dataType: "json",
-                    data: {customer_id: customer_id},
+                    data: {point_id: point_id},
                     success: function (data) {
                         if (data.status == true) {
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Cliente fue eliminado',
+                                title: 'Puntos eliminados',
                                 showConfirmButton: false,
                                 timer: 1500
                             });
@@ -99,3 +88,4 @@ function delete_customer(customer_id) {
         }
     });
 }
+

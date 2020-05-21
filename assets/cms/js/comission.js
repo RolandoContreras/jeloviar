@@ -1,25 +1,15 @@
-function validate_customer() {
-    var customer_id = document.getElementById("customer_id").value;
-    var first_name = document.getElementById("first_name").value;
-    var last_name = document.getElementById("last_name").value;
-    var password = document.getElementById("password").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var pais = document.getElementById("pais").value;
-    var kit_id = document.getElementById("kit_id").value;
+function validate_comissions() {
+    var commissions_id = document.getElementById("commissions_id").value;
+    var amount = document.getElementById("amount").value;
+    var bonus_id = document.getElementById("bonus_id").value;
     var status_value = document.getElementById("status_value").value;
     $.ajax({
         type: "post",
-        url: site + "dashboard/clientes/validate",
+        url: site + "dashboard/comisiones/validate",
         dataType: "json",
-        data: {customer_id: customer_id,
-            first_name: first_name,
-            last_name: last_name,
-            password: password,
-            email: email,
-            phone: phone,
-            kit_id: kit_id,
-            pais: pais,
+        data: {commissions_id: commissions_id,
+            amount: amount,
+            bonus_id: bonus_id,
             status_value: status_value
         },
         success: function (data) {
@@ -32,7 +22,7 @@ function validate_customer() {
                     timer: 1500
                 });
                 window.setTimeout(function () {
-                    window.location = site + "dashboard/clientes";
+                    window.location = site + "dashboard/comisiones";
                 }, 1500);
             } else {
                 Swal.fire({
@@ -45,15 +35,15 @@ function validate_customer() {
         }
     });
 }
-function edit_customer(customer_id) {
-    var url = 'dashboard/clientes/load/' + customer_id;
-    location.href = site + url;
+function edit_comissions(commissions_id){    
+     var url = 'dashboard/comisiones/load/'+commissions_id;
+     location.href = site+url;   
 }
-function cancelar_customer() {
-    var url = 'dashboard/clientes';
-    location.href = site + url;
+function cancel_comissions(){
+	var url= 'dashboard/comisiones';
+	location.href = site+url;
 }
-function delete_customer(customer_id) {
+function delete_comissions(comission_id) {
     bootbox.confirm({
         message: "¿Confirma que desea eliminar al cliente?",
         buttons: {
@@ -70,15 +60,15 @@ function delete_customer(customer_id) {
             if (result == true) {
                 $.ajax({
                     type: "post",
-                    url: site + "dashboard/clientes/delete",
+                    url: site + "dashboard/comisiones/delete",
                     dataType: "json",
-                    data: {customer_id: customer_id},
+                    data: {comission_id: comission_id},
                     success: function (data) {
                         if (data.status == true) {
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Cliente fue eliminado',
+                                title: 'Bono eliminado',
                                 showConfirmButton: false,
                                 timer: 1500
                             });
@@ -99,3 +89,5 @@ function delete_customer(customer_id) {
         }
     });
 }
+
+

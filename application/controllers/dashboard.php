@@ -29,12 +29,11 @@ class Dashboard extends CI_Controller {
     	        array_pop($cadena3);
     	        array_shift($cadena3);                
     	        $data['print'] = $cadena3[0];
-                $data['message'] = "false";       
+                $data['status'] = false;       
                 
     	    }else{
-                $data['message'] = "true";
-    	        $data['print'] = "Bienvenido al sistema";
-                $data['url'] = site_url()."dashboard/panel";               
+                $data['status'] = true;
+    	        $data['print'] = "Bienvenido";
             }         
             echo json_encode($data);  
             exit();           
