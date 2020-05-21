@@ -14,6 +14,7 @@ class D_customer extends CI_Controller{
            $params = array(
                         "select" =>"customer.customer_id,
                                     customer.name,
+                                    customer.last_name,
                                     customer.phone,
                                     customer.email,
                                     customer.date,
@@ -21,7 +22,6 @@ class D_customer extends CI_Controller{
                                     customer.active",
                         "join" => array('paises, paises.id = customer.country'),
                         "where" => "paises.id_idioma = 7"
-               
                );
            //GET DATA FROM CUSTOMER
            $obj_customer= $this->obj_customer->search($params);
@@ -31,23 +31,39 @@ class D_customer extends CI_Controller{
     }
     
     public function validate(){
-        
-        //GET CUSTOMER_ID
-        $customer_id = $this->input->post("customer_id");
-        $data = array(
+        if ($this->input->is_ajax_request()) {
+            //GET CUSTOMER_ID
+            $customer_id = $this->input->post("customer_id");
+            if($customer_id != null){
+                $data = array(
                 'name' => $this->input->post('name'),
+                'last_name' => $this->input->post('last_name'),
                 'password' => $this->input->post('password'),
                 'email' => $this->input->post('email'),
                 'phone' => $this->input->post('phone'),
+                'bio' => $this->input->post('bio'),
+                'facebook' => $this->input->post('facebook'),
+                'twitter' => $this->input->post('twitter'),
+                'instagram' => $this->input->post('instagram'),
+                'google' => $this->input->post('google'),
                 'country' => $this->input->post('pais'),
-                'date' => $this->input->post("date"),  
                 'active' => $this->input->post('active'),
                 'updated_at' => date("Y-m-d H:i:s"),
                 'updated_by' => $_SESSION['usercms']['user_id']
-                );          
-            //SAVE DATA IN TABLE    
-            $this->obj_customer->update($customer_id, $data);
-        redirect(site_url()."dashboard/clientes");
+            );
+                //SAVE DATA IN TABLE    
+                $resutl = $this->obj_customer->update($customer_id, $data);
+                if ($resutl != null) {
+                    $data['status'] = true;
+                } else {
+                    $data['status'] = false;
+                }
+            }else{
+                $data['status'] = false;
+            }
+            
+            echo json_encode($data);
+        }
     }
     
     public function load($obj_customer=NULL){

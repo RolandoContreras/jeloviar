@@ -133,7 +133,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-notification">
                                 <div class="pro-head">
-                                    <img src="<?php echo site_url() . 'assets/backoffice/img/avatar.jpg';?>" class="img-radius" alt="<?php echo $_SESSION['usercms']['name']; ?>">
+                                    <img src="<?php echo site_url() . 'assets/cms/img/avatar.jpg';?>" class="img-radius" alt="<?php echo $_SESSION['usercms']['name']; ?>">
                                     <span><?php echo $_SESSION['usercms']['name']; ?></span>
                                 </div>
                                 <ul class="pro-body">

@@ -1,26 +1,34 @@
 function validate_customer() {
     var customer_id = document.getElementById("customer_id").value;
-    var first_name = document.getElementById("first_name").value;
+    var name = document.getElementById("name").value;
     var last_name = document.getElementById("last_name").value;
     var password = document.getElementById("password").value;
     var email = document.getElementById("email").value;
     var phone = document.getElementById("phone").value;
+    var bio = document.getElementById("bio").value;
+    var facebook = document.getElementById("facebook").value;
+    var twitter = document.getElementById("twitter").value;
+    var instagram = document.getElementById("instagram").value;
+    var google = document.getElementById("google").value;
     var pais = document.getElementById("pais").value;
-    var kit_id = document.getElementById("kit_id").value;
-    var status_value = document.getElementById("status_value").value;
+    var active = document.getElementById("active").value;
     $.ajax({
         type: "post",
         url: site + "dashboard/clientes/validate",
         dataType: "json",
         data: {customer_id: customer_id,
-            first_name: first_name,
+            name: name,
             last_name: last_name,
             password: password,
             email: email,
             phone: phone,
-            kit_id: kit_id,
+            bio: bio,
             pais: pais,
-            status_value: status_value
+            facebook: facebook,
+            twitter: twitter,
+            instagram: instagram,
+            google: google,
+            active: active
         },
         success: function (data) {
             if (data.status == true) {
