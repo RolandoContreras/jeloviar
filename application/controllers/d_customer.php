@@ -90,17 +90,23 @@ class D_customer extends CI_Controller{
             $this->tmp_mastercms->render("dashboard/customer/customer_form");    
     }
     
-    public function delete(){
-         if ($this->input->is_ajax_request()) {
-             //OBETENER customer_id
-             $customer_id = $this->input->post("customer_id");
+    public function delete() {
+        if ($this->input->is_ajax_request()) {
+            //OBETENER customer_id
+            $customer_id = $this->input->post("customer_id");
             //VERIFY IF ISSET CUSTOMER_ID
-            if ($customer_id != ""){
-                $this->obj_customer->delete($customer_id);
+            if ($customer_id != "") {
+                $result = $this->obj_customer->delete($customer_id);
+                if($result != null){
+                    $data['status'] = true;
+                }else{
+                    $data['status'] = false;
+                }
+            }else{
+                $data['status'] = false;
             }
-            $data['status'] = true;
             echo json_encode($data);
-        }       
+        }
     }
     
     public function get_session(){          

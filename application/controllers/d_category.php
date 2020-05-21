@@ -42,47 +42,62 @@ class D_category extends CI_Controller{
     }
     
     public function validate(){
-        
-        //GET CUSTOMER_ID
-        $category_id = $this->input->post("category_id");
-        
-        if($category_id != ""){
-            //PARAM DATA
-            $data = array(
-               'name' => $this->input->post('name'),
-               'slug' => convert_slug($this->input->post('name')),
-               'date' => date("Y-m-d H:i:s"),
-               'active' => $this->input->post('active'),
-               'updated_at' => date("Y-m-d H:i:s"),
-               'updated_by' => $_SESSION['usercms']['user_id']
-                );          
-            //SAVE DATA IN TABLE    
-            $this->obj_category->update($category_id, $data);
-        }else{
-            //PARAM DATA SAVE
-            $data = array(
-               'name' => $this->input->post('name'),
-               'slug' => convert_slug($this->input->post('name')),
-               'active' => $this->input->post('active'),
-               'date' => date("Y-m-d H:i:s")
-                );          
-            //SAVE DATA IN TABLE    
-            $this->obj_category->insert($data);
+        if ($this->input->is_ajax_request()) {
+            //GET CUSTOMER_ID
+            $category_id = $this->input->post("category_id");
+            $slug = convert_slug($this->input->post("name"));
+            if($category_id != null){
+                $data = array(
+                'name' => $this->input->post('name'),
+                'slug' => $slug,
+                'active' => $this->input->post('active'),
+                'updated_at' => date("Y-m-d H:i:s"),
+                'updated_by' => $_SESSION['usercms']['user_id']
+            );
+                //SAVE DATA IN TABLE    
+                $result = $this->obj_category->update($category_id, $data);
+                if ($result != null) {
+                    $data['status'] = true;
+                } else {
+                    $data['status'] = false;
+                }
+            }else{
+                $data = array(
+                'name' => $this->input->post('name'),
+                'slug' => $slug,
+                'active' => $this->input->post('active'),
+                'date' => date("Y-m-d H:i:s")
+                );
+                //SAVE DATA IN TABLE    
+                $result = $this->obj_category->insert($data);
+                if ($result != null) {
+                    $data['status'] = true;
+                } else {
+                    $data['status'] = false;
+                }
+            }
+            
+            echo json_encode($data);
         }
-        redirect(site_url()."dashboard/categorias");
     }
     
-    public function delete(){
-         if ($this->input->is_ajax_request()) {
-             //OBETENER MARCA_ID
-             $category_id = $this->input->post("category_id");
+    public function delete() {
+        if ($this->input->is_ajax_request()) {
+            //OBETENER customer_id
+            $category_id = $this->input->post("category_id");
             //VERIFY IF ISSET CUSTOMER_ID
-            if ($category_id != ""){
-                $this->obj_category->delete($category_id);
+            if ($category_id != "") {
+                $result = $this->obj_category->delete($category_id);
+                if($result != null){
+                    $data['status'] = true;
+                }else{
+                    $data['status'] = false;
+                }
+            }else{
+                $data['status'] = false;
             }
-            $data['status'] = true;
             echo json_encode($data);
-        }       
+        }
     }
     
     public function get_session(){          

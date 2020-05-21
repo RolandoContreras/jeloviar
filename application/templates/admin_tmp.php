@@ -86,12 +86,11 @@
                                 <span class="pcoded-mtext">Mantenimientos</span>
                             </a>
                             <ul class="pcoded-submenu">
+                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/categorias"; ?>"><i class="icon-large icon-th"></i>Categorías</a></li>
                                 <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/clientes"; ?>"><i class="icon-large icon-th"></i>Clientes</a></li>
-                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/comisiones"; ?>"><i class="icon-large icon-th"></i>Comisiones</a></li>
+                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/clientes"; ?>"><i class="icon-large icon-th"></i>Comentarios</a></li>
+                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/cursos"; ?>"><i class="icon-large icon-th"></i>Cursos</a></li>
                                 <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/facturas"; ?>"><i class="icon-large icon-th"></i>Facturas</a></li>
-                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/kit"; ?>"><i class="icon-large icon-th"></i>Kit</a></li>
-                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/pagos"; ?>"><i class="icon-large icon-th"></i>Pagos</a></li>
-                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/puntos"; ?>"><i class="icon-large icon-th"></i>Puntos</a></li>
                                 <li class="pcoded-hasmenu" ><a href="<?php echo site_url() . "dashboard/usuarios"; ?>"><i class="icon-large icon-th"></i>Usuarios</a></li>
                             </ul>
                         </li>
