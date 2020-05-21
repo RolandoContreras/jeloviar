@@ -62,7 +62,7 @@
                                                                                 $stilo = "badge-success";
                                                                             }
                                                                             ?>
-                                                                            <span class="badge badge-pill <?php echo $stilo ?>" style="font-size: 100%;"><?php echo $valor; ?></span></td>
+                                                                            <span class="badge badge-pill <?php echo $stilo ?>" style="font-size: 100%;"><?php echo $valor; ?></span>
                                                                         </td>
                                                                         <td>
                                                                             <div class="operation">

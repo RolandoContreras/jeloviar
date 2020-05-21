@@ -1,16 +1,16 @@
 function validate_invoices() {
     var invoice_id = document.getElementById("invoice_id").value;
-    var kit_id = document.getElementById("kit_id").value;
+    var course_id = document.getElementById("course_id").value;
     var total = document.getElementById("total").value;
-    var status_value = document.getElementById("status_value").value;
+    var active = document.getElementById("active").value;
     $.ajax({
         type: "post",
         url: site + "dashboard/facturas/validate",
         dataType: "json",
         data: {invoice_id: invoice_id,
-            kit_id: kit_id,
+            course_id: course_id,
             total: total,
-            status_value: status_value
+            active: active
         },
         success: function (data) {
             if (data.status == true) {
