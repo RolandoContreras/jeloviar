@@ -1,10 +1,52 @@
+function validate_videos(course_id) {
+    var video_id = document.getElementById("video_id").value;
+    var name = document.getElementById("name").value;
+    var video = document.getElementById("video").value;
+    var type = document.getElementById("type").value;
+    var module_id = document.getElementById("module_id").value;
+    var time = document.getElementById("time").value;
+    var active = document.getElementById("active").value;
+    $.ajax({
+        type: "post",
+        url: site + "dashboard/videos/" + course_id + "/validate",
+        dataType: "json",
+        data: {video_id: video_id,
+            name: name,
+            video: video,
+            type: type,
+            module_id: module_id,
+            course_id: course_id,
+            time: time,
+            active: active
+        },
+        success: function (data) {
+            if (data.status == true) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Cambios Guardado',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                window.setTimeout(function () {
+                    window.location = site + "dashboard/videos/" + course_id;
+                }, 1500);
+            } else {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Sucedio un error',
+                    footer: 'Comunique a soporte'
+                });
+            }
+        }
+    });
+}
+
+
 function back_cursos(){
 	var url= 'dashboard/cursos';
 	location.href = site+url;
-}
-function view_archivos(course_id, video_id){   
-     var url = 'dashboard/videos/'+course_id+'/archivos/'+video_id;
-     location.href = site+url;   
 }
 function new_video(course_id){
 	var url= 'dashboard/videos/'+course_id+'/load';
@@ -39,7 +81,25 @@ function delete_video(video_id){
                    dataType: "json",
                    data: {video_id : video_id},
                    success:function(data){                             
-                   location.reload();
+                   if (data.status == true) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Vídeo eliminado',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            window.setTimeout(function () {
+                                location.reload();
+                            }, 1500);
+                        } else {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: 'Sucedio un error',
+                                footer: 'Comunique a soporte'
+                            });
+                        }
                    }         
            });
         }
@@ -67,35 +127,5 @@ function create_module(){
                     $("#module_id").html(texto);
                    }         
            });
-        }
-}
-
-function crear_archivos(){
-    var archive = document.getElementById("archive").value;
-      if(archive > 0){  
-            var texto = "";
-            var i = 0;               
-            for (i = 0; i < archive; i++) {
-                n = i + 1;
-              texto = texto+'<div class="input-group mb-3">';
-              texto = texto+'<div class="input-group-prepend">';
-              texto = texto+'<span class="input-group-text" id="basic-addon3">Archivo'+ n +'</span>';
-              texto = texto+'</div>';
-              texto = texto+'<input id="archive_'+n+'" name="archive_'+n+'" type="text" class="form-control" aria-describedby="basic-addon3" placeholder="Ingrese Nombre del Archivo">';
-              texto = texto+'</div>';
-              texto = texto+'<div class="input-group mb-3">';
-              texto = texto+'<div class="input-group-prepend">';
-              texto = texto+'<span class="input-group-text" id="basic-addon3"><i class="fa fa-file f-28 text-muted" aria-hidden="true"></i></span>';
-              texto = texto+'</div>';
-              texto = texto+'<input id="archive_link_'+n+'" name="archive_link_'+n+'" type="text" class="form-control" aria-describedby="basic-addon3" placeholder="Ingrese enlace del archivo">';
-              texto = texto+'</div>';
-              texto = texto+'<br/>';
-              texto = texto+'<hr/>';
-              texto = texto+'<br/>';
-            }
-            $("#respose_archive").html(texto);
-        }else{
-            var texto = "";
-            $("#respose_archive").html(texto);
         }
 }
