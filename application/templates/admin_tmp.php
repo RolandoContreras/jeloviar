@@ -17,6 +17,7 @@
         <link rel="manifest" href="<?php echo site_url() . 'assets/page_front/images/logo/favico/site.webmanifest'; ?>">  
         <!--estilos-->
         <link rel="stylesheet" href="<?php echo site_url() . 'assets/cms/css/style.css'; ?>">
+        <link rel="stylesheet" href="<?php echo site_url() . 'assets/cms/css/my_style.css'; ?>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="<?php echo site_url() . 'assets/cms/css/animate.min.css'; ?>">
         <script src="https://unpkg.com/feather-icons"></script>

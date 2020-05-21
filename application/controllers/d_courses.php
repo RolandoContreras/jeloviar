@@ -59,7 +59,6 @@ class D_courses extends CI_Controller{
                         "where" => $where,
             ); 
             $obj_courses  = $this->obj_courses->get_search_row($params); 
-           
             //verificar si tiene modulos
             $param_module = array(
                         "select" =>"module_id,
@@ -114,6 +113,8 @@ class D_courses extends CI_Controller{
                 $img = $_FILES["image_file"]["name"];        
                  if($img == ""){
                      $img = $img2;
+                 }else{
+                     unlink("./assets/cms/img/cursos/$img2"); 
                  }   
             }
             
@@ -131,7 +132,9 @@ class D_courses extends CI_Controller{
                 $img2 = $_FILES["image_file2"]["name"];        
                  if($img2 == ""){
                      $img2 = $img3;
-                 }   
+                 }else{
+                     unlink("./assets/cms/img/cursos/$img3"); 
+                 } 
             }
             
         if($course_id != ""){
