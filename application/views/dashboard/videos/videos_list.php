@@ -1,5 +1,5 @@
-<script src="<?php echo site_url().'assets/cms/js/core/bootbox.locales.min.js';?>"></script>
-<script src="<?php echo site_url().'assets/cms/js/core/bootbox.min.js';?>"></script>
+<script src="<?php echo site_url().'static/cms/js/core/bootbox.locales.min.js';?>"></script>
+<script src="<?php echo site_url().'static/cms/js/core/bootbox.min.js';?>"></script>
 <section class="pcoded-main-container">
   <div class="pcoded-wrapper">
     <div class="pcoded-content">
@@ -13,6 +13,7 @@
                 </div>
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/';?>">Panel</a></li>
+                  <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/cursos';?>">Cursos</a></li>
                   <li class="breadcrumb-item"><a>Vídeos</a></li>
                 </ul>
               </div>
@@ -26,7 +27,8 @@
                 <div class="card">
                   <div class="card-header">
                     <h5>Listado de Videos</h5>
-                    <button class="btn btn-secondary" type="button" onclick="new_video();"><span><span class="pcoded-micon"><i data-feather="plus"></i></span> Nuevo</span></button>
+                    <button class="btn btn-secondary" type="button" onclick="new_video('<?php echo $course_id;?>');"><span><span class="pcoded-micon"><i data-feather="plus"></i></span> Nuevo</span></button>
+                    <button class="btn btn-primary" type="button" onclick="back_cursos('<?php echo $course_id;?>');"><span><span class="pcoded-micon"><i data-feather="arrow-left"></i></span> Regresar Cursos</span></button>
                   </div>
                   <div class="card-block">
                     <div class="table-responsive">
@@ -41,12 +43,12 @@
                                     aria-label="Name: activate to sort column descending">ID</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
                                     aria-label="Position: activate to sort column ascending">FECHA</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
+                                    aria-label="Position: activate to sort column ascending">TÍTULO</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">CURSO</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 197px;"
                                     aria-label="Office: activate to sort column ascending">MÓDULO</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 392px;"
-                                    aria-label="Position: activate to sort column ascending">TÍTULO</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 135px;"
                                     aria-label="Salary: activate to sort column ascending">TIPO</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 135px;"
@@ -63,9 +65,9 @@
                                 <tr role="row" class="odd">
                             <td class="sorting_1"><?php echo $value->video_id;?></td>
                             <td><?php echo formato_fecha_barras($value->date);?></td>
-                            <td><span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->course_name;?></span></td>
-                            <td><span class="badge badge-pill badge-dark" style="font-size: 100%;"><?php echo $value->module_name;?></span></td>
                             <td><b><?php echo $value->name;?></b></td>
+                            <td><span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->course_name;?></span></td>
+                            <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;"><?php echo $value->module_name;?></span></td>
                             <td class="label-info">
                                 <?php if ($value->type == 1) {
                                     $valor = "Resumen";
@@ -77,7 +79,6 @@
                                 <span><?php echo $valor;?></span>
                             </td>
                             <td><?php echo $value->video;?></td>
-                            <!--<td><img src='<?php echo site_url()."static/course/img/$value->img";?>' width="180"/></td>-->
                             <td>
                                 <?php if ($value->active == 0) {
                                     $valor = "No Activo";
@@ -91,8 +92,9 @@
                             <td>
                                 <div class="operation">
                                         <div class="btn-group">
-                                            <button class="btn btn-secondary" type="button" onclick="edit_video('<?php echo $value->video_id;?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
+                                            <button class="btn btn-secondary" type="button" onclick="edit_video('<?php echo $course_id;?>','<?php echo $value->video_id;?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
                                             <button class="btn btn-secondary" type="button" onclick="delete_video('<?php echo $value->video_id;?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
+                                            <button class="btn btn-secondary" type="button" onclick="view_archivos('<?php echo $course_id;?>','<?php echo $value->video_id;?>');"><span><span class="pcoded-micon"><i data-feather="eye"></i></span> Archivos</span></button>
                                         </div>
                                 </div>
                             </td>
@@ -103,9 +105,9 @@
                                 <tr>
                                   <th rowspan="1" colspan="1">ID</th>
                                   <th rowspan="1" colspan="1">FECHA</th>
+                                  <th rowspan="1" colspan="1">TÍTULO</th>
                                   <th rowspan="1" colspan="1">CURSO</th>
                                   <th rowspan="1" colspan="1">MÓDULO</th>
-                                  <th rowspan="1" colspan="1">TÍTULO</th>
                                   <th rowspan="1" colspan="1">TIPO</th>
                                   <th rowspan="1" colspan="1">ENLACE</th>
                                   <th rowspan="1" colspan="1">ESTADO</th>
@@ -127,4 +129,4 @@
           </div>
         </div>
 </section>
-<script src="<?php echo site_url();?>assets/cms/js/videos.js"></script>
+<script src="<?php echo site_url();?>static/cms/js/videos.js"></script>
