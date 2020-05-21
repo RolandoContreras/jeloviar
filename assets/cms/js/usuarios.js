@@ -1,10 +1,11 @@
 function validate_users() {
     var user_id = document.getElementById("user_id").value;
     var email = document.getElementById("email").value;
+    var privilage = document.getElementById("privilage").value;
     var password = document.getElementById("password").value;
     var first_name = document.getElementById("first_name").value;
     var last_name = document.getElementById("last_name").value;
-    var status_value = document.getElementById("status_value").value;
+    var active = document.getElementById("active").value;
     $.ajax({
         type: "post",
         url: site + "dashboard/usuarios/validate",
@@ -13,8 +14,9 @@ function validate_users() {
             first_name: first_name,
             last_name: last_name,
             password: password,
+            privilage: privilage,
             email: email,
-            status_value: status_value
+            active: active
         },
         success: function (data) {
             if (data.status == true) {

@@ -55,7 +55,7 @@ class Users_Model extends CI_Model{
 	$this->fields = new users_model_atributos();
     }   
     public function insert($data){
-      $this->db->insert($this->table, $data);
+        return $this->db->insert($this->table, $data);
     }
   
     public function insert_lote($data){
@@ -64,12 +64,12 @@ class Users_Model extends CI_Model{
   
     public function update($pk, $data){
         $this->db->where($this->table_id, $pk);
-        $this->db->update($this->table, $data);
+        return $this->db->update($this->table, $data);
     }
 
     public function delete($pk){
         $this->db->where($this->table_id, $pk);
-        $this->db->delete($this->table);
+        return $this->db->delete($this->table);
     }
   
     public function get_search_row($data){
