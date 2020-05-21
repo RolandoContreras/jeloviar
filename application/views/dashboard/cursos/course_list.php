@@ -45,8 +45,6 @@
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Office: activate to sort column ascending">CATEGORÍA</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
-                                    aria-label="Office: activate to sort column ascending">PROFESOR</th>
-                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Office: activate to sort column ascending">PRECIO</th>
                                   <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" style="width: 100px;"
                                     aria-label="Office: activate to sort column ascending">IMAGEN</th>
@@ -64,7 +62,6 @@
                                 <td><?php echo formato_fecha_barras($value->date);?></td>
                                 <td><b><?php echo $value->name;?></b></td>
                                 <td><span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->category_name;?></span></td>
-                                <td><span class="badge badge-pill badge-secondary" style="font-size: 100%;"><?php echo $value->teacher;?></span></td>
                                 <td><b>S/. <?php echo $value->price;?></b></td>
                                 <td><img src="<?php echo site_url()."assets/cms/img/cursos/$value->img";?>" width="50"></td>
                                 <td>
@@ -82,6 +79,8 @@
                                             <div class="btn-group">
                                                <button class="btn btn-secondary" type="button" onclick="edit_course('<?php echo $value->course_id;?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
                                                <button class="btn btn-secondary" type="button" onclick="delete_course('<?php echo $value->course_id;?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
+                                               <button class="btn btn-secondary" type="button" onclick="view_modulos('<?php echo $value->course_id;?>');"><span><span class="pcoded-micon"><i data-feather="eye"></i></span> Módulos</span></button>
+                                               <button class="btn btn-secondary" type="button" onclick="view_videos('<?php echo $value->course_id;?>');"><span><span class="pcoded-micon"><i data-feather="eye"></i></span> Vídeos</span></button>
                                             </div>
                                     </div>
                                 </td>
@@ -94,7 +93,6 @@
                                   <th rowspan="1" colspan="1">FECHA</th>
                                   <th rowspan="1" colspan="1">NOMBRE</th>
                                   <th rowspan="1" colspan="1">CATEGORÍA</th>
-                                  <th rowspan="1" colspan="1">PROFESOR</th>
                                   <th rowspan="1" colspan="1">PRECIO</th>
                                   <th rowspan="1" colspan="1">IMAGEN</th>
                                   <th rowspan="1" colspan="1">ESTADO</th>

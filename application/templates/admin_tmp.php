@@ -26,6 +26,7 @@
         <script src="<?php echo site_url() . 'assets/cms/js/core/bootbox.all.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'assets/cms/js/core/jquery-1.11.1.min.js'; ?>"></script>
         <script src="<?php echo site_url() . 'assets/cms/js/core/bootstrap.min.js'; ?>"></script>
+        <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
         <!--//swetaler2-->
         <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
