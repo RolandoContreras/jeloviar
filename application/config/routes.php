@@ -61,6 +61,9 @@ $route['registro/validate_username'] = "register/validate_username";
 $route['registro/validate'] = "register/validate";
 
 $route['backoffice'] = "b_home";
+$route['backoffice/perfil/update_data'] = "b_home/update_data";
+$route['backoffice/perfil/change_pass'] = "b_home/change_pass";
+
 $route['backoffice/cursos'] = "b_home/cursos";
 
 

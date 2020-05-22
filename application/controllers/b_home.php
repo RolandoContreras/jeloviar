@@ -1,7 +1,4 @@
-<?php
-
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+<?php if (!defined('BASEPATH'))exit('No direct script access allowed');
 
 class B_home extends CI_Controller {
 
@@ -344,40 +341,6 @@ class B_home extends CI_Controller {
         $this->tmp_backoffice->render("backoffice/b_pay_order");
     }
 
-    public function certificados() {
-
-        $textofuente = "fonts/Oswald-Bold.ttf";
-        // En la raiz de nuestro codeigniter tenemos la carpeta fonts             
-        // Llamamos al model que nos consigue los datos del socio             
-        // Cogemos la imagen del fondo de la licencia             
-        $img = $this->loadJpeg("certificado");
-        $textocolor = imagecolorallocate($img, 0, 0, 0);
-        // Definimos el color del texto             
-        // Ponemos texto encima de la imagen             
-        imagettftext($img, 30, 0, 175, 675, $textcolor, $textfont, "Rolando Contreras");
-        imagettftext($img, 30, 0, 1360, 675, $textcolor, $textfont, "45887343");
-        imagettftext($img, 30, 0, 175, 825, $textcolor, $textfont, "06/06/1989");
-        // Se crea la imagen directamente             
-        header('Content-Type: image/jpeg');
-        imagejpeg($img);
-        imagedestroy($img);
-
-
-
-        //GET SESION ACTUALY
-        $this->get_session();
-        //establecer nombre
-        $category_name = "Mis Certificados";
-        //get customer id
-        $customer_id = $_SESSION['customer']['customer_id'];
-        //obtener cursos comprados
-        $obj_certificados = $this->get_certificados($customer_id);
-        //SEND DATA
-        $this->tmp_backoffice->set("obj_certificados", $obj_certificados);
-        $this->tmp_backoffice->set("category_name", $category_name);
-        $this->tmp_backoffice->render("backoffice/b_certificados");
-    }
-
     public function active_course() {
         //ACTIVE CUSTOMER NORMALY
         try {
@@ -539,56 +502,61 @@ class B_home extends CI_Controller {
         return $obj_customer_courses = $this->obj_customer_courses->search($params_customer_courses);
     }
 
-    public function get_certificados($customer_id) {
-        $params_customer_courses = array(
-            "select" => "courses.course_id,
-                                                courses.name,
-                                                courses.img,
-                                                courses.date,
-                                                customer_courses.complete",
-            "join" => array('courses, customer_courses.course_id = courses.course_id'),
-            "where" => "customer_courses.customer_id = $customer_id",
-        );
-        return $obj_customer_courses = $this->obj_customer_courses->search($params_customer_courses);
-    }
-
-    public function imprimir() {
+    public function update_data() {
         if ($this->input->is_ajax_request()) {
             //GET SESION ACTUALY
             $this->get_session();
-            //GET CUSTOMER_ID
+            //get customer id
+            $customer_id = $_SESSION['customer']['customer_id'];
+            $bio = $this->input->post("bio");
+            $facebook = trim($this->input->post("facebook"));
+            $google = trim($this->input->post("google"));
+            $twitter = trim($this->input->post("twitter"));
+            $instagram = trim($this->input->post("instagram"));
 
-
-            $string = 'Texto tipeado por el usuario';
-            $font = 2; // Fuente definida por PHP. Lee la documentación para más información: http://www.php.net/manual/es/image.examples.php
-            $w = ( imagefontwidth($font) * strlen($string) ) + 10; // Ancho de la imagen. En este caso tendrá un margen de 5px por lado.
-            $h = imagefontheight($font) + 10; // Altura de la imagen. Mismo margen (padding, en CSS).
-            $im = imagecreatetruecolor($w, $h); // Crea una estructura de datos.
-            $text_color = imagecolorallocate($im, 255, 255, 255); // Color del texto en la imagen.
-            imagestring($im, $font, 5, 5, $string, $text_color); // Esta es la línea que dibuja el texto en la imagen. Lo anterior era un "esqueleto".
-            imagepng($im, site_url() . 'static/cms/img/certificados/certificado.jpg'); // Crea la imagen y la guarda donde le digas (en este caso test/imagen.png). La carpeta debe tener permisos 777.
-            imagedestroy($im); // Destruye la estructura de datos
-
-            imagepng($image, $to, $quality, $filters);
-
-
-
-
-            $img = site_url() . 'static/cms/img/certificados/certificado.jpg';
-            header('Content-Description: File Transfer');
-            header('Content-Type: application/octet-stream');
-            header('Content-Disposition: attachment; filename=' . basename($img));
-            header('Content-Transfer-Encoding: binary');
-            header('Expires: 0');
-            header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-            header('Pragma: public');
-            header('Content-Length: ' . filesize($img));
-            ob_clean();
-            flush();
-            readfile($img);
-
-
-            $data['status'] = "true";
+            if ($customer_id != null) {
+                $data = array(
+                    'bio' => $bio,
+                    'facebook' => $facebook,
+                    'google' => $google,
+                    'twitter' => $twitter,
+                    'instagram' => $instagram,
+                );
+                //SAVE DATA IN TABLE    
+                $result = $this->obj_customer->update($customer_id, $data);
+                if ($result != null) {
+                    $data['status'] = true;
+                } else {
+                    $data['status'] = false;
+                }
+            } else {
+                    $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+    }
+    
+    public function change_pass() {
+        if ($this->input->is_ajax_request()) {
+            //GET SESION ACTUALY
+            $this->get_session();
+            //get customer id
+            $customer_id = $_SESSION['customer']['customer_id'];
+            $pass = trim($this->input->post("pass"));
+            if ($customer_id != null) {
+                $data = array(
+                    'password' => $pass,
+                );
+                //SAVE DATA IN TABLE    
+                $result = $this->obj_customer->update($customer_id, $data);
+                if ($result != null) {
+                    $data['status'] = true;
+                } else {
+                    $data['status'] = false;
+                }
+            } else {
+                    $data['status'] = false;
+            }
             echo json_encode($data);
         }
     }

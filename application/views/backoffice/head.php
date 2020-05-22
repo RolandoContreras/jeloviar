@@ -17,7 +17,7 @@
     <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/mystyle.css'; ?>' type='text/css' media='all' />
     <link rel='stylesheet' id='redux-google-fonts-stm_option-css' href='https://fonts.googleapis.com/css?family=Montserrat%3A200%2C500%2C600%2C400%2C700%7COpen+Sans%3A300%2C400%2C600%2C700%2C800%2C300italic%2C400italic%2C600italic%2C700italic%2C800italic&#038;subset=latin&#038;ver=1586935180' type='text/css' media='all' />
     <script type='text/javascript' src='<?php echo site_url() . 'assets/backoffice/js/jquery.js?ver=1.12.4-wp'; ?>'></script>
-    <script type='text/javascript' src='<?php echo site_url() . 'assets/backoffice/js/jquery-migrate.min.js?ver=1.4.1'; ?>'></script>
+    <!--<script type='text/javascript' src='<?php echo site_url() . 'assets/backoffice/js/jquery-migrate.min.js?ver=1.4.1'; ?>'></script>-->
     <script type='text/javascript' src='<?php echo site_url() . 'assets/backoffice/js/metaboxes/vue.min.js?ver=2.0'; ?>'></script>
     <script type='text/javascript' src='<?php echo site_url() . 'assets/backoffice/js/metaboxes/vue2-datepicker.min.js?ver=2.0'; ?>'></script>
     <script type='text/javascript' src='https://stylemixthemes.com/masterstudy/white-lms/wp-content/plugins/stm-post-type//theme/assets/lazysizes.min.js?ver=5.4.1'></script>
