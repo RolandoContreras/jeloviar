@@ -189,7 +189,7 @@
                                                                 </div>
                                                                 <div class="stm_lms_courses__single--info_meta">
                                                                     <!--<div class="stm_lms_course__meta"> <i class="stmlms-cats"></i> 10 Materiales</div>-->
-                                                                    <div class="stm_lms_course__meta"> <i class="stmlms-lms-clocks"></i> 13 Horas</div>
+                                                                    <div class="stm_lms_course__meta"> <i class="stmlms-lms-clocks"></i><?php echo $value->time;?> Horas</div>
                                                                 </div>
                                                                 <div class="stm_lms_courses__single--info_preview"> 
                                                                     <a href="<?php echo site_url() . "cursos/$value->category_slug/$value->slug";?>" title="<?php echo $value->name;?>" class="heading_font"> Vista previa de este curso</a>

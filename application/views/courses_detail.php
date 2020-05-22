@@ -20,7 +20,7 @@
                                                         </div>
                                                         <div class="meta_values">
                                                             <div class="label h6">Instructor</div>
-                                                            <div class="value heading_font h6">U-Linex</div>
+                                                            <div class="value heading_font h6"><?php echo $obj_courses->teacher;?></div>
                                                         </div>
                                                     </div>
                                             </div>
@@ -68,6 +68,17 @@
                                                                     <?php echo $obj_courses->description;?>
                                                                 </div>
                                                             </div>
+                                                            <div class="wpb_text_column wpb_content_element ">
+                                                                <div class="wpb_wrapper">
+                                                                    <?php 
+                                                                    foreach ($obj_videos as $value) {
+                                                                        if($value->type == 1){ 
+                                                                            echo $value->video;
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -89,15 +100,6 @@
                                                                     <div class="stm-curriculum-item__title">
                                                                         <div class="heading_font"> <?php echo $value_video->name;?></div>
                                                                     </div>
-                                                                    <?php 
-                                                                    if($value_video->type == 1){ ?>
-                                                                        <div class="stm-curriculum-item__preview"> 
-                                                                            <a href="<?php echo site_url() . "cursos/$obj_courses->category_slug/$obj_courses->slug/resumen"; ?>"> Ver Resumen </a>
-                                                                        </div>
-                                                                        <div class="stm-curriculum-item__meta"> 
-                                                                            <?php echo $value_video->time." minutos"?> <i class="far fa-clock"></i>
-                                                                        </div>
-                                                                    <?php } ?>
                                                                 </div>
                                                         <?php } ?>
                                                 <?php } ?>
@@ -115,17 +117,17 @@
                                     </div>
                                     <div class="stm-lms-course-info heading_font">
                                         <div class="stm-lms-course-info__single">
-                                            <div class="stm-lms-course-info__single_label"> <span>Enrolados</span>: <strong>35 students</strong></div>
+                                            <div class="stm-lms-course-info__single_label"> <span>Enrolados</span>: <strong><?php echo $obj_courses->total_enrolados;?> Estudiantes</strong></div>
                                             <div class="stm-lms-course-info__single_icon"> <i class="fa-icon-stm_icon_users"></i></div>
                                         </div>
                                         <div class="stm-lms-course-info__single">
-                                            <div class="stm-lms-course-info__single_label"> <span>Duración</span>: <strong>13 hours</strong></div>
+                                            <div class="stm-lms-course-info__single_label"> <span>Duración</span>: <strong><?php echo $obj_courses->time;?> Horas</strong></div>
                                             <div class="stm-lms-course-info__single_icon"> <i class="fa-icon-stm_icon_clock"></i></div>
                                         </div>
-                                        <div class="stm-lms-course-info__single">
+<!--                                        <div class="stm-lms-course-info__single">
                                             <div class="stm-lms-course-info__single_label"> <span>Materiales</span>: <strong>10</strong></div>
                                             <div class="stm-lms-course-info__single_icon"> <i class="fa-icon-stm_icon_bullhorn"></i></div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="stm-lms-dynamic_sidebar">
                                         <div id="stm_lms_popular_courses-3" class="widget widget_stm_lms_popular_courses">
@@ -140,7 +142,7 @@
                                                                 <div class="stm_featured_product_price">
                                                                     <div class="price price-free">S/.<?php echo $value->price;?></div>
                                                                 </div>
-                                                                <div class="expert">Por: Marco Aurelio</div>
+                                                                <div class="expert">Por: Jesús Vilela</div>
                                                             </div>
                                                         </a>
                                                     </li>

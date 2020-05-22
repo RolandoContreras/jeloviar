@@ -197,6 +197,13 @@ class Courses extends CI_Controller {
             //GET COURSE
             $url = explode("/",uri_string());
             $slug_2 = $url[2];
+            
+            //select curso_id
+             $params = array(
+                            "select" =>"course_id",
+                            "where" => "courses.slug = '$slug_2'");
+            $obj_courses = $this->obj_courses->get_search_row($params);
+            $course_id = $obj_courses->course_id;
             //get course
             $params = array(
                             "select" =>"courses.course_id,
@@ -208,16 +215,12 @@ class Courses extends CI_Controller {
                                         courses.img,
                                         courses.price,
                                         courses.price_del,
+                                        courses.time,
                                         courses.date,
+                                        (SELECT count(*) FROM (customer_courses) WHERE course_id =  $course_id) as total_enrolados,
                                         category.name as category_name,
                                         category.slug as category_slug,
-                                        teachers.name as teacher,
-                                        teachers.img as teacher_img,
-                                        teachers.profetion,
-                                        teachers.description as teacher_description,
-                                        teachers.facebook,
-                                        teachers.twiter,
-                                        teachers.instagram",
+                                        teachers.name as teacher",
                             "join" => array('category, courses.category_id = category.category_id',
                                             'teachers, courses.teacher_id = teachers.teacher_id'),
                             "where" => "courses.slug = '$slug_2'");
