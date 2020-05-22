@@ -440,6 +440,7 @@ class B_home extends CI_Controller {
         $params_category = array(
             "select" => "category_id,
                                     slug,
+                                    backoffice,
                                     name",
             "where" => "active = 1",
         );
