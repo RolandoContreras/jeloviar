@@ -47,6 +47,21 @@
                           <div class="form-group col-md-6">
                               <div class="form-row">
                                 <div class="form-group col-md-12">
+                                    <label for="inputState">Mostrar en BackOffice</label>
+                                    <select name="backoffice" id="backoffice" class="form-control" required="">
+                                         <option value="">[ Seleccionar ]</option>
+                                          <option value="1" <?php if(isset($obj_category)){
+                                              if($obj_category->backoffice == 1){ echo "selected";}
+                                          }else{echo "";} ?>>Si Mostrar</option>
+                                          <option value="0" <?php if(isset($obj_category)){
+                                              if($obj_category->backoffice == 0){ echo "selected";}
+                                          }else{echo "";} ?>>No Mostrar</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                              <div class="form-row">
+                                <div class="form-group col-md-12">
                                     <label for="inputState">Estado</label>
                                     <select name="active" id="active" class="form-control" required="">
                                          <option value="">[ Seleccionar ]</option>

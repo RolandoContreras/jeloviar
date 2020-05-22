@@ -13,6 +13,7 @@ class D_category extends CI_Controller{
             $params = array(
                         "select" =>"category_id,
                                     name,
+                                    backoffice,
                                     slug,
                                     date,
                                     active",
@@ -50,6 +51,7 @@ class D_category extends CI_Controller{
                 $data = array(
                 'name' => $this->input->post('name'),
                 'slug' => $slug,
+                'backoffice' => $this->input->post('backoffice'),
                 'active' => $this->input->post('active'),
                 'updated_at' => date("Y-m-d H:i:s"),
                 'updated_by' => $_SESSION['usercms']['user_id']
@@ -65,6 +67,7 @@ class D_category extends CI_Controller{
                 $data = array(
                 'name' => $this->input->post('name'),
                 'slug' => $slug,
+                'backoffice' => $this->input->post('backoffice'),
                 'active' => $this->input->post('active'),
                 'date' => date("Y-m-d H:i:s")
                 );

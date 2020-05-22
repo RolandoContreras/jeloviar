@@ -1,6 +1,7 @@
 function validate_category() {
     var category_id = document.getElementById("category_id").value;
     var name = document.getElementById("name").value;
+    var backoffice = document.getElementById("backoffice").value;
     var active = document.getElementById("active").value;
     $.ajax({
         type: "post",
@@ -8,6 +9,7 @@ function validate_category() {
         dataType: "json",
         data: {category_id: category_id,
             name: name,
+            backoffice:backoffice,
             active: active
         },
         success: function (data) {

@@ -38,6 +38,7 @@
                                                                 <tr role="row">
                                                                     <th class="sorting_asc" tabindex="0" rowspan="1" colspan="1" style="width: 150px;">ID</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Nombre</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Mostrar en BackOffice</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Fecha de Creación</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Estado</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Acciones</th>
@@ -50,6 +51,18 @@
                                                                         <th><?php echo $value->category_id; ?></th>
                                                                         <td>
                                                                             <span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->name;?></span>
+                                                                        </td>
+                                                                        <td>
+                                                                            <?php
+                                                                            if ($value->backoffice == 0) {
+                                                                                $valor = "No Mostrar";
+                                                                                $stilo = "badge-warning";
+                                                                            } else {
+                                                                                $valor = "Si Mostrar";
+                                                                                $stilo = "badge-secondary";
+                                                                            }
+                                                                            ?>
+                                                                            <span class="badge badge-pill <?php echo $stilo ?>" style="font-size: 100%;"><?php echo $valor; ?></span>
                                                                         </td>
                                                                         <td><?php echo formato_fecha($value->date); ?></td>
                                                                         <td>
@@ -79,6 +92,7 @@
                                                                 <tr>
                                                                     <th rowspan="1" colspan="1">ID</th>
                                                                     <th rowspan="1" colspan="1">Nombre</th>
+                                                                    <th rowspan="1" colspan="1">Mostrar en BackOffice</th>
                                                                     <th rowspan="1" colspan="1">Fecha de Creación</th>
                                                                     <th rowspan="1" colspan="1">Estado</th>
                                                                     <th rowspan="1" colspan="1">Acciones</th>
