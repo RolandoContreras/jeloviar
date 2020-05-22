@@ -66,7 +66,6 @@ class D_activate extends CI_Controller{
                 $course_id = $this->input->post("course_id");
                 
                 if($customer_id != "" && $course_id != ""){
-
                     //GET DATA FROM TABLE COURSE
                     $params = array(
                             "select" =>"price",
@@ -89,11 +88,13 @@ class D_activate extends CI_Controller{
                     $data = array(
                         'customer_id' => $customer_id,
                         'course_id' => $course_id,
+                        'date_start' => date("Y-m-d H:i:s"),
+                        'active' => 1,
                     );
                     $this->obj_customer_courses->insert($data);
-                    $data['status'] = "true";
+                    $data['status'] = true;
                 }else{
-                    $data['status'] = "false";
+                    $data['status'] = false;
                 }
                 echo json_encode($data); 
                 exit();

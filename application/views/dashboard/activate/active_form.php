@@ -33,8 +33,8 @@
                           <div class="form-group col-md-6">
                               <div class="form-group">
                                 <label>Usuario</label>
-                                <input class="form-control" onblur="validate_user(this.value);" type="text" id="username" name="username" class="input-xlarge-fluid" placeholder="Ingrese Usuario">
-                                <input type="hidden" id="customer_id" name="customer_id">
+                                <input class="form-control" onblur="validate_user(this.value);" type="text" id="username" name="username" class="input-xlarge-fluid" placeholder="Ingrese Usuario" required="">
+                                <input type="hidden" id="customer_id" name="customer_id" required="">
                                 <span class="alert-0"></span>
                               </div>
                               <div class="form-group">
@@ -54,7 +54,7 @@
                           <div class="form-group col-md-6">
                               <div class="form-group">
                               <label for="inputState">Curso</label>
-                                <select name="course_id" id="course_id" class="form-control">
+                              <select name="course_id" id="course_id" class="form-control" required="">
                                 <option value="">[ Seleccionar ]</option>
                                     <?php foreach ($obj_courses as $value ): ?>
                                 <option value="<?php echo $value->course_id;?>">
