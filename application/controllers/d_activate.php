@@ -97,8 +97,7 @@ class D_activate extends CI_Controller {
                 if ($customer_id != "" && $course_id != "") {
                     //GET DATA FROM TABLE COURSE
                     $params = array(
-                        "select" => "price,
-                                                duration",
+                        "select" => "price",
                         "where" => "course_id = $course_id"
                     );
                     //GET DATA FROM BONUS
