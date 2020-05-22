@@ -69,6 +69,8 @@ function register(){
             
             var email_2 = validar_email(email);
             if(email_2 == true){
+                document.getElementById("save_register").style.display = "none";
+                document.getElementById("spinner_register").style.display = "block";
                    $.ajax({
                         type: "post",
                         url: site+"register/validate",
@@ -87,6 +89,8 @@ function register(){
                                   footer: 'Ingrese otro Email'
                                 });
                                  $("#email").focus();
+                                 document.getElementById("save_register").style.display = "block";
+                                 document.getElementById("spinner_register").style.display = "none";
                             }else if(data.status == "success2"){
                                  Swal.fire({
                                       position: 'top-end',
@@ -115,6 +119,8 @@ function register(){
             }else{
                 document.getElementById("message_email").style.display = "block";
                 $("#email").focus();
+                document.getElementById("save_register").style.display = "block";
+                document.getElementById("spinner_register").style.display = "none";
             }
         }
 }
