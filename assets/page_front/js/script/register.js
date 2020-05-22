@@ -5,19 +5,6 @@ function register(){
     var last_name = document.getElementById("last_name").value;
     var phone = document.getElementById("phone").value;
     var country = document.getElementById("country").value;
-    //GET DATA RECAPTCHA
-//    var response = grecaptcha.getResponse();
-//        if(response.length == 0){
-//            $("#mensaje").html();
-//             var texto = "";
-//             texto = texto+'<center>';
-//             texto = texto+'<div class="alert alert-danger">';
-//             texto = texto+'<p>Captcha no validado</p>';
-//             texto = texto+'</div>';                 
-//             texto = texto+'</center>';
-//             $("#mensaje").html(texto);
-//    }else{
-        //validate
         if(name == ""){
             $("#mensaje").html();
              var texto = "";
@@ -130,7 +117,6 @@ function register(){
                 $("#email").focus();
             }
         }
-//    }
 }
 
 function validar_email( email ){

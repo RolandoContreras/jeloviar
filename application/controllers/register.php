@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Register extends CI_Controller {
     function __construct() { 
@@ -39,30 +38,24 @@ class Register extends CI_Controller {
         public function validate()
 	{
             if ($this->input->is_ajax_request()) {
-            //SET TIMEZONE AMERICA
-            date_default_timezone_set('America/Lima');
-            //get data
             //VALIDATE USERNAME
             $email = $this->input->post("email");
             $result = $this->validate_username_register($email);
-            
             if($result == 1){
                 $data['status'] = "email";
             }else{
-                $name = $this->input->post("name");
-                $phone = $this->input->post("phone");
-                $pass = $this->input->post("pass");
-                $country = $this->input->post("country");
-            
+                $name = trim($this->input->post("name"));
                 //INSERT TABLE CUSTOMER
                 $data = array(
                         'name' => $name,
+                        'last_name' => trim($this->input->post("last_name")),
                         'email' => $email,
-                        'password' => $pass,
-                        'phone' => $phone,
-                        'country' => $country,
+                        'password' => trim($this->input->post("pass")),
+                        'phone' => $this->input->post("phone"),
+                        'country' => $this->input->post("country"),
                         'date' => date("Y-m-d H:i:s"),
                         'active' => 1,
+                        'status_value' => 1
                     );
                     $customer_id = $this->obj_customer->insert($data);
                     //create session

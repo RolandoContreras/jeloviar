@@ -6,7 +6,6 @@
             <?php $this->load->view("header"); ?>
             <!-- id header -->
             <div id="main">
-
                 <div class="stm-lms-wrapper stm-lms-wrapper__login">
                     <div class="container">
                         <div class="row">
