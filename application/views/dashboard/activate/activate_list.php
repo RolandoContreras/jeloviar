@@ -37,45 +37,46 @@
                                                             <thead>
                                                                 <tr role="row">
                                                                     <th class="sorting_asc" tabindex="0" rowspan="1" colspan="1" style="width: 150px;">ID</th>
-                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Fecha de Creación</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Fecha de Inicio</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Usuario</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Cliente</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Curso</th>
-                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Importe</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Completo</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Acciones</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <?php foreach ($obj_invoices as $key => $value): ?>
-                                                                <th><?php echo $value->invoice_id; ?></th>
-                                                                <td><?php echo formato_fecha($value->date); ?></td>
-                                                                <td><b><?php echo "@" . $value->email; ?></b></td>
-                                                                <td><?php echo $value->name; ?></td>
-                                                                <td>
-                                                                    <span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->course_name; ?></span></td>
-                                                                <td>
-                                                                    <span class="badge badge-pill badge-warning" style="font-size: 100%;">&#8364;<?php echo $value->total; ?></span>                               
-                                                                </td>
-                                                                <td>
-                                                                    <?php
-                                                                    if ($value->active == 1) {
-                                                                        $valor = "Esperando Activación";
-                                                                        $stilo = "badge-info";
-                                                                    } elseif ($value->active == 2) {
-                                                                        $valor = "Procesado";
-                                                                        $stilo = "badge-success";
-                                                                    } elseif ($value->active == 0) {
-                                                                        $valor = "Sin Acción";
-                                                                        $stilo = "badge-warning";
-                                                                    } else {
-                                                                        $valor = "Cancelado";
-                                                                        $stilo = "badge-danger";
-                                                                    }
-                                                                    ?>
-                                                                    <span class="badge badge-pill <?php echo $stilo ?>" style="font-size: 100%;"><?php echo $valor; ?></span>
-                                                                </td>
-                                                                </tr>
-<?php endforeach; ?>
+                                                                <tr>
+                                                                    <?php foreach ($obj_customer_courses as $key => $value): ?>
+                                                                        <th><?php echo $value->customer_course_id; ?></th>
+                                                                        <td><span class="badge badge-pill badge-success" style="font-size: 100%;"><?php echo formato_fecha_barras($value->date_start); ?></span></td>
+                                                                        <td><b><?php echo "@" . $value->email; ?></b></td>
+                                                                        <td><?php echo $value->name . " " . $value->last_name; ?></td>
+                                                                        <td>
+                                                                            <span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->course_name; ?></span>                               
+                                                                        </td>
+                                                                        <td>
+                                                                            <?php
+                                                                            if ($value->complete == 1) {
+                                                                                $valor = "Completo";
+                                                                                $stilo = "badge-success";
+                                                                            } else {
+                                                                                $valor = "En Curso";
+                                                                                $stilo = "badge-warning";
+                                                                            }
+                                                                            ?>
+                                                                            <span class="badge badge-pill <?php echo $stilo;?>" style="font-size: 100%;"><?php echo $valor;?></span>                               
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="operation">
+                                                                                <div class="btn-group">
+                                                                                    <button class="btn btn-secondary" type="button" onclick="edit_activate('<?php echo $value->customer_course_id; ?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
+                                                                                    <button class="btn btn-secondary" type="button" onclick="delete_activate('<?php echo $value->customer_course_id; ?>', '<?php echo $value->course_id; ?>', '<?php echo $value->customer_id; ?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                <?php endforeach; ?>
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>

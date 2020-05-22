@@ -33,18 +33,33 @@ function delete_activate(customer_course_id, course_id, customer_id) {
                         course_id: course_id,
                         customer_id: customer_id},
                     success: function (data) {
-                        location.reload();
+                        if (data.status == true) {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Activación Eliminada',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                window.setTimeout(function () {
+                                    window.location = site + "dashboard/activaciones";
+                                }, 1500);
+                            } else {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: 'Sucedio un error',
+                                    footer: 'Comunique a soporte'
+                                });
+                            }
                     }
                 });
             }
         }
     });
 }
-
-
-
-
 function active() {
+    var customer_course_id = document.getElementById("customer_course_id").value;
     var customer_id = document.getElementById("customer_id").value;
     var course_id = document.getElementById("course_id").value;
 
@@ -75,36 +90,39 @@ function active() {
                     className: 'btn-danger'
                 }
             },
-            callback: function () {
-                $.ajax({
-                    type: "post",
-                    url: site + "dashboard/activaciones/active",
-                    dataType: "json",
-                    data: {customer_id: customer_id,
-                        course_id: course_id},
-                    success: function (data) {
-                        if (data.status == true) {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: 'Cambios Guardado',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                            window.setTimeout(function () {
-                                window.location = site + "dashboard/activaciones";
-                            }, 1500);
-                        } else {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'error',
-                                title: 'Sucedio un error',
-                                footer: 'Comunique a soporte'
-                            });
-                        }
+            callback: function (e) {
+                if (e == true) {
+                    $.ajax({
+                        type: "post",
+                        url: site + "dashboard/activaciones/active",
+                        dataType: "json",
+                        data: {customer_id: customer_id,
+                            customer_course_id: customer_course_id,
+                            course_id: course_id},
+                        success: function (data) {
+                            if (data.status == true) {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Cambios Guardado',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                window.setTimeout(function () {
+                                    window.location = site + "dashboard/activaciones";
+                                }, 1500);
+                            } else {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: 'Sucedio un error',
+                                    footer: 'Comunique a soporte'
+                                });
+                            }
 
-                    }
-                });
+                        }
+                    });
+                }
             }
         });
     }
