@@ -92,6 +92,10 @@
                                                                     <?php endforeach; ?>
                                                         </select>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Horas Totales</label>
+                                                        <input class="form-control" type="text" id="time" name="time" value="<?php echo isset($obj_courses->time) ? $obj_courses->time : ""; ?>" class="input-xlarge-fluid" placeholder="Total de Horas" required>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <?php if (isset($obj_courses)) { ?>

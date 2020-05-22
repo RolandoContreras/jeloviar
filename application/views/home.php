@@ -177,7 +177,7 @@
                                                                     <div class="stm_lms_courses__single--info_author__avatar"> 
                                                                         <img alt="profesor" src="<?php echo site_url() . 'assets/page_front/images/profesor.png'; ?>" class="avatar avatar-215 photo" width="215" height="215">
                                                                     </div>
-                                                                    <div class="stm_lms_courses__single--info_author__login">Instructor: U-linex</div>
+                                                                    <div class="stm_lms_courses__single--info_author__login">Jesus Vilela</div>
                                                                 </div>
                                                                 <div class="stm_lms_courses__single--info_title">
                                                                     <a href="<?php echo site_url() . "cursos/$value->category_slug/$value->slug";?>">
@@ -188,7 +188,7 @@
                                                                     <?php echo corta_texto($value->description, 300);?>
                                                                 </div>
                                                                 <div class="stm_lms_courses__single--info_meta">
-                                                                    <div class="stm_lms_course__meta"> <i class="stmlms-cats"></i> 10 Materiales</div>
+                                                                    <!--<div class="stm_lms_course__meta"> <i class="stmlms-cats"></i> 10 Materiales</div>-->
                                                                     <div class="stm_lms_course__meta"> <i class="stmlms-lms-clocks"></i> 13 Horas</div>
                                                                 </div>
                                                                 <div class="stm_lms_courses__single--info_preview"> 
