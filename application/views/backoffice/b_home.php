@@ -46,7 +46,7 @@
                                                 </div>
                                             </div>
                                             <div class="stm_lms_instructor_courses__single--title">
-                                                <a href="<?php echo site_url() . "virtual"; ?>">
+                                                <a href="<?php echo site_url() . "virtual/$value->category_slug/$value->slug"; ?>">
                                                     <h5><?php echo $value->name; ?></h5>
                                                 </a>
                                             </div>
@@ -60,7 +60,7 @@
                                                 </div>
                                             </div>
                                             <div class="stm_lms_instructor_courses__single--enroll">
-                                                <a href="<?php echo site_url() . "virtual"; ?>" class="btn btn-default">
+                                                <a href="<?php echo site_url() . "virtual/$value->category_slug/$value->slug"; ?>" class="btn btn-default">
                                                     <span>Iniciar Curso</span>
                                                 </a>
                                             </div>

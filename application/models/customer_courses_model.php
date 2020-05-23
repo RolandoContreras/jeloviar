@@ -55,6 +55,18 @@ class Customer_courses_Model extends CI_Model{
         return $this->db->delete($this->table);
     }
   
+    public function update_total_video($pk, $data){
+        $this->db->where($this->table_id, $pk);
+        $this->db->update($this->table, $data);
+       
+       $this->db->select('*');
+       $this->db->from($this->table);       
+       $this->db->where($this->table_id,$pk);
+       $query =  $this->db->get(); 
+       return $query->row();
+        
+    }
+    
     public function get_search_row($data){
         if (isset($data["select"])&& $data["select"]!=""){$this->db->select($data["select"]);}
         if (isset($data["where"]) && $data["where"]!=""){$this->db->where($data["where"]);}
