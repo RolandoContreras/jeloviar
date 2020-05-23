@@ -20,7 +20,9 @@
                                         <div class="wpb_wrapper">
                                             <div class="wpb_text_column wpb_content_element ">
                                                 <div class="wpb_wrapper">
-                                                    <?php echo $obj_courses_overview->video; ?>
+                                                    <div style="padding-bottom: 56.25%;position: relative;">
+                                                        <?php echo $obj_courses_overview->video; ?>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="wpb_text_column wpb_content_element ">
