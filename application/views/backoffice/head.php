@@ -1,13 +1,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edukate Pro | Plataforma Virtual</title>
+    <title>Jeloviar Online | Plataforma Virtual</title>
     <link rel='stylesheet' id='linear-css' href='<?php echo site_url() . 'assets/backoffice/css/linear.css?ver=2.0'; ?>' type='text/css' media='all' />
     <link rel='stylesheet' id='linear-icons-css' href='<?php echo site_url() . 'assets/backoffice/css/linear-icons.css?ver=2.0'; ?>' type='text/css' media='all' />
     <link rel='stylesheet' id='stm_lms_icons-css' href='<?php echo site_url() . 'assets/backoffice/css/stmlms_icons.css?ver=2.0'; ?>' type='text/css' media='all' />
     <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/font-awesome.min.css?ver=2.0'; ?>' type='text/css' media='all' />
     <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/stm_lms.css?ver=1588450773'; ?>' type='text/css' media='all' />
-    <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/bootstrap.min.css?ver=3.2'; ?>' type='text/css' media='all' />
+    <!--<link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/bootstrap.min.css?ver=3.2'; ?>' type='text/css' media='all' />-->
+    
+    <link rel='stylesheet' id='boostrap-css' href='https://stylemixthemes.com/masterstudy/classic-lms/wp-content/themes/masterstudy/assets/css/bootstrap.min.css?ver=3.2'
+              type='text/css' media='all' />
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/styles.css?ver=3.2'; ?>' type='text/css' media='all' />
     <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/jquery.fancybox.css'; ?>' type='text/css' media='all' />
@@ -30,6 +34,9 @@
     <!--//swetaler2-->
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <link rel='stylesheet' id='stm-lms-lesson_video-css' href='https://stylemixthemes.com/masterstudy/classic-lms/wp-content/plugins/masterstudy-lms-learning-management-system/assets/css/parts/lesson_video.css?ver=29'
+              type='text/css' media='all' />
+        <link rel='stylesheet' id='stm-lms-lesson_video-css' href='<?php echo site_url().'assets/course/css/mystyle.css?ver=29';?>' type='text/css' media='all' />
     <script>
         var site = "<?php echo site_url(); ?>"
     </script>
