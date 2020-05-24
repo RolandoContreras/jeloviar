@@ -52,11 +52,21 @@
                                             </div>
                                             <div class="stm_lms_instructor_courses__single--progress">
                                                 <div class="stm_lms_instructor_courses__single--progress_top">
-                                                    <div class="stm_lms_instructor_courses__single--duration"><i class="far fa-clock"></i> 6 hours </div>
-                                                    <div class="stm_lms_instructor_courses__single--completed"> 15% Complete </div>
+                                                    <div class="stm_lms_instructor_courses__single--duration"><i class="far fa-clock"></i> <?php echo $value->time;?> horas </div>
+                                                    <div class="stm_lms_instructor_courses__single--completed"> 
+                                                        <?php 
+                                                        if($value->total == null){
+                                                            echo "0% Completado";
+                                                        }else{
+                                                            $percent = ($value->total_video / $value->total) * 100;
+                                                            echo ceil($percent)."% Completado";
+                                                        }
+                                                        ?>
+                                                        
+                                                    </div>
                                                 </div>
                                                 <div class="stm_lms_instructor_courses__single--progress_bar">
-                                                    <div class="stm_lms_instructor_courses__single--progress_filled" style="width: 15%;"></div>
+                                                    <div class="stm_lms_instructor_courses__single--progress_filled" style="width: <?php echo $percent;?>%;"></div>
                                                 </div>
                                             </div>
                                             <div class="stm_lms_instructor_courses__single--enroll">

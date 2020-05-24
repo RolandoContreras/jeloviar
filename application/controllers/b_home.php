@@ -24,6 +24,20 @@ class B_home extends CI_Controller {
         $obj_profile = $this->get_profile($customer_id);
         //get cursos comprados
         $obj_courses_by_customer = $this->courses_by_customer($customer_id);
+        //get porcent of curse
+        $params_customer_courses = array(
+            "select" => "customer_courses.date_start,
+                         category.name as category_name",
+            "join" => array('customer, customer_courses.customer_id = customer.customer_id',
+                'courses, customer_courses.course_id = courses.course_id',
+                'category, courses.category_id = category.category_id'),
+            "where" => "customer.customer_id = $customer_id",
+            "order" => "courses.course_id DESC",
+        );
+        $obj_customer_courses = $this->obj_customer_courses->search($params_customer_courses);
+        
+
+        
         //mis compras
         $obj_orders = $this->mis_pedidos($customer_id);
         if (isset($_GET['search'])) {
@@ -483,17 +497,20 @@ class B_home extends CI_Controller {
     public function courses_by_customer($customer_id) {
         $params_customer_courses = array(
             "select" => "customer_courses.date_start,
-                                                courses.course_id,
-                                                courses.category_id,
-                                                courses.name,
-                                                courses.slug,
-                                                courses.description,
-                                                courses.img,
-                                                courses.price,
-                                                courses.date,
-                                                customer.customer_id,
-                                                category.slug as category_slug,
-                                                category.name as category_name",
+                        courses.course_id,
+                        courses.category_id,
+                        courses.name,
+                        courses.slug,
+                        courses.time,
+                        customer_courses.total_video,
+                        customer_courses.total,
+                        courses.description,
+                        courses.img,
+                        courses.price,
+                        courses.date,
+                        customer.customer_id,
+                        category.slug as category_slug,
+                        category.name as category_name",
             "join" => array('customer, customer_courses.customer_id = customer.customer_id',
                 'courses, customer_courses.course_id = courses.course_id',
                 'category, courses.category_id = category.category_id'),

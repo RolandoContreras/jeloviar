@@ -117,17 +117,19 @@ class C_home extends CI_Controller {
             $course_id = $this->input->post("course_id");
             $video_id = $this->input->post("video_id");
             $total_videos = $this->input->post("total_videos");
+            
             //GET DATA COURSE CUSTOMER
             $params = array(
                 "select" => "customer_course_id,
                                         video_actual,
                                         total_video,
+                                        total,
                                         complete",
                 "where" => "customer_id = $customer_id and course_id = $course_id",
             );
             $curso_actual = $this->obj_customer_courses->get_search_row($params);
 
-            if ($curso_actual->complete == null) {
+            if ($curso_actual->complete != 1) {
                 if ($curso_actual->total_video < $total_videos) {
                     //verificar
                     if ($curso_actual->total_video == 0) {
@@ -135,6 +137,7 @@ class C_home extends CI_Controller {
                         $data = array(
                             'video_actual' => $video_id,
                             'total_video' => 1,
+                            'total' => $total_videos,
                         );
                         $result = $this->obj_customer_courses->update_total_video($curso_actual->customer_course_id, $data);
                         if ($result != null) {
@@ -176,41 +179,6 @@ class C_home extends CI_Controller {
             //ACTUALIZAR VIDEO
             echo json_encode($data);
         }
-    }
-
-    public function send_message() {
-        if ($this->input->is_ajax_request()) {
-            //GET CUSTOMER_ID
-            $customer_id = $_SESSION['customer']['customer_id'];
-            $message = $this->input->post('comment');
-            $video_id = $this->input->post('video_id');
-            //ADD VIDEO_MESSAGE
-            $data = array(
-                'customer_id' => $customer_id,
-                'video_id' => $video_id,
-                'message' => $message,
-                'date' => date("Y-m-d H:i:s"),
-                'active' => 1,
-            );
-            $video_message_id = $this->obj_video_message->insert($data);
-            if ($video_message_id != "") {
-                $data['status'] = "true";
-            } else {
-                $data['status'] = "false";
-            }
-            echo json_encode($data);
-        }
-    }
-
-    public function nav_videos() {
-        $params_category_videos = array(
-            "select" => "category_id,
-                                    slug,
-                                    name",
-            "where" => "type = 1 and active = 1",
-        );
-        //GET DATA COMMENTS
-        return $obj_category_videos = $this->obj_category->search($params_category_videos);
     }
 
     public function get_session() {
