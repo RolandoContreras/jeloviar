@@ -29,7 +29,7 @@ class Register extends CI_Controller {
             $data['obj_category'] = $this->nav_category();
             //Select params
             $data['obj_paises'] = $this->list_pais();
-            $data['title'] = "Nuevo Registro";
+            $data['title'] = "Nuevo Registro | Jeloviar Online";
             /// VIEW
             $this->load->view("register", $data);
 		

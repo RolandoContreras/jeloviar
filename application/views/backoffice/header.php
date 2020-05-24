@@ -61,7 +61,9 @@
                 <div class="col-md-12">
                     <div class="header_top">
                         <div class="logo-unit"> 
-                            <a href="<?php echo site_url() . 'backoffice'; ?>"> <img class="img-responsive logo_transparent_static visible logo" src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" alt="Jeloviar Logo" /> </a>              
+                            <a href="<?php echo site_url() . 'backoffice'; ?>"> 
+                                <img class="img-responsive logo_transparent_static visible logo" src="<?php echo site_url() . 'assets/page_front/images/logo/logo.png'; ?>" alt="Jeloviar Logo" /> 
+                            </a>              
                         </div>
                         <div class="right-unit">
                             <div class="stm_lms_account_dropdown">

@@ -104,7 +104,7 @@ class Courses extends CI_Controller {
             //send total row
             $data['total'] = $config["total_rows"];
             //SEND DATA
-            $data['title'] = "Todos los Cursos";
+            $data['title'] = "Todos los Cursos | Jeloviar Online";
             //view
             $this->load->view('courses',$data);
 	}
@@ -187,7 +187,7 @@ class Courses extends CI_Controller {
             //send total row
             $data['total'] = $config["total_rows"];
             //SEND DATA
-            $data['title'] = "Cursos | $obj_category->name";
+            $data['title'] = "Cursos | $obj_category->name | Jeloviar Online";
             $this->load->view('courses',$data);
 	}
         public function detail($slug)
