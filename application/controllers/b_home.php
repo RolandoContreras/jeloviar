@@ -319,6 +319,7 @@ class B_home extends CI_Controller {
             $quantity = 1;
             $name = $this->input->post('name');
             $name_cart = convert_slug_cart($name);
+            $img = $this->input->post('img');
             //ADD CART
             if ($quantity > 0) {
                 $data = array(
@@ -326,6 +327,7 @@ class B_home extends CI_Controller {
                     'qty' => $quantity,
                     'price' => $price,
                     'name' => "$name_cart",
+                    'img' => "$img"
                 );
                 $cart_id = $this->cart->insert($data);
                 if ($cart_id != "") {
@@ -346,12 +348,12 @@ class B_home extends CI_Controller {
         //get customer id
         $customer_id = $_SESSION['customer']['customer_id'];
         //get nav ctalogo
-        $obj_category_videos = $this->nav_category();
+        $obj_category = $this->nav_category();
         //get cursos comprados
         $obj_courses_by_customer = $this->courses_by_customer($customer_id);
         //SEND DATA
         $this->tmp_backoffice->set("obj_courses_by_customer", $obj_courses_by_customer);
-        $this->tmp_backoffice->set("obj_category_videos", $obj_category_videos);
+        $this->tmp_backoffice->set("obj_category", $obj_category);
         $this->tmp_backoffice->render("backoffice/b_pay_order");
     }
 
