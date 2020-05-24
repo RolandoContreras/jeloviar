@@ -20,11 +20,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/jeloviar/application/controllers/home.php</file>
-            <file>file:/C:/wamp64/www/jeloviar/application/views/courses_detail.php</file>
-            <file>file:/C:/wamp64/www/jeloviar/application/controllers/courses.php</file>
-            <file>file:/C:/wamp64/www/jeloviar/application/controllers/panel.php</file>
-            <file>file:/C:/wamp64/www/jeloviar/application/views/home.php</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/config/routes.php</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/controllers/c_home.php</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/views/backoffice/header.php</file>
+            <file>file:/C:/wamp64/www/jeloviar/assets/course/js/script/c_home.js</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/templates/template_course.php</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/views/course/c_home.php</file>
         </group>
     </open-files>
 </project-private>

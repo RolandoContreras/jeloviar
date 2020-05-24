@@ -127,7 +127,7 @@ class C_home extends CI_Controller {
             );
             $curso_actual = $this->obj_customer_courses->get_search_row($params);
 
-            if ($curso_actual->complete != 1) {
+            if ($curso_actual->complete == null) {
                 if ($curso_actual->total_video < $total_videos) {
                     //verificar
                     if ($curso_actual->total_video == 0) {
