@@ -18,6 +18,9 @@
         <link rel="icon" type="image/png" sizes="32x32" href="<?php echo site_url() . 'assets/page_front/images/logo/favico/favicon-32x32.png'; ?>">
         <link rel="icon" type="image/png" sizes="16x16" href="<?php echo site_url() . 'assets/page_front/images/logo/favico/favicon-16x16.png'; ?>">
         <link rel="manifest" href="<?php echo site_url() . 'assets/page_front/images/logo/favicon/site.webmanifest'; ?>">
+        <script>
+            var site = "<?php echo site_url(); ?>"
+        </script>
     </head>
     <body class="logged-in stm_lms_button skin_custom_color classic_lms stm_preloader_1 wpb-js-composer js-comp-ver-5.6 vc_responsive">
         <div class="stm_lms_lesson_header">
@@ -143,7 +146,7 @@
                         <span class="stm_lms_section_text"><?php echo $obj_video_next->name; ?></span> 
                         <span>Siguiente</span> <i class="lnr lnr-chevron-right"></i>        
                     </a>
-<?php } ?>
+                <?php } ?>
             </div>
         </div>
         <link rel='stylesheet' id='stm-lms-curriculum_trigger-css' href='<?php echo site_url() . 'assets/course/css/curriculum_trigger.css?ver=29'; ?>' type='text/css' media='all' />

@@ -7,11 +7,7 @@
     <link rel='stylesheet' id='stm_lms_icons-css' href='<?php echo site_url() . 'assets/backoffice/css/stmlms_icons.css?ver=2.0'; ?>' type='text/css' media='all' />
     <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/font-awesome.min.css?ver=2.0'; ?>' type='text/css' media='all' />
     <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/stm_lms.css?ver=1588450773'; ?>' type='text/css' media='all' />
-    <!--<link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/bootstrap.min.css?ver=3.2'; ?>' type='text/css' media='all' />-->
-    
-    <link rel='stylesheet' id='boostrap-css' href='https://stylemixthemes.com/masterstudy/classic-lms/wp-content/themes/masterstudy/assets/css/bootstrap.min.css?ver=3.2'
-              type='text/css' media='all' />
-    
+    <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/bootstrap.min.css?ver=3.2'; ?>' type='text/css' media='all' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/styles.css?ver=3.2'; ?>' type='text/css' media='all' />
     <link rel='stylesheet' href='<?php echo site_url() . 'assets/backoffice/css/jquery.fancybox.css'; ?>' type='text/css' media='all' />

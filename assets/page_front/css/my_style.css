@@ -333,3 +333,11 @@
     width: 250px;
     margin-top: -18px;
 }
+.active_nav{
+    color:red !important;
+    font-weight: bold !important;
+}
+.shopping_nav{
+    color:green !important;
+    font-weight: bold !important;
+}

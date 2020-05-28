@@ -48,7 +48,7 @@ $route['politica-privacidad'] = 'home/policy';
 $route['politica-cookies'] = 'home/cookies';
 
 $route['iniciar-sesion'] = 'login';
-$route['recuperar_contrasena'] = 'forget';
+$route['recuperar-contrasena'] = 'forget';
 
 $route['cursos'] = 'courses';
 $route['cursos/([0-9]+)'] = 'courses/index/$1';

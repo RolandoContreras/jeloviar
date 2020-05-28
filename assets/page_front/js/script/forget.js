@@ -36,9 +36,6 @@ function recuperar(){
                                       showConfirmButton: false,
                                       timer: 1500
                                     });
-                                window.setTimeout( function(){
-                                     window.location = site+"recuperar-contrasena";
-                                 }, 1500 ); 
                             }
                         }         
                       }); 

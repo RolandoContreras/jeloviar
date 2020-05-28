@@ -58,6 +58,9 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="stm_lms_register_wrapper__actions">
+                                                        <a href="<?php echo site_url().'iniciar-sesion';?>">
+                                                            <span class="lostpassword" title="¿Ya tienes una cuenta?"> ¿Ya tienes una cuenta? </span>
+                                                        </a>
                                                         <button id="save_register" type="submit" class="btn btn-default">Registrar</button>
                                                         <button class="btn btn-default" type="button" style="display: none;" id="spinner_register">
                                                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>

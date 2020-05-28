@@ -30,14 +30,11 @@
                                                 <input class="form-control" type="password" name="password" id="password" placeholder="Ingrese Contraseña" required/> 
                                             </div>
                                             <div class="stm_lms_login_wrapper__actions">
-                                                <label class="stm_lms_styled_checkbox"> 
-                                                    <span class="stm_lms_styled_checkbox__inner"> 
-                                                        <input type="checkbox" name="Recuérdame"/> <span><i class="fa fa-check"></i> </span> 
-                                                    </span> 
-                                                    <span>Recuérdame</span> 
-                                                </label>                  
                                                 <a href="<?php echo site_url().'recuperar-contrasena';?>">
                                                     <span class="lostpassword" title="¿Olvidaste tu contraseña?"> ¿Olvidaste tu contraseña? </span>
+                                                </a>
+                                                <a href="<?php echo site_url().'registro';?>">
+                                                    <span class="lostpassword" title="¿Aún no tiene una cuenta?"> ¿Aún no tiene una cuenta? </span>
                                                 </a>
                                                 <button class="btn btn-default"> 
                                                     Iniciar Sesión

@@ -1,79 +1,77 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Forget extends CI_Controller {
-    public function __construct(){
-     parent::__construct();
-     $this->load->model("category_model","obj_category");
-     $this->load->model("customer_model","obj_customer");
-    } 
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-            //get category
-            $data['obj_category'] = $this->nav_category();
-            //enviar datos
-            $this->load->view('forget',$data);
-	}
-        
-        public function validate(){
-        if (isset($_SERVER['HTTP_ORIGIN'])) {  
-            header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");  
-            header('Access-Control-Allow-Credentials: true');  
-            header('Access-Control-Max-Age: 86400');   
-        }
-            //GET DATA STRING
-            $email = $this->input->post("code");
-            //SET PARAMETER
-            $params = array("select" =>"customer.customer_id,
-                                        customer.name,
-                                        customer.email,
-                                        customer.password",
-                             "where" => "customer.email = '$email' and customer.active = 1");
-            $obj_customer = $this->obj_customer->get_search_row($params);
-            
-            if (isset($obj_customer->customer_id) != ""){
-                    //verify cart shop
-                    $data['status'] = "true";
-                    $this->message($obj_customer->name, $email, $obj_customer->password);
-                   
-            }else{
-                   $data['status'] = "false";
-            }
-            
-            echo json_encode($data); 
-            exit(); 
+    public function __construct() {
+        parent::__construct();
+        $this->load->model("category_model", "obj_category");
+        $this->load->model("customer_model", "obj_customer");
     }
-        
-        public function nav_category(){
-            $params_category = array(
-                        "select" =>"category_id,
+
+    /**
+     * Index Page for this controller.
+     *
+     * Maps to the following URL
+     * 		http://example.com/index.php/welcome
+     * 	- or -
+     * 		http://example.com/index.php/welcome/index
+     * 	- or -
+     * Since this controller is set as the default controller in
+     * config/routes.php, it's displayed at http://example.com/
+     *
+     * So any other public methods not prefixed with an underscore will
+     * map to /index.php/welcome/<method_name>
+     * @see https://codeigniter.com/user_guide/general/urls.html
+     */
+    public function index() {
+        //get category
+        $data['obj_category'] = $this->nav_category();
+        $data['title'] = "Recuperar Contraseña | Jeloviar Online";
+        //enviar datos
+        $this->load->view('forget', $data);
+    }
+
+    public function recuperar() {
+        //ENVIAR MENSAJE DE CORREO
+        if ($this->input->is_ajax_request()) {
+            $email = $this->input->post("email");
+            //verificar email y nombre del cliente
+            $params = array(
+                "select" => "customer_id,
+                                    name,
+                                    password",
+                "where" => "email = '$email'");
+            //GET DATA FROM INVOICES
+            $obj_customer = $this->obj_customer->get_search_row($params);
+
+            if ($obj_customer != null) {
+                //enviar mensaje con contraseña
+                $this->message($obj_customer->name, $email, $obj_customer->password);
+                $data['status'] = true;
+            } else {
+                $data['status'] = false;
+            }
+
+            echo json_encode($data);
+            exit();
+        }
+    }
+
+    public function nav_category() {
+        $params_category = array(
+            "select" => "category_id,
                                     slug,
                                     name",
-                "where" => "active = 1",
-            );
-            //GET DATA COMMENTS
-            return $obj_category = $this->obj_category->search($params_category);
+            "where" => "active = 1",
+        );
+        //GET DATA COMMENTS
+        return $obj_category = $this->obj_category->search($params_category);
     }
-    
-    
-    public function message($name, $email, $pwd){    
-                $mensaje = wordwrap("<html>
+
+    public function message($name, $email, $pwd) {
+        $mensaje = wordwrap("<html>
                     
  <div bgcolor='#E9E9E9' style='background:#fff;margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
   <table style='background-color:#fff;border-collapse:collapse;margin:0;padding:0' width='100%' height='100%' cellspacing='0' cellpadding='0' border='0'
@@ -132,10 +130,11 @@ class Forget extends CI_Controller {
   </table>
   </div>
                             .</html>", 70, "\n", true);
-                    $titulo = "Recuperar Contraseña - [JELOVIAR ONLINE]";
-                    $headers = "MIME-Version: 1.0\r\n"; 
-                    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-                    $headers .= "From: JELOVIAR ONLINE <contacto@jeloviaronline.com>\r\n";
-                    $bool = mail("$email",$titulo,$mensaje,$headers);
+        $titulo = "Recuperar Contraseña - [JELOVIAR ONLINE]";
+        $headers = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+        $headers .= "From: JELOVIAR ONLINE <contacto@jeloviaronline.com>\r\n";
+        $bool = mail("$email", $titulo, $mensaje, $headers);
     }
+
 }

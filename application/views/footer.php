@@ -12,10 +12,9 @@
                                 <p><a href="<?php echo site_url(); ?>"> Jeloviar Online.</a> Únete a cientos de personas que están haciendo sus vidas diferentes. Aprovecha de todos los beneficios que tenemos para ti.<br /><br /> desarrollado por <a href="https://evolucionweb.tech">Evolucion Web</a>.</p>
                             </div>
                             <div class="socials_widget_wrapper socials_widget_wrapper__text"> 
-                                <a href='#' target='_blank'><i class='fab fa-facebook'></i></a>
-                                <a href='javascript:void(0);'><i class='fab fa-twitter'></i></a> 
-                                <a href='javascript:void(0);'><i class='fab fa-instagram'></i></a>
-                                <a href='javascript:void(0);'><i class='fab fa-youtube'></i></a>
+                                <a href='https://instagram.com/jeloviar.online' target='_blank'><i class='fab fa-instagram'></i></a>
+                                <a href='https://www.facebook.com/jeloviar.online/' target='_blank'><i class='fab fa-facebook'></i></a>
+                                <a href='https://www.youtube.com/jeloviaronline/?sub_confirmation=1' target='_blank'><i class='fab fa-youtube'></i></a>
                             </div>
 
                         </aside>

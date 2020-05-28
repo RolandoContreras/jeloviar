@@ -1,3 +1,36 @@
+<?php
+$url = explode("/", uri_string());
+
+if (isset($url[0])) {
+    $nav = $url[0];
+} else {
+    $nav = "";
+}
+
+$inicio_syle = "";
+$cursos_syle = "";
+$iniciar_sesion_syle = "";
+$registro_syle = "";
+$contacto_syle = "";
+switch ($nav) {
+    case "cursos":
+        $cursos_syle = "active_nav";
+        break;
+    case "iniciar-sesion":
+        $iniciar_sesion_syle = "active_nav";
+        break;
+    case "registro":
+        $registro_syle = "active_nav";
+        break;
+    case "contacto":
+        $contacto_syle = "active_nav";
+        break;
+    default:
+        $inicio_syle = "active_nav";
+        break;
+}
+?>
+
 <div id="header" class="transparent_header_off" data-color="">
     <div class="header_default header_2">
         <div class="header_top_bar header_2_top_bar">
@@ -6,7 +39,11 @@
                     <div class="col-md-12">
                         <div class="header_2_top_bar__inner">
                             <div class="top_bar_right_part">
+                                
                                 <div class="stm_menu_toggler" data-text="Menu"></div>
+                                <div class="">
+                                    <a href="<?php echo site_url() . 'backoffice/pay_order'; ?>" class="shopping_nav"><i class="fas fa-shopping-bag" aria-hidden="true"></i> </a>
+                                </div>
                                 <div class="header_main_menu_wrapper clearfix" style="margin-top:5px;">
                                     <div class="pull-right hidden-xs right_buttons">
                                         <div class="search-toggler-unit">
@@ -15,9 +52,9 @@
                                         <div class="pull-right">
                                             <div class="header_top_bar_socs">
                                                 <ul class="clearfix">
-                                                    <li><a href='#'><i class='fab fa-instagram'></i></a></li>
-                                                    <li><a href='#'><i class='fab fa-facebook'></i></a></li>
-                                                    <li><a href='#'><i class='fab fa-youtube'></i></a></li>
+                                                    <li><a href='https://instagram.com/jeloviar.online' target="_blank"><i class='fab fa-instagram'></i></a></li>
+                                                    <li><a href='https://www.facebook.com/jeloviar.online/' target="_blank"><i class='fab fa-facebook'></i></a></li>
+                                                    <li><a href='https://www.youtube.com/jeloviaronline/?sub_confirmation=1' target="_blank"><i class='fab fa-youtube'></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -25,29 +62,34 @@
                                     <div class="collapse navbar-collapse pull-right">
                                         <ul class="header-menu clearfix">
                                             <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
-                                                <a href="<?php echo site_url(); ?>" aria-current="page">Inicio</a>
+                                                <a href="<?php echo site_url(); ?>" class="<?php echo $inicio_syle; ?>">Inicio</a>
                                             </li>
                                             <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
-                                                <a href="<?php echo site_url() . 'cursos'; ?>">Cursos</a>
+                                                <a href="<?php echo site_url() . 'cursos'; ?>" class="<?php echo $cursos_syle; ?>">Cursos</a>
                                             </li>
                                             <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
-                                                <a href="<?php echo site_url() . 'iniciar-sesion'; ?>">Iniciar Sesión</a>
+                                                <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" class="<?php echo $iniciar_sesion_syle; ?>">Iniciar Sesión</a>
                                             </li>
                                             <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
-                                                <a href="<?php echo site_url() . 'registro'; ?>">Registro</a>
+                                                <a href="<?php echo site_url() . 'registro'; ?>" class="<?php echo $registro_syle; ?>">Registro</a>
                                             </li>
                                             <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
-                                                <a href="<?php echo site_url() . 'contacto'; ?>">Contacto</a>
+                                                <a href="<?php echo site_url() . 'contacto'; ?>" class="<?php echo $contacto_syle; ?>">Contacto</a>
                                             </li>
+                                            <?php if (!empty($this->cart->contents())) { ?>
+                                                <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
+                                                    <a href="<?php echo site_url() . 'backoffice/pay_order'; ?>" class="shopping_nav"><i class="fas fa-shopping-bag" aria-hidden="true"></i> Pagar</a>
+                                                </li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="pull-right">
                                     <div class="header_top_bar_socs">
                                         <ul class="clearfix">
-                                            <li><a href='#'><i class='fab fa-instagram'></i></a></li>
-                                            <li><a href='#'><i class='fab fa-facebook'></i></a></li>
-                                            <li><a href='#'><i class='fab fa-youtube'></i></a></li>
+                                            <li><a href='https://instagram.com/jeloviar.online' target="_blank"><i class='fab fa-instagram'></i></a></li>
+                                            <li><a href='https://www.facebook.com/jeloviar.online/' target="_blank"><i class='fab fa-facebook'></i></a></li>
+                                            <li><a href='https://www.youtube.com/jeloviaronline/?sub_confirmation=1' target="_blank"><i class='fab fa-youtube'></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,12 +132,31 @@
                             </div>
                         </div>
                         <div class="right-unit">
-                            <a href="<?php echo site_url() . 'iniciar-sesion' ?>" class="btn btn-default" data-text="Iniciar Sesión"> <span>Iniciar Sesión</span> </a>
-                            <div class="stm_lms_wishlist_button">
-                                <a href="#" data-text="Favorites"> <i class="lnr lnr-bookmark "></i> </a>
-                            </div>
+                            <?php if (isset($_SESSION['customer'])) { ?>
+                                <div class="stm_lms_account_dropdown">
+                                    <div class="dropdown">
+                                        <div class="stm-lms-user_message_btn__counter"> 1 </div> 
+                                        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                            <i class="lnr lnr-user"></i> <span class="login_name">Hola, <?php echo corta_texto($_SESSION['customer']['name'], 4); ?></span> <span class="caret"></span> 
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li> 
+                                                <a href="<?php echo site_url() . 'backoffice'; ?>">Mi Cuenta</a>                      
+                                                <a href="<?php echo site_url() . 'salir'; ?>">Salir</a>                      
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="stm_lms_settings_button">
+                                    <a href="<?php echo site_url() . 'backoffice/' ?>#settings"><i class="lnr lnr-cog"></i></a>
+                                </div>
+                            <?php } else { ?>
+                                <a href="<?php echo site_url() . 'iniciar-sesion' ?>" class="btn btn-default" data-text="Iniciar Sesión"> <span>Iniciar Sesión</span> </a>
+                                <div class="stm_lms_wishlist_button">
+                                    <a href="#" data-text="Favorites"> <i class="lnr lnr-bookmark "></i> </a>
+                                </div>
+                            <?php } ?>
                         </div>
-                        <a href="<?php echo site_url() . 'iniciar-sesion'; ?>"><div class="stm_header_top_toggler mbc"><i class="lnr lnr-user"></i></div></a>
                     </div>
                 </div>
             </div>
@@ -113,9 +174,9 @@
                         <div class="pull-right">
                             <div class="header_top_bar_socs">
                                 <ul class="clearfix">
-                                    <li><a href='#'><i class='fab fa-instagram'></i></a></li>
-                                    <li><a href='https://www.facebook.com/U-linex-103662281176014/'><i class='fab fa-facebook'></i></a></li>
-                                    <li><a href='#'><i class='fab fa-youtube'></i></a></li>
+                                    <li><a href='https://instagram.com/jeloviar.online' target="_blank"><i class='fab fa-instagram'></i></a></li>
+                                    <li><a href='https://www.facebook.com/jeloviar.online/' target="_blank"><i class='fab fa-facebook'></i></a></li>
+                                    <li><a href='https://www.youtube.com/jeloviaronline/?sub_confirmation=1' target="_blank"><i class='fab fa-youtube'></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -123,19 +184,19 @@
                     <div class="collapse navbar-collapse pull-right">
                         <ul class="header-menu clearfix">
                             <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
-                                <a href="<?php echo site_url(); ?>" aria-current="page">Inicio</a>
+                                <a href="<?php echo site_url(); ?>" class="<?php echo $inicio_syle; ?>">Inicio</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
-                                <a href="<?php echo site_url() . 'cursos'; ?>">Cursos</a>
+                                <a href="<?php echo site_url() . 'cursos'; ?>" class="<?php echo $cursos_syle; ?>">Cursos</a>
                             </li>
                             <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
-                                <a href="<?php echo site_url() . 'iniciar-sesion'; ?>">Iniciar Sesión</a>
+                                <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" class="<?php echo $iniciar_sesion_syle; ?>">Iniciar Sesión</a>
                             </li>
                             <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
-                                <a href="<?php echo site_url() . 'registro'; ?>">Registro</a>
+                                <a href="<?php echo site_url() . 'registro'; ?>" class="<?php echo $registro_syle; ?>">Registro</a>
                             </li>
                             <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
-                                <a href="<?php echo site_url() . 'contacto'; ?>">Contacto</a>
+                                <a href="<?php echo site_url() . 'contacto'; ?>" class="<?php echo $contacto_syle; ?>">Contacto</a>
                             </li>
                         </ul>
                     </div>
