@@ -30,7 +30,6 @@ switch ($nav) {
         break;
 }
 ?>
-
 <div id="header" class="transparent_header_off" data-color="">
     <div class="header_default header_2">
         <div class="header_top_bar header_2_top_bar">
@@ -39,11 +38,7 @@ switch ($nav) {
                     <div class="col-md-12">
                         <div class="header_2_top_bar__inner">
                             <div class="top_bar_right_part">
-                                
                                 <div class="stm_menu_toggler" data-text="Menu"></div>
-                                <div class="">
-                                    <a href="<?php echo site_url() . 'backoffice/pay_order'; ?>" class="shopping_nav"><i class="fas fa-shopping-bag" aria-hidden="true"></i> </a>
-                                </div>
                                 <div class="header_main_menu_wrapper clearfix" style="margin-top:5px;">
                                     <div class="pull-right hidden-xs right_buttons">
                                         <div class="search-toggler-unit">
@@ -76,17 +71,17 @@ switch ($nav) {
                                             <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
                                                 <a href="<?php echo site_url() . 'contacto'; ?>" class="<?php echo $contacto_syle; ?>">Contacto</a>
                                             </li>
-                                            <?php if (!empty($this->cart->contents())) { ?>
-                                                <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
-                                                    <a href="<?php echo site_url() . 'backoffice/pay_order'; ?>" class="shopping_nav"><i class="fas fa-shopping-bag" aria-hidden="true"></i> Pagar</a>
-                                                </li>
-                                            <?php } ?>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="pull-right">
                                     <div class="header_top_bar_socs">
                                         <ul class="clearfix">
+                                            <?php if (!empty($this->cart->contents())) { ?>
+                                                <li>
+                                                    <a href="<?php echo site_url() . 'backoffice/pay_order'; ?>" class="shopping_nav"><i class="fas fa-shopping-bag" aria-hidden="true"></i></a>
+                                                </li>
+                                            <?php } ?>
                                             <li><a href='https://instagram.com/jeloviar.online' target="_blank"><i class='fab fa-instagram'></i></a></li>
                                             <li><a href='https://www.facebook.com/jeloviar.online/' target="_blank"><i class='fab fa-facebook'></i></a></li>
                                             <li><a href='https://www.youtube.com/jeloviaronline/?sub_confirmation=1' target="_blank"><i class='fab fa-youtube'></i></a></li>
@@ -198,6 +193,8 @@ switch ($nav) {
                             <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
                                 <a href="<?php echo site_url() . 'contacto'; ?>" class="<?php echo $contacto_syle; ?>">Contacto</a>
                             </li>
+                            
+                            
                         </ul>
                     </div>
                 </div>
