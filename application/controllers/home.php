@@ -7,6 +7,7 @@ class Home extends CI_Controller {
             $this->load->model("category_model","obj_category");
             $this->load->model("courses_model","obj_courses");
             $this->load->model("videos_model","obj_videos");
+            $this->load->model("boletin_model","obj_boletin");
     }   
         
 	/**

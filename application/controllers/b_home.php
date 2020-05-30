@@ -317,7 +317,6 @@ class B_home extends CI_Controller {
             //GET CUSTOMER_ID
             $price = $this->input->post('price');
             $course_id = $this->input->post('course_id');
-            $price_pen = $this->input->post('price_pen');
             $quantity = 1;
             $name = $this->input->post('name');
             $name_cart = convert_slug_cart($name);
@@ -330,7 +329,6 @@ class B_home extends CI_Controller {
                     'price' => $price,
                     'name' => "$name_cart",
                     'img' => "$img",
-                    'price_pen' => $price_pen,
                 );
                 $cart_id = $this->cart->insert($data);
                 if ($cart_id != "") {

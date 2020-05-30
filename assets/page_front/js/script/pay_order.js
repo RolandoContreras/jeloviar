@@ -66,7 +66,7 @@ function add_cart(course_id, price, name) {
         }
     });
 }
-function add_cart_home(course_id, price, name, img , price_pen) {
+function add_cart_home(course_id, price, name, img) {
     var url = site + "backoffice/pay_order";
     $.ajax({
         type: "post",
@@ -75,8 +75,7 @@ function add_cart_home(course_id, price, name, img , price_pen) {
         data: {course_id: course_id,
             price: price,
             name: name,
-            img: img,
-            price_pen:price_pen},
+            img: img},
         success: function (data) {
             if (data.status == "true") {
                 Swal.fire({

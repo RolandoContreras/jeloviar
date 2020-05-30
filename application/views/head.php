@@ -5,7 +5,6 @@
     <meta name="googlebot" content="index, follow" />
     <link media="all" href="<?php echo site_url().'assets/page_front/css/autoptimize_6f56.css';?>" rel="stylesheet" />
     <link media="screen" href="<?php echo site_url().'assets/page_front/css/autoptimize_11.css';?>" rel="stylesheet" />
-    <link media="all" href="<?php echo site_url().'assets/page_front/css/autoptimize_be.css';?>" rel="stylesheet" />
     <link rel='stylesheet' href='<?php echo site_url().'assets/page_front/css/autoptimize_single.css?ver=75';?>' type='text/css' media='all' />
     <link media="all" href="<?php echo site_url().'assets/page_front/css/autoptimize_b008f.css';?>" rel="stylesheet" />
     <link media="all" href="<?php echo site_url().'assets/page_front/css/my_style.css';?>" rel="stylesheet" />

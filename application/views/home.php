@@ -184,75 +184,6 @@
                             </div>
                         </div>
                         <div class="vc_row-full-width vc_clearfix"></div>
-                        <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1531998548740 vc_row-has-fill" style="background-position: 50% 100% !important; position: relative; left: -351.5px; box-sizing: border-box; width: 1903px; padding-left: 351.5px; padding-right: 351.5px;">
-                            <div class="wpb_column vc_column_container vc_col-sm-2">
-                                <div class="vc_column-inner vc_custom_1534239815041">
-                                    <div class="wpb_wrapper"></div>
-                                </div>
-                            </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-8">
-                                <div class="vc_column-inner">
-                                    <div class="wpb_wrapper">
-                                        <div class="a3b8602d12208927a4a9a27379b1014ff vc_empty_space" style="height: 62px"> <span class="vc_empty_space_inner"></span></div>
-                                        <div class="vc_custom_heading">
-                                            <h2 style="font-size: 50px;line-height: 50px;text-align: center">Estamos orgulloso</h2>
-                                        </div>
-                                        <div class="vc_custom_heading fwl">
-                                            <h4 style="font-size: 18px;line-height: 28px;text-align: center">Los cursos son impartidos por instructores altamente educados y calificados que poseen títulos profesionales y maestrías.</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-2">
-                                <div class="vc_column-inner vc_custom_1534239801946">
-                                    <div class="wpb_wrapper"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="vc_row-full-width vc_clearfix"></div>
-                        <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1534239338510 a9ff1d1a9908abebc8fc1ee6b5f2d9096 vc_row-has-fill"
-                             style="background-position: 50% 100% !important; position: relative; left: -351.5px; box-sizing: border-box; width: 1903px; padding-left: 351.5px; padding-right: 351.5px;">
-                            <div class="wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner">
-                                    <div class="wpb_wrapper">
-                                        <div class="vc_row wpb_row vc_inner vc_row-fluid">
-                                            <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-                                                <div class="vc_column-inner">
-                                                    <div class="wpb_wrapper">
-                                                        <div class="stats_counter with_border_right text-center" style="color:#273044" data-id="counter_module__5e9779c42e2f984b61a845f0de5702c3" data-value="200" data-duration="2.5">
-                                                            <div class="h1" id="counter_module__5e9779c42e2f984b61a845f0de5702c3" style="color:#273044;font-size: 70px; line-height: 70px; margin-bottom: 20px;">200</div>
-                                                            <div class="stats_counter_title h5" style="color:#273044;font-size: 20px; line-height: 20px"> Estudiantes</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-                                                <div class="vc_column-inner">
-                                                    <div class="wpb_wrapper">
-                                                        <div class="stats_counter with_border_right text-center" style="color:#273044" data-id="counter_module__0f3e8d0ecdf201ac2e8336727581db72" data-value="10" data-duration="2.5"> 
-                                                            <div class="h1" id="counter_module__0f3e8d0ecdf201ac2e8336727581db72" style="color:#273044;font-size: 70px; line-height: 70px; margin-bottom: 20px;">10</div>
-                                                            <div class="stats_counter_title h5" style="color:#273044;font-size: 20px; line-height: 20px">Cursos</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-4 vc_col-xs-12">
-                                                <div class="vc_column-inner">
-                                                    <div class="wpb_wrapper">
-                                                        <div class="stats_counter with_border_right text-center" style="color:#273044" data-id="counter_module__f9e0d4866502e66e96fc1543bd71128d" data-value="1000" data-duration="2.5">
-                                                            <div class="h1" id="counter_module__f9e0d4866502e66e96fc1543bd71128d" style="color:#273044;font-size: 70px; line-height: 70px; margin-bottom: 20px;">1000</div>
-                                                            <div class="stats_counter_title h5" style="color:#273044;font-size: 20px; line-height: 20px">Horas de Vídeo</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="a9ff892a4b93a9ccd2fe95c188511a8eb vc_empty_space" style="height: 100px"> <span class="vc_empty_space_inner"></span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="vc_row-full-width vc_clearfix"></div>
                         <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid primary_bg_color vc_custom_1532328330193" style="position: relative; left: -351.5px; box-sizing: border-box; width: 1903px; padding-left: 351.5px; padding-right: 351.5px;">
                             <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-7 vc_col-md-7">
                                 <div class="vc_column-inner">
@@ -275,13 +206,12 @@
                                         <div class="stm_subscribe aed8f1be467e74ab7798b72bc1c0ec271">
                                             <div class="widget widget_mailchimp">
                                                 <h5 class="stm_subscribe_title" style="color: #ffffff;">Ingrese su E-mail</h5>
-                                                <form action="#" class="stm_subscribe_1587856685">
+                                                <form action="javascript:void(0);" class="stm_subscribe_1587856685" onsubmit="boletin();">
                                                     <div class="stm_mailchimp_unit">
                                                         <div class="form-group">
                                                             <input type="email" name="email" class="form-control stm_subscribe_email" placeholder="Ingrese su E-mail" required="">
                                                         </div>
-                                                        <button
-                                                            class="button"><span class="h5">Suscribirse</span></button>
+                                                        <button type="submit" class="button"><span class="h5">Suscribirse</span></button>
                                                         <div class="stm_subscribe_preloader">Please wait...</div>
                                                     </div>
                                                 </form>
