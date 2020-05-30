@@ -12,7 +12,7 @@
                                 <div class="stm_lms_user_side">
                                     <div class="stm-lms-user-avatar-edit "> 
                                         <div class=""> 
-                                            <img class="img-radius" alt='avatar' src='https://u-linex.com/static/backoffice/images/profile/elizabeth.jpg' class='avatar avatar-215 photo' height='215' width='215'/> 
+                                            <img class="img-radius" alt='avatar' src='https://u-linex.com/static/backoffice/images/avatar.png' class='avatar avatar-215 photo' height='215' width='215'/> 
                                         </div>
                                     </div>
                                     <h3 class="stm_lms_update_field__first_name">Rolando Irvyng</h3>
@@ -68,5 +68,6 @@
         <script type='text/javascript'>
             var stm_lms_edit_account_info = {"id": "", "avatar": "", "avatar_url": "", "email": "", "url": "", "meta": {}}
         </script>
+        
     </body>
 </html>

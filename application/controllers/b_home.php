@@ -11,6 +11,7 @@ class B_home extends CI_Controller {
         $this->load->model("invoices_model", "obj_invoices");
         $this->load->model("modules_model", "obj_modules");
         $this->load->model("customer_courses_model", "obj_customer_courses");
+        $this->load->library("culqi");
     }
 
     public function index() {
@@ -316,6 +317,7 @@ class B_home extends CI_Controller {
             //GET CUSTOMER_ID
             $price = $this->input->post('price');
             $course_id = $this->input->post('course_id');
+            $price_pen = $this->input->post('price_pen');
             $quantity = 1;
             $name = $this->input->post('name');
             $name_cart = convert_slug_cart($name);
@@ -327,7 +329,8 @@ class B_home extends CI_Controller {
                     'qty' => $quantity,
                     'price' => $price,
                     'name' => "$name_cart",
-                    'img' => "$img"
+                    'img' => "$img",
+                    'price_pen' => $price_pen,
                 );
                 $cart_id = $this->cart->insert($data);
                 if ($cart_id != "") {
@@ -362,18 +365,8 @@ class B_home extends CI_Controller {
         try {
             //GET SESION ACTUALY
             $this->get_session();
-            //UPDATED SET TIME ZONE
-            date_default_timezone_set('America/Lima');
             //get customer
             $customer_id = $_SESSION['customer']['customer_id'];
-            //SELECT DATA CUSTOMER
-            $params_customer = array(
-                "select" => "name",
-                "where" => "customer_id = $customer_id",
-            );
-            //GET DATA COMMENTS
-            $obj_customer = $this->obj_customer->get_search_row($params_customer);
-
             $price_cart = $this->cart->format_number($this->cart->total());
             $price = $this->input->post('price');
             $token = $this->input->post('token');
@@ -381,14 +374,13 @@ class B_home extends CI_Controller {
             //obtener día de hoy
             $today = date("Y-m-d");
             //make charged
-            $charge = $this->culqi->charge($token, $price, $email, $obj_customer->name);
+            $charge = $this->culqi->charge($token, $price, $email);
 
             $price_cart = explode(".", $price_cart);
             $price = $price_cart[0];
             $price = quitar_coma_number($price);
             //INSERT INVOICE
 
-            $option = "";
             foreach ($this->cart->contents() as $items) {
                 //CREATE INVOICE
                 $data_invoice = array(
@@ -402,31 +394,21 @@ class B_home extends CI_Controller {
                 );
                 $invoice_id = $this->obj_invoices->insert($data_invoice);
                 $course_id = $items['id'];
-                $params = array(
-                    "select" => "duration",
-                    "where" => "course_id = $course_id",
-                );
-                //GET DATA COMMENTS
-                $obj_courses = $this->obj_courses->get_search_row($params);
-                //CREATE CUSTOMER COURSE
-                $duration = $obj_courses->duration == null ? 0 : $obj_courses->duration;
                 //sumar el tiempo de duración
-                $today_curso = date("Y-m-d", strtotime($today . "+ $duration days"));
                 $data = array(
                     'customer_id' => $customer_id,
                     'course_id' => $items['id'],
-                    'date_start' => date("Y-m-d H:i:s"),
-                    'duration_time' => $today_curso,
+                    'date_start' => date("Y-m-d H:i:s")
                 );
                 $this->obj_customer_courses->insert($data);
             }
             //DESTROY CART
             $this->cart->destroy();
             // Respuesta
-            $data['status'] = "true";
+            $data['status'] = true;
             echo json_encode($charge);
         } catch (Exception $e) {
-            $data['status'] = "false";
+            $data['status'] = false;
             echo json_encode($e->getMessage());
         }
     }

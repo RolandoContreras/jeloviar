@@ -112,7 +112,7 @@
                             <div class="col-md-3">
                                 <div class="stm-lms-course__sidebar">
                                     <div class="stm-lms-buy-buttons stm-lms-buy-buttons-mixed stm-lms-buy-buttons-mixed-pro sssss dssssssssss">
-                                        <a onclick="add_cart_home('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>', '<?php echo $obj_courses->img; ?>');" class="btn btn-default start-course">
+                                        <a onclick="add_cart_home('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>', '<?php echo $obj_courses->img; ?>', '<?php echo $obj_courses->price_pen; ?>');" class="btn btn-default start-course">
                                             <span><i class="fas fa-shopping-bag"></i> Agregar a Cesta</span> 
                                         </a>
                                     </div>

@@ -1,12 +1,12 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 class Culqi {
-    public function charge($token,$price,$email,$name){
+    public function charge($token,$price,$email){
         require 'Requests/library/Requests.php';
         Requests::register_autoloader();
         require 'culqi-php/lib/culqi.php';
         
         
-        $SECRET_KEY = "sk_test_a97f34f9b293a02a";
+        $SECRET_KEY = "sk_test_2755b0643ba7ee33";
         $culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
         
         $charge = $culqi->Charges->create(
@@ -17,10 +17,6 @@ class Culqi {
                   "description" => "Venta de Producto y/o Servicios",
                   "email" => "$email",
                   "installments" => 0,
-                  "antifraud_details" => array(
-                      "country_code" => "PE",
-                      "first_name" => "$name",
-                  ),
                   "source_id" => "$token"
                 )
             );

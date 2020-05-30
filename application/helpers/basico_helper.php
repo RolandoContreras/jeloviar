@@ -30,6 +30,17 @@ function encrypt($cadena){
     return($encrypted);
 }
 
+function tipo_cambio($qty){
+    
+     $qty = quitar_punto_number($qty);
+     $json = file_get_contents("https://api.cambio.today/v1/quotes/EUR/PEN/json?quantity=$qty&key=4462|i4j*gX3BMs_iJVoOtWHhs8AFixj*1VEd");
+     $str = json_decode($json);
+     $result = $str->result;
+     $result = (ceil($result->amount));
+     return $result;
+
+}
+
 function eliminar_ultimo_caracter($string){    
     $new_value = substr($string, 0, -1);    
     return $new_value;
