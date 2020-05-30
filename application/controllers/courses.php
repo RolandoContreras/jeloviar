@@ -219,7 +219,6 @@ class Courses extends CI_Controller {
                                         courses.img,
                                         courses.price,
                                         courses.price_del,
-                                        courses.price_pen,
                                         courses.time,
                                         courses.date,
                                         (SELECT count(*) FROM (customer_courses) WHERE course_id =  $course_id) as total_enrolados,

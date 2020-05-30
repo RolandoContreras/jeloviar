@@ -115,7 +115,7 @@
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
                                                     <i class="fa fa-wallet text-c-green f-30 m-r-10"></i>
-                                                    s/.<?php echo!empty($obj_invoices->total_semana) ? $obj_invoices->total_semana : "0.00"; ?>
+                                                    &euro;<?php echo!empty($obj_invoices->total_semana) ? $obj_invoices->total_semana : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>
@@ -134,7 +134,7 @@
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
                                                     <i class="fa fa-wallet text-c-green f-30 m-r-10"></i>
-                                                    s/.<?php echo!empty($obj_invoices->total_year) ? $obj_invoices->total_year : "0"; ?>
+                                                    &euro;<?php echo!empty($obj_invoices->total_year) ? $obj_invoices->total_year : "0"; ?>
                                                 </h3>
                                             </div>
                                         </div>
@@ -153,7 +153,7 @@
                                             <div class="col-9">
                                                 <h3 class="f-w-300 d-flex align-items-center m-b-0">
                                                     <i class="fa fa-wallet text-c-green f-30 m-r-10"></i>
-                                                    s/.<?php echo!empty($obj_invoices->total_mes) ? $obj_invoices->total_mes : "0.00"; ?>
+                                                    &euro;<?php echo!empty($obj_invoices->total_mes) ? $obj_invoices->total_mes : "0.00"; ?>
                                                 </h3>
                                             </div>
                                         </div>
