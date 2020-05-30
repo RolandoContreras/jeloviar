@@ -27,17 +27,6 @@
                                 <div class="courses_filters__title">
                                     <h1>Cursos</h1>
                                 </div>
-                                <div class="courses_filters__activities">
-                                    <div class="stm_lms_courses_grid__sort"> 
-                                        <span class="sort_label heading_font">Ordenar por:</span> 
-                                        <select class="no-search">
-                                            <option value="date_high">Fecha (Lo más nuevo)</option>
-                                            <option value="date_low">Fecha (Lo mas antiguo)</option>
-                                            <option value="price_high">Precio alto</option>
-                                            <option value="price_low">Precio bajo</option>
-                                        </select>
-                                    </div>
-                                </div>
                             </div>
                             <div class="stm_lms_courses stm_lms_courses__archive">
                                 <div class="stm_lms_courses__grid stm_lms_courses__grid_4 stm_lms_courses__grid_center">
@@ -78,7 +67,7 @@
                                                             <div class="stm_lms_courses__single--info_author__avatar"> 
                                                                 <img alt="profesor" src="<?php echo site_url() . 'assets/page_front/images/profesor.png'; ?>" class="avatar avatar-215 photo" width="215" height="215">
                                                             </div>
-                                                            <div class="stm_lms_courses__single--info_author__login">Instructor: U-Linex</div>
+                                                            <div class="stm_lms_courses__single--info_author__login">Instructor: Jesús Vilela</div>
                                                         </div>
                                                         <div class="stm_lms_courses__single--info_title">
                                                             <a href="<?php echo site_url() . "cursos/$value->category_slug/$value->slug"; ?>">
@@ -89,7 +78,7 @@
                                                             <?php echo corta_texto($value->description, 300); ?>
                                                         </div>
                                                         <div class="stm_lms_courses__single--info_meta">
-                                                            <div class="stm_lms_course__meta"> <i class="stmlms-cats"></i> 3 Lecturas</div>
+                                                            <!--<div class="stm_lms_course__meta"> <i class="stmlms-cats"></i> 3 Lecturas</div>-->
                                                             <div class="stm_lms_course__meta"> <i class="stmlms-lms-clocks"></i> 12 Horas</div>
                                                         </div>
                                                         <div class="stm_lms_courses__single--info_preview"> 
@@ -114,7 +103,8 @@
                 </div>
             </div>
         </div>
-<?php $this->load->view("footer"); ?>
+        <?php $this->load->view("footer"); ?>
+        <script defer src="<?php echo site_url() . 'assets/page_front/js/script/cursos.js'; ?>"></script>
         <script defer src="<?php echo site_url() . 'assets/page_front/js/autoptimize_775c.js'; ?>"></script>
     </body>
 </html>

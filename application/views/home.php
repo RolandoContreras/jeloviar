@@ -88,31 +88,6 @@
                                 </div>
                             </div>
                         </div>
-<!--                        <div class="vc_row wpb_row vc_row-fluid">
-                            <div class="wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner">
-                                    <div class="wpb_wrapper">
-                                        <div class="a2c5ceba221e03c7fc582a1bda68d77b4 vc_empty_space" style="height: 77px"> <span class="vc_empty_space_inner"></span></div>
-                                        <div class="stm_lms_courses_categories style_1">
-                                            <?php foreach ($obj_category as $value) { ?>
-                                                <div class="stm_lms_courses_category stm_lms_courses_category__1 stm_lms_courses_category_default">
-                                                    <a href="<?php echo site_url() . "cursos/$value->slug" ?>" title="<?php echo $value->name; ?>" class="no_deco default">
-                                                        <div class="stm_lms_courses_category__image">
-                                                            <div class="stm_lms_lazy_image stm_lms_lazyloaded stm_lms_lazy_image__lazyloaded">
-                                                                <img data-srcset="<?php echo site_url() . "assets/cms/img/categorias/$value->img"; ?> 2x" class=" lazyloaded" data-src="<?php echo site_url() . "assets/cms/img/categorias/$value->img"; ?>" alt="cat_2" title="cat_2" srcset="<?php echo site_url() . "assets/cms/img/categorias/$value->img"; ?> 2x" src="<?php echo site_url() . "assets/cms/img/categorias/$value->img"; ?>" width="370" height="155">
-                                                            </div>
-                                                        </div>
-                                                        <div class="stm_lms_courses_category__info">
-                                                            <h4><?php echo $value->name; ?></h4> <span>8 Courses</span></div>
-                                                    </a>
-                                                </div>
-                                            <?php } ?>
-                                        </div>
-                                        <div class="a77ebfd36b5a39b7e350e246ec22bf799 vc_empty_space" style="height: 50px"> <span class="vc_empty_space_inner"></span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
                         <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1536053689227 aa5c78e661a071cc8ef558ce0a5313b4c vc_row-has-fill"
                              style="background-position: 10% 20% !important; position: relative; left: -351.5px; box-sizing: border-box; width: 1903px; padding-left: 351.5px; padding-right: 351.5px;">
                             <div class="wpb_column vc_column_container vc_col-sm-8 vc_col-lg-6 vc_col-md-6 vc_col-xs-12">
@@ -168,7 +143,7 @@
                                                                 <div class="stm_lms_courses__single--meta">
                                                                     <div class="stm_lms_courses__hours"> <i class="stmlms-lms-clocks"></i> <span>6 hours</span></div>
                                                                     <div class="stm_lms_courses__single--price heading_font"> 
-                                                                        <span><?php echo $value->price_del;?></span><strong><?php echo $value->price;?></strong>
+                                                                        <span>&euro;<?php echo $value->price_del;?></span><strong>&euro;<?php echo $value->price;?></strong>
                                                                     </div>
                                                                 </div>
                                                             </div>

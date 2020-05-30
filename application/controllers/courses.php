@@ -25,8 +25,12 @@ class Courses extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function index($search_type = null)
 	{
+            
+//            echo "Hola";
+//            die();
+            
             //get categorías
             $data['obj_category'] = $this->nav_category();
             //obtener todos los cursos top

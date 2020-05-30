@@ -55,8 +55,18 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="description">
-                                        <div class="stm_lms_course__image"> 
-                                            <img width="870" height="440" src="<?php echo site_url() . "assets/cms/img/cursos/$obj_courses->img2"; ?>" class="attachment-img-870-440 size-img-870-440 wp-post-image" alt="<?php echo $obj_courses->name; ?>"/>
+                                        <div class="wpb_text_column wpb_content_element ">
+                                            <div class="wpb_wrapper">
+                                                <div style="padding-bottom: 56.25%;position: relative;">
+                                                    <?php
+                                                    foreach ($obj_videos as $value) {
+                                                        if ($value->type == 1) {
+                                                            echo $value->video;
+                                                        }
+                                                    }
+                                                    ?>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="stm_lms_course__content">
                                             <div class="vc_row wpb_row vc_row-fluid">
@@ -68,19 +78,7 @@
                                                                     <?php echo $obj_courses->description; ?>
                                                                 </div>
                                                             </div>
-                                                            <div class="wpb_text_column wpb_content_element ">
-                                                                <div class="wpb_wrapper">
-                                                                    <div style="padding-bottom: 56.25%;position: relative;">
-                                                                        <?php
-                                                                        foreach ($obj_videos as $value) {
-                                                                            if ($value->type == 1) {
-                                                                                echo $value->video;
-                                                                            }
-                                                                        }
-                                                                        ?>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -93,7 +91,8 @@
                                                 <div class="stm-curriculum-section">
                                                     <h3>Sección <?php echo $key = $key + 1; ?> : <?php echo $value->name ?></h3>
                                                 </div>
-                                                <?php foreach ($obj_videos as $key_2 => $value_video) {
+                                                <?php
+                                                foreach ($obj_videos as $key_2 => $value_video) {
                                                     if ($value->module_id == $value_video->module_id) {
                                                         ?>
                                                         <div class="stm-curriculum-item ">
@@ -130,7 +129,7 @@
                                     <div class="stm-lms-dynamic_sidebar">
                                         <div id="stm_lms_popular_courses-3" class="widget widget_stm_lms_popular_courses">
                                             <ul class="stm_product_list_widget widget_woo_stm_style_2">
-                                                <?php foreach ($obj_courses_related as $value) { ?>
+<?php foreach ($obj_courses_related as $value) { ?>
                                                     <li>
                                                         <a href="<?php echo site_url() . "cursos/$value->category_slug/$value->slug"; ?>"> 
                                                             <img width="75" height="75" src="<?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?>" class="attachment-img-75-75 size-img-75-75 wp-post-image" alt="<?php echo $value->name; ?>" srcset="<?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 75w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 150w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 129w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 122w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 69w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 50w" sizes="(max-width: 75px) 100vw, 75px" />
@@ -143,7 +142,7 @@
                                                             </div>
                                                         </a>
                                                     </li>
-                                                <?php } ?>
+<?php } ?>
                                             </ul>
                                         </div>
                                         <div class="multiseparator"></div>
@@ -155,7 +154,7 @@
                 </div>
             </div>
         </div>
-        <?php $this->load->view("footer"); ?>
+<?php $this->load->view("footer"); ?>
         <script src="<?php echo site_url() . 'assets/page_front/js/script/pay_order.js'; ?>"></script>
         <script defer src="<?php echo site_url() . 'assets/page_front/js/autoptimize_54ab.js'; ?>"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
