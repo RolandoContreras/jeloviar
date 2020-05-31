@@ -9,11 +9,11 @@
                         <div class="row align-items-center">
                             <div class="col-md-12">
                                 <div class="page-header-title">
-                                    <h5 class="m-b-10">Mantenimientos de Categorías</h5>
+                                    <h5 class="m-b-10">Mantenimientos de Boletin</h5>
                                 </div>
                                 <ul class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="<?php echo site_url() . 'dashboard/'; ?>">Panel</a></li>
-                                    <li class="breadcrumb-item"><a>Categorías</a></li>
+                                    <li class="breadcrumb-item"><a>Boletin</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -25,8 +25,7 @@
                             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Listado de Categorías</h5>
-                                        <button class="btn btn-secondary" type="button" onclick="new_category();"><span><span class="pcoded-micon"><i data-feather="plus"></i></span> Nuevo</span></button>
+                                        <h5>Listado de Boletin</h5>
                                     </div>
                                     <div class="card-block">
                                         <div class="table-responsive">
@@ -37,8 +36,7 @@
                                                             <thead>
                                                                 <tr role="row">
                                                                     <th class="sorting_asc" tabindex="0" rowspan="1" colspan="1" style="width: 150px;">ID</th>
-                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Nombre</th>
-                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Mostrar en BackOffice</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Email</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Fecha de Creación</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Estado</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Acciones</th>
@@ -46,23 +44,11 @@
                                                             </thead>
                                                             <tbody>
 
-                                                                <?php foreach ($obj_category as $value): ?>
+                                                                <?php foreach ($obj_boletin as $value): ?>
                                                                     <tr>
-                                                                        <th><?php echo $value->category_id; ?></th>
+                                                                        <th><?php echo $value->boletin_id; ?></th>
                                                                         <td>
-                                                                            <span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->name;?></span>
-                                                                        </td>
-                                                                        <td>
-                                                                            <?php
-                                                                            if ($value->backoffice == 0) {
-                                                                                $valor = "No Mostrar";
-                                                                                $stilo = "badge-warning";
-                                                                            } else {
-                                                                                $valor = "Si Mostrar";
-                                                                                $stilo = "badge-secondary";
-                                                                            }
-                                                                            ?>
-                                                                            <span class="badge badge-pill <?php echo $stilo ?>" style="font-size: 100%;"><?php echo $valor; ?></span>
+                                                                            <span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->email;?></span>
                                                                         </td>
                                                                         <td><?php echo formato_fecha($value->date); ?></td>
                                                                         <td>
@@ -80,8 +66,8 @@
                                                                         <td>
                                                                             <div class="operation">
                                                                                 <div class="btn-group">
-                                                                                    <button class="btn btn-secondary" type="button" onclick="edit_category('<?php echo $value->category_id; ?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
-                                                                                    <button class="btn btn-secondary" type="button" onclick="delete_category('<?php echo $value->category_id; ?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
+                                                                                    <button class="btn btn-secondary" type="button" onclick="edit_boletin('<?php echo $value->boletin_id; ?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
+                                                                                    <button class="btn btn-secondary" type="button" onclick="delete_boletin('<?php echo $value->boletin_id; ?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
@@ -92,7 +78,6 @@
                                                                 <tr>
                                                                     <th rowspan="1" colspan="1">ID</th>
                                                                     <th rowspan="1" colspan="1">Nombre</th>
-                                                                    <th rowspan="1" colspan="1">Mostrar en BackOffice</th>
                                                                     <th rowspan="1" colspan="1">Fecha de Creación</th>
                                                                     <th rowspan="1" colspan="1">Estado</th>
                                                                     <th rowspan="1" colspan="1">Acciones</th>
@@ -113,4 +98,4 @@
         </div>
     </div>
 </section>
-<script src="<?php echo site_url(); ?>assets/cms/js/categoria.js"></script>
+<script src="<?php echo site_url(); ?>assets/cms/js/boletin.js"></script>

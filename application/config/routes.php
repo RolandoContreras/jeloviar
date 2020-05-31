@@ -101,6 +101,12 @@ $route['backoffice/invoice/upload'] = "b_finance/upload";
 $route['dashboard'] = "dashboard";
 $route['dashboard/panel'] = "panel";
 
+$route['dashboard/boletin'] = "d_boletin";
+$route['dashboard/boletin/load/([0-9]+)'] = "d_boletin/load/$1";
+$route['dashboard/boletin/validate'] = "d_boletin/validate";
+$route['dashboard/boletin/delete'] = "d_boletin/delete";
+
+
 $route['dashboard/categorias'] = "d_category";
 $route['dashboard/categorias/load'] = "d_category/load";
 $route['dashboard/categorias/load/([0-9]+)'] = "d_category/load/$1";
