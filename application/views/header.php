@@ -30,7 +30,7 @@ switch ($nav) {
         break;
 }
 ?>
-<div id="header" class="transparent_header_off" data-color="">
+<div id="header" class="transparent_header_off">
     <div class="header_default header_2">
         <div class="header_top_bar header_2_top_bar">
             <div class="container">
@@ -56,19 +56,19 @@ switch ($nav) {
                                     </div>
                                     <div class="collapse navbar-collapse pull-right">
                                         <ul class="header-menu clearfix">
-                                            <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
+                                            <li class="menu-item">
                                                 <a href="<?php echo site_url(); ?>" class="<?php echo $inicio_syle; ?>">Inicio</a>
                                             </li>
-                                            <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
+                                            <li class="menu-item">
                                                 <a href="<?php echo site_url() . 'cursos'; ?>" class="<?php echo $cursos_syle; ?>">Cursos</a>
                                             </li>
-                                            <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
+                                            <li class="menu-item">
                                                 <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" class="<?php echo $iniciar_sesion_syle; ?>">Iniciar Sesión</a>
                                             </li>
-                                            <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
+                                            <li class="menu-item">
                                                 <a href="<?php echo site_url() . 'registro'; ?>" class="<?php echo $registro_syle; ?>">Registro</a>
                                             </li>
-                                            <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
+                                            <li class="menu-item">
                                                 <a href="<?php echo site_url() . 'contacto'; ?>" class="<?php echo $contacto_syle; ?>">Contacto</a>
                                             </li>
                                         </ul>
@@ -178,23 +178,21 @@ switch ($nav) {
                     </div>
                     <div class="collapse navbar-collapse pull-right">
                         <ul class="header-menu clearfix">
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
+                            <li class="menu-item">
                                 <a href="<?php echo site_url(); ?>" class="<?php echo $inicio_syle; ?>">Inicio</a>
                             </li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-5">
+                            <li class="menu-item">
                                 <a href="<?php echo site_url() . 'cursos'; ?>" class="<?php echo $cursos_syle; ?>">Cursos</a>
                             </li>
-                            <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
+                            <li class="menu-item">
                                 <a href="<?php echo site_url() . 'iniciar-sesion'; ?>" class="<?php echo $iniciar_sesion_syle; ?>">Iniciar Sesión</a>
                             </li>
-                            <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
+                            <li class="menu-item">
                                 <a href="<?php echo site_url() . 'registro'; ?>" class="<?php echo $registro_syle; ?>">Registro</a>
                             </li>
-                            <li class="stm_lms_badge_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-3363">
+                            <li class="menu-item">
                                 <a href="<?php echo site_url() . 'contacto'; ?>" class="<?php echo $contacto_syle; ?>">Contacto</a>
                             </li>
-                            
-                            
                         </ul>
                     </div>
                 </div>
