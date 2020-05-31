@@ -19,6 +19,11 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/wamp64/www/jeloviar/assets/page_front/css/my_style.css</file>
+            <file>file:/C:/wamp64/www/jeloviar/assets/page_front/css/autoptimize_da4b.css</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/views/head.php</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/views/home.php</file>
+        </group>
     </open-files>
 </project-private>

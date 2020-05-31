@@ -10,7 +10,7 @@
                 </div>
                 <div class="container">
                     <div class="post_type_exist clearfix">
-                        <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1534238310373 aed6bbdbcfb88221d9cb9b85256190b1e vc_row-has-fill row-has-animation" style="background-position: 95% 90% !important; position: relative; left: -351.5px; box-sizing: border-box; width: 1903px; padding-left: 351.5px; padding-right: 351.5px;">
+<!--                        <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1534238310373 aed6bbdbcfb88221d9cb9b85256190b1e vc_row-has-fill row-has-animation" style="background-position: 95% 90% !important; position: relative; left: -351.5px; box-sizing: border-box; width: 1903px; padding-left: 351.5px; padding-right: 351.5px;">
                             <div class="stm_lms_row_animation"> 
                                 <img src="<?php echo site_url().'assets/page_front/images/animation/base.png';?>">              
                                 <img class="book1" src="<?php echo site_url().'assets/page_front/images/animation/book1.png';?>">              
@@ -39,55 +39,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
+                        
+                        
+                        
+                        
+                        
                         <div class="vc_row-full-width vc_clearfix"></div>
-                        <div class="vc_row wpb_row vc_row-fluid">
-                            <div class="wpb_column vc_column_container vc_col-sm-4">
-                                <div class="vc_column-inner">
-                                    <div class="wpb_wrapper">
-                                        <div class="icon_box vc_custom_1535366761423 stm_icon_box_hover_top standart module__f3eac30ffcdce927d15c39838e8e910f clearfix">
-                                            <div class="icon_alignment_center">
-                                                <div class="icon"> <i class="stmlms-world"></i></div>
-                                                <div class="icon_text">
-                                                    <h4 style="color:#273044">Reconocido a nivel mundial</h4>
-                                                    <p>Las plataformas de educación virtual hoy en día son usadas por institutos y universidades de prestigios.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-4">
-                                <div class="vc_column-inner">
-                                    <div class="wpb_wrapper">
-                                        <div class="icon_box vc_custom_1535366769840 stm_icon_box_hover_top standart module__df9ceca0e8527971a2077ab928c0fe8f clearfix">
-                                            <div class="icon_alignment_center">
-                                                <div class="icon"> <i class="stmlms-screen"></i></div>
-                                                <div class="icon_text">
-                                                    <h4 style="color:#273044"> Aprendizaje desde tu casa</h4>
-                                                    <p>No necesitas salir de tu comodidad, tendrás acceso a todos tus cursos desde tu hogar todos los días del año.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-4">
-                                <div class="vc_column-inner">
-                                    <div class="wpb_wrapper">
-                                        <div class="icon_box vc_custom_1535366786219 stm_icon_box_hover_top standart module__8c3033ebf56b4b964392037df86f8ff0 clearfix">
-                                            <div class="icon_alignment_center">
-                                                <div class="icon"> <i class="stmlms-calendar"></i></div>
-                                                <div class="icon_text">
-                                                    <h4 style="color:#273044"> Sé un experto en pocos meses</h4>
-                                                    <p>La metodología usada garantiza un aprendizaje rápido. Los cursos se quedan grabados para seguir estudiándolos.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1536053689227 aa5c78e661a071cc8ef558ce0a5313b4c vc_row-has-fill"
                              style="background-position: 10% 20% !important; position: relative; left: -351.5px; box-sizing: border-box; width: 1903px; padding-left: 351.5px; padding-right: 351.5px;">
                             <div class="wpb_column vc_column_container vc_col-sm-8 vc_col-lg-6 vc_col-md-6 vc_col-xs-12">
@@ -95,7 +53,7 @@
                                     <div class="wpb_wrapper">
                                         <div class="a11cba70e4710584340f5e5e7c0bb7f30 vc_empty_space" style="height: 98px"> <span class="vc_empty_space_inner"></span></div>
                                         <div class="vc_custom_heading">
-                                            <h2 style="font-size: 50px;line-height: 60px;text-align: left">Aprendizaje ilimitado, más posibilidades.</h2>
+                                            <h2 style="font-size: 50px;line-height: 60px;text-align: left">Tu plataforma de Educación Online.</h2>
                                         </div>
                                         <div class="vc_custom_heading vc_custom_1535368101130">
                                             <h3 style="text-align: left">Los cursos en línea abren la oportunidad de aprender a cualquier persona, independientemente del horario muy ocupado que atender.</h3>
@@ -209,10 +167,10 @@
                                                 <form action="javascript:void(0);" class="stm_subscribe_1587856685" onsubmit="boletin();">
                                                     <div class="stm_mailchimp_unit">
                                                         <div class="form-group">
-                                                            <input type="email" name="email" class="form-control stm_subscribe_email" placeholder="Ingrese su E-mail" required="">
+                                                            <input type="email" name="email" id="email" class="form-control stm_subscribe_email" placeholder="Ingrese su E-mail" required="">
                                                         </div>
                                                         <button type="submit" class="button"><span class="h5">Suscribirse</span></button>
-                                                        <div class="stm_subscribe_preloader">Please wait...</div>
+                                                        <div class="stm_subscribe_preloader">Por favor espera...</div>
                                                     </div>
                                                 </form>
                                             </div>
@@ -228,6 +186,8 @@
             </div>
         </div>
         <?php $this->load->view("footer"); ?>
-    <script defer src="<?php echo site_url() . 'assets/page_front/js/autoptimize_278f.js'; ?>"></script>
+        <script defer src="<?php echo site_url() . 'assets/page_front/js/autoptimize_278f.js'; ?>"></script>
+        <script defer src="<?php echo site_url() . 'assets/page_front/js/script/home.js'; ?>"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>
