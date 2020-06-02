@@ -6,12 +6,14 @@ class Login extends CI_Controller {
      parent::__construct();
      $this->load->model('customer_model','obj_customer');
      $this->load->model("category_model","obj_category");
+     $this->load->model("textos_model", "obj_textos");
      $this->load->library('facebook'); 
     } 
 
     public function index(){
         //get category
         $data['obj_category'] = $this->nav_category();
+        $data['obj_textos'] = $this->textos();
         //send meta title
         $data['title'] = "Inicio de Sesión | Jeloviar Online";
         
@@ -96,6 +98,20 @@ class Login extends CI_Controller {
             exit(); 
     }
 
+    public function textos() {
+        $params = array(
+            "select" => "nosotros_footer,
+                         text_nosotros_footer,
+                         titulo_contacto_footer,
+                         email_footer,
+                         phone_footer,
+                         address_footer",
+            "where" => "texto_id = 1",
+        );
+        //GET DATA EVENTOS
+        return $obj_textos = $this->obj_textos->get_search_row($params);
+    }
+    
     public function nav_category(){
             $params_category = array(
                         "select" =>"category_id,

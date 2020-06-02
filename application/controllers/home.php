@@ -81,6 +81,7 @@ class Home extends CI_Controller {
     public function term_condition() {
         //get category
         $data['obj_category'] = $this->nav_category();
+        $data['obj_textos'] = $this->textos_home();
         $data['title'] = "Terminos y Condiciones | Jeloviar Online";
         $this->load->view('terminos', $data);
     }
@@ -88,6 +89,7 @@ class Home extends CI_Controller {
     public function policy() {
         //get category
         $data['obj_category'] = $this->nav_category();
+        $data['obj_textos'] = $this->textos_home();
         $data['title'] = "Política de privacidad | Jeloviar Online";
         $this->load->view('policy', $data);
     }
@@ -95,6 +97,7 @@ class Home extends CI_Controller {
     public function cookies() {
         //get category
         $data['obj_category'] = $this->nav_category();
+        $data['obj_textos'] = $this->textos_home();
         $data['title'] = "Política de cookies | Jeloviar Online";
         $this->load->view('cookies', $data);
     }

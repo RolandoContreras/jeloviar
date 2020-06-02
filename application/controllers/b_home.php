@@ -11,12 +11,14 @@ class B_home extends CI_Controller {
         $this->load->model("invoices_model", "obj_invoices");
         $this->load->model("modules_model", "obj_modules");
         $this->load->model("customer_courses_model", "obj_customer_courses");
+        $this->load->model("textos_model", "obj_textos");
         $this->load->library("culqi");
     }
 
     public function index() {
         //GET SESION ACTUALY
         $this->get_session();
+        $obj_textos = $this->textos();
         //get customer id
         $customer_id = $_SESSION['customer']['customer_id'];
         //GET NAV CURSOS
@@ -92,7 +94,7 @@ class B_home extends CI_Controller {
         /// DATA
         $obj_courses = $this->obj_courses->search_data($params_course, $config["per_page"], $this->uri->segment(2));
         //GET DATA CURSOS COMPRADOS
-
+        $this->tmp_backoffice->set("obj_textos", $obj_textos);
         $this->tmp_backoffice->set("obj_orders", $obj_orders);
         $this->tmp_backoffice->set("obj_profile", $obj_profile);
         $this->tmp_backoffice->set("category_name", $category_name);
@@ -559,6 +561,20 @@ class B_home extends CI_Controller {
             }
             echo json_encode($data);
         }
+    }
+    
+    public function textos() {
+        $params = array(
+            "select" => "nosotros_footer,
+                         text_nosotros_footer,
+                         titulo_contacto_footer,
+                         email_footer,
+                         phone_footer,
+                         address_footer",
+            "where" => "texto_id = 1",
+        );
+        //GET DATA EVENTOS
+        return $obj_textos = $this->obj_textos->get_search_row($params);
     }
 
     public function get_session() {
