@@ -98,6 +98,9 @@ $route['backoffice/history'] = "b_finance";
 $route['backoffice/invoice'] = "b_finance/invoice";
 $route['backoffice/invoice/upload'] = "b_finance/upload";
 
+$route['dashboard/textos/inicio'] = "d_textos";
+$route['dashboard/textos/inicio/validate'] = "d_textos/validate";
+
 $route['dashboard'] = "dashboard";
 $route['dashboard/panel'] = "panel";
 

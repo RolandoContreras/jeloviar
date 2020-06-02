@@ -6,10 +6,10 @@
                     <div class="widgets cols_4 clearfix">
                         <aside id="stm_text-2" class="widget stm_wp_widget_text">
                             <div class="widget_title">
-                                <h3>Nosotros</h3>
+                                <h3><?php echo $obj_textos->nosotros_footer;?></h3>
                             </div>
                             <div class="textwidget">
-                                <p><a href="<?php echo site_url(); ?>"> Jeloviar Online.</a> Únete a cientos de personas que están haciendo sus vidas diferentes. Aprovecha de todos los beneficios que tenemos para ti.<br /><br /> desarrollado por <a href="https://evolucionweb.tech">Evolucion Web</a>.</p>
+                                <p><?php echo $obj_textos->text_nosotros_footer;?><br /><br /> desarrollado por <a href="https://evolucionweb.tech">Evolucion Web</a>.</p>
                             </div>
                             <div class="socials_widget_wrapper socials_widget_wrapper__text"> 
                                 <a href='https://instagram.com/jeloviar.online' target='_blank'><i class='fab fa-instagram'></i></a>
@@ -59,17 +59,17 @@
                         </aside>
                         <aside id="contacts-2" class="widget widget_contacts">
                             <div class="widget_title">
-                                <h3>Contrato</h3>
+                                <h3><?php echo $obj_textos->titulo_contacto_footer;?></h3>
                             </div>
                             <ul class="style_2">
                                 <li class="page_item page-item-664">
-                                    <a><span class="h6">contacto@jeloviaronline.com</span></a>
+                                    <a><span class="h6"><?php echo $obj_textos->email_footer;?></span></a>
                                 </li>
                                 <li class="page_item page-item-2 current_page_item">
-                                    <a><span class="h6">+ (51) 998 878 636</span></a>
+                                    <a><span class="h6"><?php echo $obj_textos->phone_footer;?></span></a>
                                 </li>
                                 <li class="page_item page-item-2 current_page_item">
-                                    <a><span class="h6">No #200 Joseob, Lima.</span></a>
+                                    <a><span class="h6"><?php echo $obj_textos->address_footer;?></span></a>
                                 </li>
                             </ul>
                         </aside>

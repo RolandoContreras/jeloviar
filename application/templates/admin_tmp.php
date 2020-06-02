@@ -51,10 +51,11 @@
                         } else {
                             $nav = "";
                         }
-                        $panel_syle = "";
-                        $activaciones_syle = "";
-                        $pagos_syle = "";
-                        $mantenimiento_syle = "";
+                        $panel_syle = null;
+                        $activaciones_syle = null;
+                        $pagos_syle = null;
+                        $mantenimiento_syle = null;
+                        $text_syle = null;
                         switch ($nav) {
                             case "panel":
                                 $panel_syle = "active";
@@ -64,6 +65,9 @@
                                 break;
                             case "activar_pagos":
                                 $pagos_syle = "active";
+                                break;
+                            case "textos":
+                                $activaciones_syle = "active";
                                 break;
                             default:
                                 $mantenimiento_syle = "active";
@@ -104,6 +108,20 @@
                                 </span>
                                 <span class="pcoded-mtext">Activaciones</span>
                             </a>
+                        </li>
+                        <li class="nav-item pcoded-menu-caption"><label>Textos Dinámicos</label></li>
+                        <li class="nav-item pcoded-hasmenu">
+                            <a href="#!" class="<?php echo $text_syle; ?>">
+                                <span class="pcoded-micon">
+                                    <i data-feather="align-justify"></i>
+                                </span>
+                                <span class="pcoded-mtext">Textos</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/textos/inicio"; ?>"><i class="icon-large icon-th"></i>Inicio</a></li>
+                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/biografia"; ?>"><i class="icon-large icon-th"></i>Biografia</a></li>
+                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/contacto"; ?>"><i class="icon-large icon-th"></i>Contacto</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>

@@ -1,6 +1,4 @@
-<?php
-
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
@@ -10,6 +8,7 @@ class Home extends CI_Controller {
         $this->load->model("courses_model", "obj_courses");
         $this->load->model("videos_model", "obj_videos");
         $this->load->model("boletin_model", "obj_boletin");
+        $this->load->model("textos_model", "obj_textos");
     }
 
     /**
@@ -30,7 +29,7 @@ class Home extends CI_Controller {
     public function index() {
         //get category
         $data['obj_category'] = $this->nav_category();
-
+        $data['obj_textos'] = $this->textos_home();
         //obtener todos los cursos DESC
         $params_course = array(
             "select" => "courses.course_id,
@@ -100,6 +99,15 @@ class Home extends CI_Controller {
         $this->load->view('cookies', $data);
     }
 
+    public function textos_home() {
+        $params = array(
+            "select" => "*",
+            "where" => "texto_id = 1",
+        );
+        //GET DATA EVENTOS
+        return $obj_textos = $this->obj_textos->get_search_row($params);
+    }
+    
     public function nav_category() {
         $params_category = array(
             "select" => "category_id,

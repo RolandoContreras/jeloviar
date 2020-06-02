@@ -15,12 +15,12 @@
                                     <div class="wpb_wrapper">
                                         <div class="space-98"></div>
                                         <div>
-                                            <h2 class="h2-title text-align-left">Tu plataforma de Educación Online.</h2>
+                                            <h2 class="h2-title text-align-left"><?php echo $obj_textos->titulo_home;?></h2>
                                         </div>
                                         <div class="padding-bottom-44">
-                                            <h3 class="text-align-left">Los cursos en línea abren la oportunidad de aprender a cualquier persona, independientemente del horario muy ocupado que atender.</h3>
+                                            <h3 class="text-align-left"><?php echo $obj_textos->description_home;?></h3>
                                         </div>
-                                        <a class="btn btn-default lg" href="<?php echo site_url() . 'contacto'; ?>" title="Contacto">Contactar</a>
+                                        <a class="btn btn-default lg" href="<?php echo site_url() . 'contacto'; ?>" title="Contacto"><?php echo $obj_textos->boton_home;?></a>
                                         <div class="space-98"></div>
                                     </div>
                                 </div>
@@ -32,7 +32,7 @@
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
                                         <div class="padding-bottom-44">
-                                            <h2 class="h2-title text-align-center">Nuestros Cursos</h2>
+                                            <h2 class="h2-title text-align-center"><?php echo $obj_textos->titulo_cursos;?></h2>
                                         </div>
                                         <div class="stm_lms_recent_courses">
                                             <div class="stm_lms_courses__grid stm_lms_courses__grid_6 stm_lms_courses__grid_center">
@@ -92,7 +92,7 @@
                                                 <?php } ?>
                                             </div>
                                             <div class="stm_lms_recent_courses__all text-center"> 
-                                                <a href="<?php echo site_url() . 'cursos'; ?>" class="btn btn-default"> Ver todo los cursos </a>
+                                                <a href="<?php echo site_url() . 'cursos'; ?>" class="btn btn-default"><?php echo $obj_textos->boton_cursos;?></a>
                                             </div>
                                         </div>
                                         <div class="space-75"></div>
@@ -106,8 +106,8 @@
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
                                         <div class="space-27"></div>
-                                        <h4 class="h4-title text-align-left">Suscríbase a nuestro boletín</h4>
-                                        <h5 class="h5-title text-align-left">Mantente informado de los beneficios que tenemos en Edukate Pro, para que seas el próximo emprendedor y tengas tu colegio virtual</h5>
+                                        <h4 class="h4-title text-align-left"><?php echo $obj_textos->titulo_boletin;?></h4>
+                                        <h5 class="h5-title text-align-left"><?php echo $obj_textos->description_boletin;?></h5>
                                         <div class="space-45"></div>
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
                                                         <div class="form-group">
                                                             <input type="email" name="email" id="email" class="form-control stm_subscribe_email" placeholder="Ingrese su E-mail" required="">
                                                         </div>
-                                                        <button type="submit" class="button"><span class="h5">Suscribirse</span></button>
+                                                        <button type="submit" class="button"><span class="h5"><?php echo $obj_textos->boton_boletin;?></span></button>
                                                         <div class="stm_subscribe_preloader">Por favor espera...</div>
                                                     </div>
                                                 </form>
