@@ -69,3 +69,54 @@ function save(){
     }
     });
 }
+function save_contacto(){
+    titulo_contacto = document.getElementById("titulo_contacto").value;
+    web = document.getElementById("web").value;
+    titulo_mensaje = document.getElementById("titulo_mensaje").value;
+    boton_contacto = document.getElementById("boton_contacto").value;
+    bootbox.confirm({
+    message: "¿Confirma que desea guardar los cambios?",
+    buttons: {
+        confirm: {
+            label: 'Confirmar',
+            className: 'btn-success'
+        },
+        cancel: {
+            label: 'Cerrar',
+            className: 'btn-danger'
+        }
+    },
+    callback: function (result) {
+        if(result == true){
+            $.ajax({
+                   type: "post",
+                   url: site+"dashboard/textos/contacto/validate",
+                   dataType: "json",
+                   data: {titulo_contacto : titulo_contacto,
+                          web : web,
+                          titulo_mensaje : titulo_mensaje,
+                          boton_contacto : boton_contacto
+                },
+                   success:function(data){                             
+                     if(data.status == true){
+                           Swal.fire({
+                              position: 'top-end',
+                              icon: 'success',
+                              title: 'Texto Cambiado.',
+                              showConfirmButton: false,
+                              timer: 1500
+                            });
+                            setTimeout('document.location.reload()',1500);
+                       }else{
+                           Swal.fire({
+                              icon: 'error',
+                              title: 'Ups...',
+                              text: 'Sucedió un error',
+                            });
+                       }
+                   }         
+           });
+        }
+    }
+    });
+}

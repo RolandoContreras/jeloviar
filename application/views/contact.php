@@ -27,14 +27,14 @@
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
                                         <div class="vc_custom_heading vc_custom_1532608688589">
-                                            <h3 style="text-align: left">Información de Contacto:</h3>
+                                            <h3 style="text-align: left"><?php echo $obj_textos->titulo_contacto;?></h3>
                                         </div>
                                         <div class="icon_box vc_custom_1435658011508 stm_icon_box_hover_h3 standart module__aa8b3d7f9806343760e1c6804712df56 clearfix">
                                             <div class="icon_alignment_left">
                                                 <div class="icon vc_custom_1435658011507"> <i class="fa-icon-stm_icon_pin-o"></i></div>
                                                 <div class="icon_text">
                                                     <h5 style="color:#555555"> Dirección:</h5>
-                                                    <p>Av. Alfredo Benavides #2191 Dpto 201 , Miraflores, Lima, PE.</p>
+                                                    <p><?php echo $obj_textos->address_footer;?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -47,7 +47,9 @@
                                                                 <div class="icon vc_custom_1435665617761"> <i class="fa-icon-stm_icon_phone-o"></i></div>
                                                                 <div class="icon_text">
                                                                     <h5 style="color:#555555"> Teléfono:</h5>
-                                                                    <p><a>+51 995 031 006</a></p>
+                                                                    <p>
+                                                                        <?php echo $obj_textos->phone_footer;?>
+                                                                    </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -62,7 +64,7 @@
                                                                 <div class="icon vc_custom_1435657717791"> <i class="fa-icon-stm_icon_mail-o"></i></div>
                                                                 <div class="icon_text">
                                                                     <h5 style="color:#555555"> Web:</h5>
-                                                                    <p><a href="https://edukatepro.com/">www.edukatepro.com</a></p>
+                                                                    <p><?php echo $obj_textos->web;?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -105,7 +107,7 @@
                                 <div class="vc_column-inner vc_custom_1437478190523">
                                     <div class="wpb_wrapper">
                                         <div class="vc_custom_heading vc_custom_1532608711151">
-                                            <h3 style="text-align: left">Envíanos un mensaje:</h3>
+                                            <h3 style="text-align: left"><?php echo $obj_textos->titulo_mensaje;?></h3>
                                         </div>
                                             <div class="screen-reader-response"></div>
                                             <form action="javascript:void(0);" method="post" class="wpcf7-form" onsubmit="send_message();">
@@ -143,7 +145,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
-                                                        <button type="submit" class="wpcf7-form-control wpcf7-submit btn btn-default" />Enviar</button>
+                                                        <button type="submit" class="wpcf7-form-control wpcf7-submit btn btn-default" /><?php echo $obj_textos->boton_contacto;?></button>
                                                     </div>
                                                 </div>
                                             </form>

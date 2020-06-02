@@ -1,7 +1,4 @@
-<?php
-
-if (!defined("BASEPATH"))
-    exit("No direct script access allowed");
+<?php if (!defined("BASEPATH")) exit("No direct script access allowed");
 
 class D_textos extends CI_Controller {
 
@@ -52,68 +49,35 @@ class D_textos extends CI_Controller {
             echo json_encode($data);
         }
     }
-
-    public function biografia() {
-        //GER SESSION
-        $this->get_session();
-        $params = array(
-            "select" => "biografia_id,
-                                    titulo,
-                                    text",
-            "where" => "biografia_id = 1",
-        );
-        //GET DATA EVENTOS
-        $obj_biografia = $this->obj_biografia->get_search_row($params);
-        /// VISTA
-        $this->tmp_mastercms->set("obj_biografia", $obj_biografia);
-        $this->tmp_mastercms->render("dashboard/biografia/biografia_form");
-    }
-
-    public function biografia_validate() {
-        if ($this->input->is_ajax_request()) {
-            //OBETENER MARCA_ID
-
-            $data = array(
-                'titulo' => trim($this->input->post('titulo')),
-                'text' => trim($this->input->post('text')),
-            );
-
-            $result = $this->obj_biografia->update(1, $data);
-            if ($result == true) {
-                $data['status'] = true;
-            } else {
-                $data['status'] = false;
-            }
-            echo json_encode($data);
-        }
-    }
-
+    
     public function contacto() {
         //GER SESSION
         $this->get_session();
         $params = array(
-            "select" => "address,
-                                    phones,
-                                    email",
-            "where" => "contacto_id = 1",
+            "select" => "titulo_contacto,
+                         web,
+                         titulo_mensaje,
+                         boton_contacto",
+            "where" => "texto_id = 1",
         );
         //GET DATA EVENTOS
-        $obj_contacto = $this->obj_contacto->get_search_row($params);
+        $obj_textos = $this->obj_textos->get_search_row($params);
         /// VISTA
-        $this->tmp_mastercms->set("obj_contacto", $obj_contacto);
-        $this->tmp_mastercms->render("dashboard/contacto/contacto_form");
+        $this->tmp_mastercms->set("obj_textos", $obj_textos);
+        $this->tmp_mastercms->render("dashboard/inicio/contacto_form");
     }
 
-    public function contacto_validate() {
+    public function validate_contacto() {
         if ($this->input->is_ajax_request()) {
             //OBETENER MARCA_ID
             $data = array(
-                'address' => trim($this->input->post('address')),
-                'phones' => trim($this->input->post('phones')),
-                'email' => trim($this->input->post('email')),
+                'titulo_contacto' => trim($this->input->post('titulo_contacto')),
+                'web' => trim($this->input->post('web')),
+                'titulo_mensaje' => trim($this->input->post('titulo_mensaje')),
+                'boton_contacto' => trim($this->input->post('boton_contacto')),
             );
 
-            $result = $this->obj_contacto->update(1, $data);
+            $result = $this->obj_textos->update(1, $data);
             if ($result == true) {
                 $data['status'] = true;
             } else {

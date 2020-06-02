@@ -37,7 +37,13 @@ class Contact extends CI_Controller {
 
     public function textos() {
         $params = array(
-            "select" => "nosotros_footer,
+            "select" => "titulo_contacto,
+                         web,
+                         titulo_mensaje,
+                         boton_contacto,
+                         nosotros_footer,
+                         address_footer,
+                         phone_footer,
                          text_nosotros_footer,
                          titulo_contacto_footer,
                          email_footer,

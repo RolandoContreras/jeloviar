@@ -119,8 +119,7 @@
                             </a>
                             <ul class="pcoded-submenu">
                                 <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/textos/inicio"; ?>"><i class="icon-large icon-th"></i>Inicio</a></li>
-                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/biografia"; ?>"><i class="icon-large icon-th"></i>Biografia</a></li>
-                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/contacto"; ?>"><i class="icon-large icon-th"></i>Contacto</a></li>
+                                <li class="pcoded-hasmenu"><a href="<?php echo site_url() . "dashboard/textos/contacto"; ?>"><i class="icon-large icon-th"></i>Contacto</a></li>
                             </ul>
                         </li>
                     </ul>
