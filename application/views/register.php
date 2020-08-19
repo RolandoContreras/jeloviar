@@ -84,5 +84,6 @@
         <?php $this->load->view("footer"); ?>
         <script src="<?php echo site_url() . 'assets/page_front/js/autoptimize_667d.js'; ?>"></script>
         <script src="<?php echo site_url() . 'assets/page_front/js/script/register.js'; ?>"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </body>
 </html>

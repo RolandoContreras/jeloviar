@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
     public function __construct(){
@@ -14,46 +13,155 @@ class Login extends CI_Controller {
         //get category
         $data['obj_category'] = $this->nav_category();
         $data['obj_textos'] = $this->textos();
+        //RUTA GOOGLE
+        include_once APPPATH . "libraries/vendor/autoload.php";
+        //FACEBOOK
+        if ($this->facebook->is_authenticated()) {
+            // Get user info from facebook 
+            $fbUser = $this->facebook->request('get', '/me?fields=id,first_name,last_name,email');
+            // Preparing data for database insertion 
+            $userData['oauth_provider'] = 'facebook';
+            $userData['oauth_uid'] = !empty($fbUser['id']) ? $fbUser['id'] : '';
+            $userData['name'] = !empty($fbUser['first_name']) ? $fbUser['first_name'] : '';
+            $userData['last_name'] = !empty($fbUser['last_name']) ? $fbUser['last_name'] : '';
+            $userData['email'] = !empty($fbUser['email']) ? $fbUser['email'] : '';
+            $userData['active'] = 1;
+            $userData['country'] = 28;
+            //verify data
+            if (!empty($userData['oauth_uid']) && !empty($userData['name'])) {
+                $result = $this->obj_customer->checkUser($userData);
+                if ($result == true) {
+                    //get data customer
+                    $id = $userData['oauth_uid'];
+                    $params = array("select" => "customer.customer_id,
+                                                customer.name,
+                                                customer.last_name,
+                                                customer.email,
+                                                customer.active",
+                        "where" => "customer.oauth_provider = 'facebook' and oauth_uid = $id");
+                    $obj_customer = $this->obj_customer->get_search_row($params);
+                    //crear sesión
+                    $data_customer_session['customer_id'] = $obj_customer->customer_id;
+                    $data_customer_session['name'] = $obj_customer->name;
+                    $data_customer_session['last_name'] = $obj_customer->last_name;
+                    $data_customer_session['email'] = $obj_customer->email;
+                    $data_customer_session['active'] = 1;
+                    $data_customer_session['logged_customer'] = "TRUE";
+                    $_SESSION['customer'] = $data_customer_session;
+                    //redirect
+                    redirect(site_url() . "backoffice");
+                    return true;
+                } else {
+                    //insert data
+                    $user_data = array(
+                        'oauth_provider' => 'facebook',
+                        'oauth_uid' => $userData['oauth_uid'],
+                        'name' => $userData['name'],
+                        'last_name' => $userData['last_name'],
+                        'email' => $userData['email'],
+                        'country' => 29,
+                        'date' => date('Y-m-d H:i:s'),
+                        'active' => 1,
+                        'status_value' => 1
+                    );
+                    //crear session customer
+                    $customer_id = $this->obj_customer->insert($user_data);
+                    //create sesion
+                    $data_customer_session['customer_id'] = $customer_id;
+                    $data_customer_session['name'] = $userData['name'];
+                    $data_customer_session['last_name'] = $userData['last_name'];
+                    $data_customer_session['email'] = $userData['email'];
+                    $data_customer_session['active'] = 1;
+                    $data_customer_session['logged_customer'] = "TRUE";
+                    $_SESSION['customer'] = $data_customer_session;
+                    $this->message($customer_id, $userData['name'], $userData['email']);
+                    //redirect
+                    redirect(site_url() . "backoffice");
+                    return true;
+                }
+            } else {
+                // Facebook authentication url 
+                $data['userData'] = array();
+                $data['authURL'] = $this->facebook->login_url();
+            }
+        } else {
+            // Facebook authentication url 
+            $data['userData'] = array();
+            $data['authURL'] = $this->facebook->login_url();
+        }
+        
+        $google_client = new Google_Client();
+        $google_client->setClientId("854470080737-pd0ua8aeno1afqrs340sc8pvtd6j9mnr.apps.googleusercontent.com");
+        $google_client->setClientSecret("2JiX9KmOf3_SCEpAFJyCv93T");
+        $google_client->setRedirectUri(site_url() . "iniciar-sesion");
+        $google_client->addScope('email');
+        $google_client->addScope('profile');
+        
+        if (isset($_GET["code"])) {
+            $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+            if (!isset($token["error"])) {
+                $google_client->setAccessToken($token['access_token']);
+                $this->session->set_userdata('access_token', $token['access_token']);
+                $google_service = new Google_Service_Oauth2($google_client);
+                $data = $google_service->userinfo->get();
+                $current_datetime = date('Y-m-d H:i:s');
+                if ($this->obj_customer->Is_already_register_google($data['id'])) {
+                    $id = $data['id'];
+                    //get data customer
+                    $params = array("select" => "customer.customer_id,
+                                                customer.name,
+                                                customer.last_name,
+                                                customer.email,
+                                                customer.active",
+                        "where" => "customer.oauth_provider = 'google' and oauth_uid = $id");
+                    $obj_customer = $this->obj_customer->get_search_row($params);
+                    //crear sesión
+                    $data_customer_session['customer_id'] = $obj_customer->customer_id;
+                    $data_customer_session['name'] = $obj_customer->name;
+                    $data_customer_session['last_name'] = $obj_customer->last_name;
+                    $data_customer_session['email'] = $obj_customer->email;
+                    $data_customer_session['active'] = 1;
+                    $data_customer_session['logged_customer'] = "TRUE";
+                    $_SESSION['customer'] = $data_customer_session;
+                } else {
+                    //insert data
+                    $user_data = array(
+                        'oauth_provider' => 'google',
+                        'oauth_uid' => $data['id'],
+                        'name' => $data['given_name'],
+                        'last_name' => $data['family_name'],
+                        'email' => $data['email'],
+                        'country' => 29,
+                        'date' => $current_datetime,
+                        'active' => 1,
+                        'status_value' => 1
+                    );
+                    //crear session customer
+                    $customer_id = $this->obj_customer->insert($user_data);
+                    $data_customer_session['customer_id'] = $customer_id;
+                    $data_customer_session['name'] = $data['given_name'];
+                    $data_customer_session['last_name'] = $data['family_name'];
+                    $data_customer_session['email'] = $data['email'];
+                    $data_customer_session['active'] = 1;
+                    $data_customer_session['logged_customer'] = "TRUE";
+                    $_SESSION['customer'] = $data_customer_session;
+                    $this->message($customer_id, $data['given_name'], $data['email']);
+                }
+                $this->session->set_userdata('user_data', $user_data);
+            }
+        }
+        
+        
+        $login_button = '';
+        if (!$this->session->userdata('access_token')) {
+            $login_button = '<a href="' . $google_client->createAuthUrl() . '"><img src="' . site_url() . 'assets/page_front/images/google_login.png" width="230"/></a>';
+            $data['login_button'] = $login_button;
+        } else {
+            redirect(site_url() . "backoffice");
+        }
+        
         //send meta title
         $data['title'] = "Inicio de Sesión | Jeloviar Online";
-        
-        //sesion facebook
-        $userData = array(); 
-        // Authenticate user with facebook 
-        if($this->facebook->is_authenticated()){ 
-            // Get user info from facebook 
-            $fbUser = $this->facebook->request('get', '/me?fields=id,first_name,last_name,email'); 
-            // Preparing data for database insertion 
-            $userData['oauth_provider'] = 'facebook'; 
-            $userData['oauth_uid']    = !empty($fbUser['id'])?$fbUser['id']:'';; 
-            $first_name = !empty($fbUser['first_name'])?$fbUser['first_name']:''; 
-            $last_name = !empty($fbUser['last_name'])?$fbUser['last_name']:'';
-            $userData['name'] = $first_name." ".$last_name;
-            $userData['email'] = !empty($fbUser['email'])?$fbUser['email']:''; 
-            $userData['active'] = 1; 
-            $userData['country'] = 89; 
-            // Insert or update user data to the database 
-            $user_id = $this->obj_customer->checkUser($userData); 
-            // Check user data insert or update status 
-            if(!empty($user_id)){ 
-                $data_customer_session['customer_id'] = $user_id;
-                $data_customer_session['name'] = $userData['name'];
-                $data_customer_session['email'] = $userData['email'];
-                $data_customer_session['active'] = 1;
-                $data_customer_session['country'] = 89;
-                $data_customer_session['logged_customer'] = "TRUE";
-                $_SESSION['customer'] = $data_customer_session; 
-                redirect("backoffice");
-            }else{ 
-               $data['userData'] = array(); 
-               $data['authURL'] =  $this->facebook->login_url(); 
-               $this->load->view('login',$data);
-            } 
-            // Facebook logout URL 
-        }else{ 
-            // Facebook authentication url 
-            $data['authURL'] =  $this->facebook->login_url(); 
-        } 
         // Load login/profile view 
         $this->load->view('login',$data);
     }
