@@ -19,6 +19,16 @@
                                     <h3>Regístrate</h3>
                                     <form onsubmit="register();" action="javascript:void(0);" method="post">
                                         <div class="stm_lms_register_wrapper">
+                                            <div style="text-align: center">
+                                                <?php if(isset($login_button)){
+                                                    echo $login_button;
+                                                } ?>
+                                                <?php 
+                                                if(!empty($authURL)){ ?>
+                                                    <a href="<?php echo $authURL;?>"><img src="<?php echo site_url().'assets/page_front/images/face_login.png';?>" width="230" /></a>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="space-27"></div>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group"><label class="heading_font">Nombres</label> <input type="text" name="name" id="name" placeholder="Ingresa tus nombres" class="form-control" required></div>

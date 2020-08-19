@@ -21,6 +21,16 @@
                                     </div>
                                     <form onsubmit="login();" action="javascript:void(0);" method="post">
                                         <div class="stm_lms_login_wrapper">
+                                            <div style="text-align: center">
+                                                <?php if(isset($login_button)){
+                                                    echo $login_button;
+                                                } ?>
+                                                <?php 
+                                                if(!empty($authURL)){ ?>
+                                                    <a href="<?php echo $authURL;?>"><img src="<?php echo site_url().'assets/page_front/images/face_login.png';?>" width="230" /></a>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="space-27"></div>
                                             <div class="form-group"> 
                                                 <label class="heading_font"> E-mail </label> 
                                                 <input class="form-control" type="text" name="username" id="username" placeholder="Ingrese Usuario" required/> 
