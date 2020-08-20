@@ -38,9 +38,11 @@ class Home extends CI_Controller {
                                                 courses.slug,
                                                 courses.top,
                                                 courses.type,
+                                                courses.top,
                                                 courses.time,
                                                 courses.img,
                                                 courses.description,
+                                                courses.free,
                                                 courses.price,
                                                 courses.price_del,
                                                 category.name as category_name,
@@ -51,7 +53,6 @@ class Home extends CI_Controller {
             "limit" => "12",
         );
         $data['obj_courses'] = $this->obj_courses->search($params_course);
-
         //set meta title
         $data['title'] = "Bienvenido | Jeloviar Online";
         $this->load->view('home', $data);

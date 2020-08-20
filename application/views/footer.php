@@ -1,5 +1,5 @@
-<footer id="footer">
-    <div class="footer_wrapper">
+<footer id="footer" class="bg_footer">
+    <div class="footer_wrapper bg_footer">
         <div id="footer_bottom">
             <div class="footer_widgets_wrapper kek text-normal">
                 <div class="container">
