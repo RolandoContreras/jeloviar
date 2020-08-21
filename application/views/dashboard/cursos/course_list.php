@@ -41,6 +41,7 @@
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Nombre</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Categoría</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Profesor</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">MasterMind</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Precio</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Imagen</th>
                                                                     <th class="sorting" tabindex="0" rowspan="1" colspan="1">Estado</th>
@@ -56,6 +57,21 @@
                                                                         <td><span class="badge badge-pill badge-info" style="font-size: 100%;"><?php echo $value->name; ?></span></td>
                                                                         <td><?php echo $value->category_name;?></td>
                                                                         <td><?php echo $value->teacher;?></td>
+                                                                        <td>
+                                                                           <?php 
+                                                                           if($value->top == 1){
+                                                                               $text = "SI";
+                                                                               $style = "badge-success";
+                                                                           }else{
+                                                                               $text = "NO";
+                                                                               $style = "badge-info";
+                                                                           }
+                                                                           
+                                                                           ?>
+                                                                            <span class="badge badge-pill <?php echo $style;?>" style="font-size: 100%;"> 
+                                                                                <?php echo $text;?>
+                                                                            </span>
+                                                                        </td>
                                                                         <td>
                                                                             <span class="badge badge-pill badge-warning" style="font-size: 100%;">	&#8364; <?php echo $value->price; ?></span>
                                                                         </td>
@@ -95,6 +111,7 @@
                                                                     <th rowspan="1" colspan="1">Nombre</th>
                                                                     <th rowspan="1" colspan="1">Categoría</th>
                                                                     <th rowspan="1" colspan="1">Profesor</th>
+                                                                    <th rowspan="1" colspan="1">MasterMind</th>
                                                                     <th rowspan="1" colspan="1">Precio</th>
                                                                     <th rowspan="1" colspan="1">Imagen</th>
                                                                     <th rowspan="1" colspan="1">Estado</th>

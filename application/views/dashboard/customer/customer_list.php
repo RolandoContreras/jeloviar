@@ -85,7 +85,6 @@
                                                                     <th rowspan="1" colspan="1">Apellidos</th>
                                                                     <th rowspan="1" colspan="1">E-mail</th>
                                                                     <th rowspan="1" colspan="1">Teléfono</th>
-                                                                    <th rowspan="1" colspan="1">Kit</th>
                                                                     <th rowspan="1" colspan="1">País</th>
                                                                     <th rowspan="1" colspan="1">Estado</th>
                                                                     <th rowspan="1" colspan="1">Acciones</th>
