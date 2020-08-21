@@ -109,7 +109,7 @@ class Register extends CI_Controller {
         $google_client = new Google_Client();
         $google_client->setClientId("854470080737-pd0ua8aeno1afqrs340sc8pvtd6j9mnr.apps.googleusercontent.com");
         $google_client->setClientSecret("2JiX9KmOf3_SCEpAFJyCv93T");
-        $google_client->setRedirectUri(site_url() . "iniciar-sesion");
+        $google_client->setRedirectUri(site_url() . "registro");
         $google_client->addScope('email');
         $google_client->addScope('profile');
         
