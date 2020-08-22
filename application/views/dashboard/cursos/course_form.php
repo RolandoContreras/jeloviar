@@ -120,9 +120,30 @@
                                                     ?>>NO</option>
                                                         </select>
                                                     </div>
-                                                    
-                                                    
-                                                    
+                                                    <div class="form-group">
+                                                        <label for="inputState">Gratis</label>
+                                                        <select name="free" id="free" class="form-control" required>
+                                                            <option value="">[ Seleccionar ]</option>
+                                                            <option value="1" <?php
+                                                    if (isset($obj_courses)) {
+                                                        if ($obj_courses->free == 1) {
+                                                            echo "selected";
+                                                        }
+                                                    } else {
+                                                        echo "";
+                                                    }
+                                                    ?>>SI</option>
+                                                            <option value="0" <?php
+                                                    if (isset($obj_courses)) {
+                                                        if ($obj_courses->free == 0) {
+                                                            echo "selected";
+                                                        }
+                                                    } else {
+                                                        echo "";
+                                                    }
+                                                    ?>>NO</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <?php if (isset($obj_courses)) { ?>

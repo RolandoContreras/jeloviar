@@ -71,7 +71,7 @@
                                                                         <div class="stm_lms_courses__single--term"> <?php echo $value->category_name; ?></div>
                                                                     </div>
                                                                     <div class="stm_lms_courses__single--title">
-                                                                        <a href="<?php echo site_url() . "programas/$value->category_slug/$value->slug"; ?>">
+                                                                        <a href="<?php echo site_url() . "cursos/$value->category_slug/$value->slug"; ?>">
                                                                             <h5><?php echo $value->name; ?></h5>
                                                                         </a>
                                                                     </div>
@@ -81,7 +81,7 @@
                                                                             <?php if ($value->free == 1) { ?>
                                                                                 <b>Libre</b>
                                                                             <?php } else { ?>
-                                                                                <span>&dollar;<?php echo $value->price_del; ?></span><strong>&dollar;<?php echo $value->price; ?></strong>
+                                                                                <span>&euro;;<?php echo $value->price_del; ?></span><strong>&dollar;<?php echo $value->price; ?></strong>
                                                                             <?php } ?>
                                                                         </div>
                                                                     </div>
@@ -96,11 +96,11 @@
                                                                             <?php } ?>
                                                                         </div>
                                                                         <div class="stm_lms_courses__single--info_author__login">
-                                                                            Expansión Consciente
+                                                                            Jesús Vilela
                                                                         </div>
                                                                     </div>
                                                                     <div class="stm_lms_courses__single--info_title">
-                                                                        <a href="<?php echo site_url() . "programas/$value->category_slug/$value->slug"; ?>">
+                                                                        <a href="<?php echo site_url() . "cursos/$value->category_slug/$value->slug"; ?>">
                                                                             <h4><?php echo $value->name; ?></h4>
                                                                         </a>
                                                                     </div>
@@ -111,7 +111,7 @@
                                                                         <div class="stm_lms_course__meta"><i class="stmlms-lms-clocks"></i><?php echo $value->time; ?> Horas</div>
                                                                     </div>
                                                                     <div class="stm_lms_courses__single--info_preview"> 
-                                                                        <a href="<?php echo site_url() . "programas/$value->category_slug/$value->slug"; ?>" title="<?php echo $value->name; ?>" class="heading_font"> Vista previa de este curso</a>
+                                                                        <a href="<?php echo site_url() . "cursos/$value->category_slug/$value->slug"; ?>" title="<?php echo $value->name; ?>" class="heading_font"> Vista previa de este curso</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -161,7 +161,11 @@
                                                                 <div class="stm_lms_courses__single--meta">
                                                                     <div class="stm_lms_courses__hours"> <i class="stmlms-lms-clocks"></i> <span>6 hours</span></div>
                                                                     <div class="stm_lms_courses__single--price heading_font"> 
-                                                                        <span>&euro;<?php echo $value->price_del; ?></span><strong>&euro;<?php echo $value->price; ?></strong>
+                                                                        <?php if ($value->free == 1) { ?>
+                                                                                <b>Libre</b>
+                                                                            <?php } else { ?>
+                                                                                <span>&euro;<?php echo $value->price_del; ?></span><strong>&euro;<?php echo $value->price; ?></strong>
+                                                                            <?php } ?>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -32,26 +32,6 @@ class Courses extends CI_Controller {
         //get categorías
         $data['obj_category'] = $this->nav_category();
         $data['obj_textos'] = $this->textos();
-
-        //obtener todos los cursos top
-        $params_course = array(
-            "select" => "courses.course_id,
-                                                courses.category_id,
-                                                courses.name,
-                                                courses.slug,
-                                                courses.top,
-                                                courses.date,
-                                                courses.type,
-                                                courses.img,
-                                                courses.price,
-                                                courses.price_del,
-                                                category.name as category_name,
-                                                category.slug as category_slug",
-            "join" => array('category, courses.category_id = category.category_id'),
-            "where" => "courses.top = 1 and courses.active = 1",
-            "order" => "courses.course_id DESC",
-        );
-        $data['obj_courses_top'] = $this->obj_courses->search($params_course);
         //buscar por curso
         if (isset($_GET['search'])) {
             $search = $_GET['search'];
@@ -71,6 +51,7 @@ class Courses extends CI_Controller {
                                                 courses.img,
                                                 courses.type,
                                                 courses.price,
+                                                courses.free,
                                                 courses.price_del,
                                                 courses.date,
                                                 category.name as category_name,
