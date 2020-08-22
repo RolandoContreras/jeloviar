@@ -62,7 +62,7 @@
                                                                 <div class="icon vc_custom_1435657717791"> <i class="fa-icon-stm_icon_mail-o"></i></div>
                                                                 <div class="icon_text">
                                                                     <h5 style="color:#555555;padding-bottom: 9px;"> Web:</h5>
-                                                                    <p><?php echo $obj_textos->phone_footer; ?></p>
+                                                                    <p><?php echo $obj_textos->web; ?></p>
                                                                 </div>
                                                             </div>
                                                         </div>

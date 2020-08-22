@@ -357,7 +357,9 @@
     letter-spacing: 1px;
     text-align: center;
 }
-
+.img-login {
+    margin-top: 61px;
+}
 
 @media (max-width: 968px) {
     .vc_row.aed6bbdbcfb88221d9cb9b85256190b1e {

@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="stm_lms_row_animation"> 
-                                    <img src="<?php echo site_url() . 'assets/page_front/images/animation/base.png';?>">              
+                                    <img class="img-login" src="<?php echo site_url() . 'assets/page_front/images/inicio-sesion.jpg';?>">              
                                 </div>
                             </div>
                             <div class="col-md-6">
