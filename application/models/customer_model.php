@@ -68,28 +68,33 @@ class Customer_Model extends CI_Model{
     }
     
     public function checkUser($userData = array()){
-        if(!empty($userData)){
             //check whether user data already exists in database with same oauth info
             $this->db->select($this->table_id);
             $this->db->from($this->table);
             $this->db->where(array('oauth_provider'=>$userData['oauth_provider'], 'oauth_uid'=>$userData['oauth_uid']));
             $prevQuery = $this->db->get();
             $prevCheck = $prevQuery->num_rows();
-            $user_id = "";
-            if($prevCheck == 0){
-                //insert user data
-                $userData['date']  = date("Y-m-d H:i:s");
-                $insert = $this->db->insert($this->table, $userData);
-                //get user ID
-                $user_id = $this->db->insert_id();
+            if($prevCheck > 0){
+                return true;
             }else{
-                $query = $prevQuery->row();
-                $user_id = $query->customer_id;
+                return false;
             }
-        }
-        //return user ID
-        return $user_id;
     }
+    
+     public function Is_already_register_google($id){
+            //check whether user data already exists in database with same oauth info
+            $this->db->select($this->table_id);
+            $this->db->from($this->table);
+            $this->db->where(array('oauth_provider'=>"google", 'oauth_uid'=>$id));
+            $prevQuery = $this->db->get();
+            $prevCheck = $prevQuery->num_rows();
+            if($prevCheck > 0){
+                return true;
+            }else{
+                return false;
+            }
+    }
+    
     
     public function insert($data){
       $this->db->insert($this->table, $data);
