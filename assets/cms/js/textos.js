@@ -5,11 +5,14 @@ function save(){
     titulo_cursos = document.getElementById("titulo_cursos").value;
     boton_cursos = document.getElementById("boton_cursos").value;
     titulo_boletin = document.getElementById("titulo_boletin").value;
+    titulo_masterclass = document.getElementById("titulo_masterclass").value;
+    texto_masterclass = CKEDITOR.instances.texto_masterclass.getData();
     description_boletin = CKEDITOR.instances.description_boletin.getData();
     boton_boletin = document.getElementById("boton_boletin").value;
     nosotros_footer = document.getElementById("nosotros_footer").value;
     text_nosotros_footer = CKEDITOR.instances.text_nosotros_footer.getData();
     titulo_contacto_footer = document.getElementById("titulo_contacto_footer").value;
+    link_boton = document.getElementById("link_boton").value;
     email_footer = document.getElementById("email_footer").value;
     phone_footer = CKEDITOR.instances.phone_footer.getData();
     address_footer = CKEDITOR.instances.address_footer.getData();
@@ -39,10 +42,13 @@ function save(){
                           titulo_boletin : titulo_boletin,
                           description_boletin : description_boletin,
                           boton_boletin:boton_boletin,
+                          titulo_masterclass:titulo_masterclass,
+                          texto_masterclass:texto_masterclass,
                           nosotros_footer : nosotros_footer,
                           text_nosotros_footer : text_nosotros_footer,
                           titulo_contacto_footer : titulo_contacto_footer,
                           email_footer : email_footer,
+                          link_boton: link_boton,
                           phone_footer : phone_footer,
                           address_footer : address_footer,
                 },

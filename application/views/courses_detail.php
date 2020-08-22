@@ -89,7 +89,7 @@
                                         <div class="stm-curriculum">
                                             <?php foreach ($obj_modules as $key => $value) { ?>
                                                 <div class="stm-curriculum-section">
-                                                    <h3>Sección <?php echo $key = $key + 1; ?> : <?php echo $value->name ?></h3>
+                                                    <h3>Módulo <?php echo $key = $key + 1; ?> : <?php echo $value->name ?></h3>
                                                 </div>
                                                 <?php
                                                 foreach ($obj_videos as $key_2 => $value_video) {

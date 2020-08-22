@@ -21,7 +21,7 @@
                                             <h3 class="text-align-left header-plataforma"><?php echo $obj_textos->description_home;?></h3>
                                         </div>
                                         <center>
-                                            <a class="btn btn-danger lg" href="<?php echo site_url() . 'contacto'; ?>" title="Contacto"><?php echo $obj_textos->boton_home;?></a>
+                                            <a class="btn btn-danger lg" href="<?php echo $obj_textos->link_boton;?>" title="Contacto"><?php echo $obj_textos->boton_home;?></a>
                                         </center>
                                         <div class="space-18"> </div>
                                     </div>
@@ -38,11 +38,11 @@
                                             <div class="padding-bottom-44 padding-top-20">
                                                 <div class="col-md-offset-2 col-sm-8 col-md-offset-2">
                                                     <div class="vc_custom_heading">
-                                                        <h2 class="text-master-mind">EN ESTRENO – MASTER MIND</h2>
+                                                        <h2 class="text-master-mind"><?php echo $obj_textos->titulo_masterclass;?></h2>
                                                     </div>
 
                                                     <div class="vc_custom_heading fwl">
-                                                        <h4 style="font-size: 18px;line-height: 28px;text-align: center">Hemos lanzado una clase magistral gratuita de 90 minutos con nuestros fundadores de Expansión Consciente profundizando en una idea poderosa y transformadora basado en su vida. </h4>
+                                                        <h4 style="font-size: 18px;line-height: 28px;text-align: center"><?php echo $obj_textos->texto_masterclass;?></h4>
                                                     </div>
                                                 </div>
                                             </div>

@@ -61,6 +61,20 @@
                                                         <label>Boton</label>
                                                         <input class="form-control" type="text" id="boton_boletin" name="boton_boletin" value="<?php echo isset($obj_textos->boton_boletin) ? $obj_textos->boton_boletin : ""; ?>" class="input-xlarge-fluid" placeholder="Boton Boletin" required>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Enlace del Boton</label>
+                                                        <input class="form-control" type="text" id="link_boton" name="link_boton" value="<?php echo isset($obj_textos->link_boton) ? $obj_textos->link_boton : ""; ?>" class="input-xlarge-fluid" placeholder="Boton Boletin" required>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-group">
+                                                        <label>Título MasterClass</label>
+                                                        <input class="form-control" type="text" id="titulo_masterclass" name="titulo_masterclass" value="<?php echo isset($obj_textos->titulo_masterclass) ? $obj_textos->titulo_masterclass : ""; ?>" class="input-xlarge-fluid" placeholder="Título MasterClass" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Texto MasterClass</label>
+                                                        <textarea name="texto_masterclass" id="texto_masterclass" placeholder="Contenido"><?php echo isset($obj_textos->texto_masterclass) ? $obj_textos->texto_masterclass : ""; ?></textarea>
+                                                        <script>CKEDITOR.replace('texto_masterclass');</script>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <div class="form-group">
