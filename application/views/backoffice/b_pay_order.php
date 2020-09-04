@@ -46,7 +46,7 @@
                                                 <span class="stm_lms_radio__fake"></span>
 
                                             </span> 
-                                            <h4>Transferencia Bancaria</h4>
+                                            <h4>Pago con Bitcoin</h4>
                                         </label>
                                     </div>
                                     <div id="bank" style="overflow: auto;">
@@ -54,27 +54,26 @@
                                         <table cellpadding="0" cellspacing="0" border="0">
                                             <thead>
                                                 <tr>
-                                                    <th>Número de Cuenta</th>
-                                                    <th>Titular</th>
-                                                    <th>Nombre del Banco</th>
-                                                    <th>Código Swift</th>
+                                                    <th>Wallet</th>
                                                     <th>Descripción</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr id="pmpro_account-invoice-3B9914E266">
-                                                    <td>32432432510954 </td>
-                                                    <td>Tim Sab</td>
-                                                    <td>OFB</td>
-                                                    <td>900325984</td>
-                                                    <td>Pay via Wire Transfer </td>
+                                                    <td>1FCsxpGVEQizw7EbjRrBiaJGfNGsjBQBWm</td>
+                                                    <td>Pago con Bitcoin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="text-align: center">
+                                                        <img src="<?php echo site_url()."assets/backoffice/images/btc_qr.png"?>" alt="bitcoin" width="200"/>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                         <div class="alert alert-primary" role="alert">
-                                            Luego de hacer la transferencia, enviar el comprobante del depósito al correo:
-                                            <b>contacto@jeloviaronline.com</b>, indicando el curso que desea comprar, su nombre completo y el email con el cual se registró.
-                                            En 24 horas estaremos activando su pedido.
+                                            Luego de hacer la transferencia, enviar la imagen del envio al correo:
+                                            <b>contacto@jeloviaronline.com</b>, indicando el curso que desea adquirir, su nombre completo y el email con el cual se registró.
+                                            En pocas horas estaremos activando su pedido.
                                         </div>
                                     </div>
                                     <!---->
@@ -86,7 +85,7 @@
                                                 <input onclick="show_stripe();" type="radio" name="payment_method" value="stripe"> 
                                                 <span class="stm_lms_radio__fake"></span>
                                             </span> 
-                                            <h4>Tarjeta Crédito / Debito (PEN)</h4>
+                                            <h4>Tarjeta Crédito / Debito</h4>
                                         </label>
                                     </div>
                                     <div id="stripe" style="display: none;">
