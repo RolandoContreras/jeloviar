@@ -422,3 +422,6 @@
     color:green !important;
     font-weight: bold !important;
 }
+.btn-success:hover {
+    color: white !important;
+}

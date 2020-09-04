@@ -11,7 +11,7 @@
                             <div class="col-md-9">
                                 <h1 class="stm_lms_course__title"><?php echo str_to_mayusculas($obj_courses->name); ?></h1>
                                 <div class="single_product_after_title">
-                                    
+
                                     <div class="clearfix">
                                         <div class="pull-left meta_pull">
                                             <div class="pull-left stm_lms_teachers">
@@ -89,7 +89,17 @@
                                                                     <?php echo $obj_courses->description; ?>
                                                                 </div>
                                                             </div>
-
+                                                            <div class="stm-lms-buy-buttons stm-lms-buy-buttons-mixed stm-lms-buy-buttons-mixed-pro">
+                                                                <?php if ($obj_courses->free == 1) { ?>
+                                                                    <a onclick="add_cart_free('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->name; ?>', '<?php echo $obj_courses->img; ?>');" class="btn btn-success start-course">
+                                                                        <span><i class="fas fa-shopping-bag"></i> ¡SÍ!, LO QUIERO</span> 
+                                                                    </a>
+                                                                <?php } else { ?>
+                                                                    <a onclick="add_cart_home('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>', '<?php echo $obj_courses->img; ?>');" class="btn btn-success start-course">
+                                                                        <span><i class="fas fa-shopping-bag"></i> ¡SÍ!, LO QUIERO</span> 
+                                                                    </a>
+                                                                <?php } ?>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -123,9 +133,15 @@
                             <div class="col-md-3">
                                 <div class="stm-lms-course__sidebar">
                                     <div class="stm-lms-buy-buttons stm-lms-buy-buttons-mixed stm-lms-buy-buttons-mixed-pro">
-                                        <a onclick="add_cart_home('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>', '<?php echo $obj_courses->img; ?>');" class="btn btn-default start-course">
-                                            <span><i class="fas fa-shopping-bag"></i> Agregar a Cesta</span> 
-                                        </a>
+                                        <?php if ($obj_courses->free == 1) { ?>
+                                            <a onclick="add_cart_free('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->name; ?>', '<?php echo $obj_courses->img; ?>');" class="btn btn-success start-course">
+                                                <span><i class="fas fa-shopping-bag"></i> ¡SÍ!, LO QUIERO</span> 
+                                            </a>
+                                        <?php } else { ?>
+                                            <a onclick="add_cart_home('<?php echo $obj_courses->course_id; ?>', '<?php echo $obj_courses->price; ?>', '<?php echo $obj_courses->name; ?>', '<?php echo $obj_courses->img; ?>');" class="btn btn-success start-course">
+                                                <span><i class="fas fa-shopping-bag"></i> ¡SÍ!, LO QUIERO</span> 
+                                            </a>
+                                        <?php } ?>
                                     </div>
                                     <div class="stm-lms-course-info heading_font">
                                         <div class="stm-lms-course-info__single">
@@ -140,7 +156,7 @@
                                     <div class="stm-lms-dynamic_sidebar">
                                         <div id="stm_lms_popular_courses-3" class="widget widget_stm_lms_popular_courses">
                                             <ul class="stm_product_list_widget widget_woo_stm_style_2">
-<?php foreach ($obj_courses_related as $value) { ?>
+                                                <?php foreach ($obj_courses_related as $value) { ?>
                                                     <li>
                                                         <a href="<?php echo site_url() . "cursos/$value->category_slug/$value->slug"; ?>"> 
                                                             <img width="75" height="75" src="<?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?>" class="attachment-img-75-75 size-img-75-75 wp-post-image" alt="<?php echo $value->name; ?>" srcset="<?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 75w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 150w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 129w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 122w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 69w, <?php echo site_url() . "assets/cms/img/cursos/$value->img"; ?> 50w" sizes="(max-width: 75px) 100vw, 75px" />
@@ -153,7 +169,7 @@
                                                             </div>
                                                         </a>
                                                     </li>
-<?php } ?>
+                                                <?php } ?>
                                             </ul>
                                         </div>
                                         <div class="multiseparator"></div>
@@ -165,7 +181,7 @@
                 </div>
             </div>
         </div>
-<?php $this->load->view("footer"); ?>
+        <?php $this->load->view("footer"); ?>
         <script src="<?php echo site_url() . 'assets/page_front/js/script/pay_order.js'; ?>"></script>
         <script defer src="<?php echo site_url() . 'assets/page_front/js/autoptimize_54ab.js'; ?>"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

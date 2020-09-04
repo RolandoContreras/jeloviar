@@ -1,7 +1,9 @@
-<?php if (!defined('BASEPATH'))exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class B_home extends CI_Controller {
-
     function __construct() {
         parent::__construct();
         $this->load->model("customer_model", "obj_customer");
@@ -342,18 +344,76 @@ class B_home extends CI_Controller {
         }
     }
 
+    public function add_cart_free() {
+        if ($this->input->is_ajax_request()) {
+            //GET CUSTOMER_ID
+            $course_id = $this->input->post('course_id');
+            $name = $this->input->post('name');
+            $img = $this->input->post('img');
+            $name_cart = convert_slug_cart($name);
+            //ADD CART
+            $data_cart = array(
+                'id' => $course_id,
+                'qty' => 1,
+                'free' => 1,
+                'price' => 1,
+                'img' => $img,
+                'name' => "$name_cart",
+            );
+            $cart_id = $this->cart->insert($data_cart);
+            if ($cart_id != "") {
+                $data['status'] = true;
+            } else {
+                $data['status'] = false;
+            }
+            echo json_encode($data);
+        }
+    }
+
     public function pay_order() {
         //GET SESION ACTUALY
         $this->get_session_pay_order();
+        $obj_textos = $this->textos();
         //get customer id
         $customer_id = $_SESSION['customer']['customer_id'];
+        //get profile
+        $obj_profile = $this->get_profile($customer_id);
         //get nav ctalogo
         $obj_category = $this->nav_category();
         //get cursos comprados
         $obj_courses_by_customer = $this->courses_by_customer($customer_id);
+        //verify course free
+        $count = count($this->cart->contents());
+        if ($count == 1) {
+            foreach ($this->cart->contents() as $items) {
+                if ($items['free'] == 1) {
+                    //CREATE INVOICE
+                    $data_invoice = array(
+                        'customer_id' => $customer_id,
+                        'course_id' => $items['id'],
+                        'sub_total' => $items['price'],
+                        'igv' => 0,
+                        'total' => $items['price'],
+                        'date' => date("Y-m-d H:i:s"),
+                        'active' => 2,
+                    );
+                    $this->obj_invoices->insert($data_invoice);
+                    //inser on customer_course
+                    $data = array(
+                        'customer_id' => $customer_id,
+                        'course_id' => $items['id'],
+                        'date_start' => date("Y-m-d H:i:s")
+                    );
+                    $this->obj_customer_courses->insert($data);
+                    redirect(site_url().'backoffice');
+                }
+            }
+        }
         //SEND DATA
+        $this->tmp_backoffice->set("obj_textos", $obj_textos);
         $this->tmp_backoffice->set("obj_courses_by_customer", $obj_courses_by_customer);
         $this->tmp_backoffice->set("obj_category", $obj_category);
+        $this->tmp_backoffice->set("obj_profile", $obj_profile);
         $this->tmp_backoffice->render("backoffice/b_pay_order");
     }
 
@@ -532,12 +592,12 @@ class B_home extends CI_Controller {
                     $data['status'] = false;
                 }
             } else {
-                    $data['status'] = false;
+                $data['status'] = false;
             }
             echo json_encode($data);
         }
     }
-    
+
     public function change_pass() {
         if ($this->input->is_ajax_request()) {
             //GET SESION ACTUALY
@@ -557,12 +617,12 @@ class B_home extends CI_Controller {
                     $data['status'] = false;
                 }
             } else {
-                    $data['status'] = false;
+                $data['status'] = false;
             }
             echo json_encode($data);
         }
     }
-    
+
     public function textos() {
         $params = array(
             "select" => "nosotros_footer,

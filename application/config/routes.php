@@ -72,6 +72,9 @@ $route['backoffice/cursos'] = "b_home/cursos";
 $route['backoffice/pay_order'] = "b_home/pay_order";
 $route['backoffice/shopping'] = "b_home/order";
 $route['backoffice/order/add_cart'] = 'b_home/add_cart';
+$route['backoffice/add_cart_free'] = "b_home/add_cart_free";
+
+
 $route['backoffice/order/delete_cart'] = 'b_home/delete_cart';
 $route['backoffice/active_course'] = 'b_home/active_course';
 $route['backoffice/active_course_free'] = 'b_home/active_course_free';

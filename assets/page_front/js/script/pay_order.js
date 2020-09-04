@@ -80,15 +80,45 @@ function add_cart_home(course_id, price, name, img) {
             if (data.status == "true") {
                 Swal.fire({
                     position: 'top-end',
-                    title: 'Producto Agregado a la Cesta',
-                    icon: 'success',
-                    showCloseButton: true,
-                    focusConfirm: false,
-                    confirmButtonText:
-                            '<i class="fa fa-shopping-cart" aria-hidden="true"></i> <a style="color:white !important;" href="'+url+'">Ir al Carrito!</a>'
+                    title: 'Producto Agregado',
+                    showConfirmButton: false,
+                    icon: 'success'
                 });
+                setTimeout(function(){ 
+                    location.href = site + "backoffice/pay_order"; 
+                }, 1500);
             } else {
                 Swal.fire({
+                    icon: 'error',
+                    title: 'Ups! Hubo un error',
+                    footer: 'Comuniquese con soporte',
+                });
+            }
+        }
+    });
+}
+function add_cart_free(course_id, name, img) {
+    $.ajax({
+        type: "post",
+        url: site + "backoffice/add_cart_free",
+        dataType: "json",
+        data: {course_id: course_id,
+               name: name,
+               img: img},
+        success: function (data) {
+            if (data.status == true) {
+                Swal.fire({
+                    position: 'top-end',
+                    title: 'Producto Agregado',
+                    showConfirmButton: false,
+                    icon: 'success'
+                });
+                setTimeout(function(){ 
+                    location.href = site + "backoffice/pay_order"; 
+                }, 1500);
+            } else {
+                Swal.fire({
+                    position: 'top-end',
                     icon: 'error',
                     title: 'Ups! Hubo un error',
                     footer: 'Comuniquese con soporte',
