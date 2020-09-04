@@ -39,18 +39,18 @@
                             <h3>Total: &euro;<?php echo $this->cart->format_number($this->cart->total()); ?></h3>
                             <div id="error-message"></div>
                             <div class="stm-lms-payment-methods">
-                                <div id="bank_style" class="stm-lms-payment-method active">
+                                <div id="bank_style" class="stm-lms-payment-method">
                                     <div class="stm-lms-payment-method__name">
                                         <label>
                                             <span class="stm_lms_radio">
-                                                <input onclick="show_bank();" type="radio" name="payment_method" checked=""> 
+                                                <input onclick="show_bank();" type="radio" name="payment_method"> 
                                                 <span class="stm_lms_radio__fake"></span>
 
                                             </span> 
                                             <h4>Pago con Bitcoin</h4>
                                         </label>
                                     </div>
-                                    <div id="bank" style="overflow: auto;">
+                                    <div id="bank" style="overflow: auto;display: none;">
                                         <div class="stm-lms-payment-method__name"></div>    
                                         <table cellpadding="0" cellspacing="0" border="0">
                                             <thead>
@@ -79,21 +79,19 @@
                                     </div>
                                     <!---->
                                 </div>
-                                <div id="stripe_style" class="stm-lms-payment-method">
+                                <div id="stripe_style" class="stm-lms-payment-method  active">
                                     <div class="stm-lms-payment-method__name">
                                         <label>
                                             <span class="stm_lms_radio">
-                                                <input onclick="show_stripe();" type="radio" name="payment_method" value="stripe"> 
+                                                <input onclick="show_stripe();" type="radio" name="payment_method" value="stripe" checked="">  
                                                 <span class="stm_lms_radio__fake"></span>
                                             </span> 
-                                            <h4>Tarjeta Crédito / Debito</h4>
+                                            <h4>Tarjeta Crédito / Debito</h4> 
                                         </label>
                                     </div>
-                                    <div id="stripe" style="display: none;">
-                                        <button class="btn shadow-2 btn-success btn-lg" style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-                                            id="checkout-button-price_1HNmmxHzZI37AgqNG15vTaA9"
-                                            role="link" type="button" >
-                                            Pagar
+                                    <div id="stripe" style="text-align: center">
+                                        <button class="btn shadow-2 btn-success btn-lg" id="checkout-button-price_1HNmmxHzZI37AgqNG15vTaA9" role="link" type="button" >
+                                            <i class="fa fa-credit-card"></i>&nbsp;&nbsp; Pagar
                                         </button>
                                     </div>
                                     <!---->
