@@ -130,7 +130,6 @@ switch ($nav) {
                             <?php if (isset($_SESSION['customer'])) { ?>
                                 <div class="stm_lms_account_dropdown">
                                     <div class="dropdown">
-                                        <div class="stm-lms-user_message_btn__counter"> 1 </div> 
                                         <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
                                             <i class="lnr lnr-user"></i> <span class="login_name">Hola, <?php echo corta_texto($_SESSION['customer']['name'], 4); ?></span> <span class="caret"></span> 
                                         </button>

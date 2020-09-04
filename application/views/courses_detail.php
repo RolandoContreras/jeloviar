@@ -11,6 +11,7 @@
                             <div class="col-md-9">
                                 <h1 class="stm_lms_course__title"><?php echo str_to_mayusculas($obj_courses->name); ?></h1>
                                 <div class="single_product_after_title">
+                                    
                                     <div class="clearfix">
                                         <div class="pull-left meta_pull">
                                             <div class="pull-left stm_lms_teachers">
@@ -24,7 +25,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="pull-left xs-product-cats-left">
+                                            <div class="pull-left xs-product-cats-left stm_lms_teachers">
                                                 <div class="meta-unit categories clearfix">
                                                     <div class="pull-left"> <i class="fa-icon-stm_icon_category secondary_color"></i></div>
                                                     <div class="meta_values">
@@ -37,13 +38,23 @@
                                             </div>
                                             <div class="pull-left xs-product-cats-left">
                                                 <div class="meta-unit categories clearfix">
-                                                    <div class="pull-left"> <i class="fa-icon-stm_icon_bullhorn secondary_color"></i></div>
-                                                    <div class="meta_values">
-                                                        <div class="label h6">Antes: <span style="text-decoration:line-through">&euro;<?php echo $obj_courses->price_del; ?></span></div>
-                                                        <div class="stm_lms_courses__single--price"> 
-                                                            <strong>Ahora: &euro;<?php echo $obj_courses->price; ?></strong>
+                                                    <?php if ($obj_courses->free == 1) { ?>
+                                                        <div class="pull-left"> <i class="fa-icon-stm_icon_bullhorn secondary_color"></i></div>
+                                                        <div class="meta_values">
+                                                            <div class="label h6">Curso:</div>
+                                                            <div class="value h6"> 
+                                                                <b>Libre</b>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    <?php } else { ?>
+                                                        <div class="pull-left"> <i class="fa-icon-stm_icon_bullhorn secondary_color"></i></div>
+                                                        <div class="meta_values">
+                                                            <div class="label h6">Antes: <span style="text-decoration:line-through">&dollar;<?php echo $obj_courses->price_del; ?></span></div>
+                                                            <div class="stm_lms_courses__single--price"> 
+                                                                <b>Ahora: &dollar;<?php echo $obj_courses->price; ?></b>
+                                                            </div>
+                                                        </div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
