@@ -69,6 +69,48 @@ class B_profile extends CI_Controller {
             }
     }
     
+    public function upload() {
+
+        //SELECT ID FROM CUSTOMER
+        $img = $_FILES['file'];
+        $templocation = $img["tmp_name"];
+        $name = $img["name"];
+        //get customer_id
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //create file
+
+
+        if (!is_dir("./assets/backoffice/images/profile/$customer_id")) {
+            mkdir("./assets/backoffice/images/profile/$customer_id", 0777);
+        }
+        if (!$templocation) {
+            die("No se ha seleccionado ningun archivos");
+        }
+
+        $files = glob("./assets/backoffice/images/profile/$customer_id/*"); //obtenemos todos los nombres de los ficheros
+        foreach ($files as $file) {
+            if (is_file($file))
+                unlink($file); //elimino el fichero
+        }
+        
+        if (move_uploaded_file($templocation, "./assets/backoffice/images/profile/$customer_id/$name")) {
+            echo "archivos guardos";
+            //save on table
+            $data = array(
+                'img' => $name
+            );
+            //SAVE DATA IN TABLE    
+            $result = $this->obj_customer->update($customer_id, $data);
+            if (!empty($result)) {
+                echo "guardado";
+            } else {
+                echo "error";
+            }
+        } else {
+            echo "Error";
+        }
+    }
+    
     public function nav_category(){
         $params_category = array(
                     "select" =>"category_id,

@@ -1,7 +1,7 @@
 <div class="col-md-9 col-sm-12">
     <div class="stm_lms_private_information" data-container-open=".stm_lms_private_information">
         <div class="stm_lms_user_info_top">
-            <h1><?php echo $_SESSION['customer']['name']; ?></h1>
+            <h1><?php echo $obj_profile->name . ' ' . $obj_profile->last_name; ?></h1>
             <div class="stm_lms_user_info_top__socials">
                 <a href="<?php echo $obj_profile->facebook; ?>" target="_blank" class="facebook stm_lms_update_field__facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="<?php echo $obj_profile->instagram; ?>" target="_blank" class="instagram stm_lms_update_field__instagram"><i class="fab fa-instagram"></i></a>
@@ -52,23 +52,23 @@
                                             </div>
                                             <div class="stm_lms_instructor_courses__single--progress">
                                                 <div class="stm_lms_instructor_courses__single--progress_top">
-                                                    <div class="stm_lms_instructor_courses__single--duration"><i class="far fa-clock"></i> <?php echo $value->time;?> horas </div>
+                                                    <div class="stm_lms_instructor_courses__single--duration"><i class="far fa-clock"></i> <?php echo $value->time; ?> horas </div>
                                                     <div class="stm_lms_instructor_courses__single--completed"> 
-                                                        <?php 
-                                                        if($value->total == null || $value->total == 0){
+                                                        <?php
+                                                        if ($value->total == null || $value->total == 0) {
                                                             $percent = 0;
                                                             echo "0% Completado";
-                                                        }else{
+                                                        } else {
                                                             $percent = null;
                                                             $percent = ($value->total_video / $value->total) * 100;
-                                                            echo ceil($percent)."% Completado";
+                                                            echo ceil($percent) . "% Completado";
                                                         }
                                                         ?>
-                                                        
+
                                                     </div>
                                                 </div>
                                                 <div class="stm_lms_instructor_courses__single--progress_bar">
-                                                    <div class="stm_lms_instructor_courses__single--progress_filled" style="width: <?php echo $percent;?>%;"></div>
+                                                    <div class="stm_lms_instructor_courses__single--progress_filled" style="width: <?php echo $percent; ?>%;"></div>
                                                 </div>
                                             </div>
                                             <div class="stm_lms_instructor_courses__single--enroll">
@@ -241,8 +241,31 @@
                     </div>
                 </div>
             </form>
+            <div class="stm_lms_edit_socials">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Cambiar Imagen de Perfil</h3>
+                        <p>Tamaño de la imagen recomendada (215 x 215)</p>
+                    </div>
+                </div>
+                <div class="stm_lms_edit_socials_list">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group"> 
+                                <form id="dropzone" action="<?php echo site_url() . 'backoffice/upload_perfil'; ?>" class="dropzone">
+                                    <div class="fallback">
+                                        <input name="file" type="file" id="archivos"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <script src="<?php echo site_url() . 'assets/backoffice/js/script/profile.js'; ?>"></script>
+<link rel="stylesheet" href="<?php echo site_url() . 'assets/page_front/dropzone/css/dropzone.css'; ?>" media="all">
+<script defer src="<?php echo site_url() . 'assets/page_front/dropzone/js/dropzone.js'; ?>"></script>
 

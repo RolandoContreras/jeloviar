@@ -38,9 +38,6 @@ class B_home extends CI_Controller {
             "order" => "courses.course_id DESC",
         );
         $obj_customer_courses = $this->obj_customer_courses->search($params_customer_courses);
-        
-
-        
         //mis compras
         $obj_orders = $this->mis_pedidos($customer_id);
         if (isset($_GET['search'])) {
@@ -464,11 +461,14 @@ class B_home extends CI_Controller {
 
     public function get_profile($customer_id) {
         $params_category = array(
-            "select" => "name,
+            "select" => "
+                                    customer_id,
+                                    name,
                                     last_name,
                                     bio,
                                     facebook,
                                     twitter,
+                                    img,
                                     instagram,
                                     google,
                                     img",
