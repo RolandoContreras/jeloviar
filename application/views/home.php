@@ -105,7 +105,7 @@
                                                                         </a>
                                                                     </div>
                                                                     <div class="stm_lms_courses__single--info_excerpt"> 
-                                                                        <?php echo corta_texto($value->description, 300); ?>
+                                                                        <?php echo corta_texto($value->description, 150); ?>
                                                                     </div>
                                                                     <div class="stm_lms_courses__single--info_meta">
                                                                         <div class="stm_lms_course__meta"><i class="stmlms-lms-clocks"></i><?php echo $value->time; ?> Horas</div>
@@ -182,7 +182,7 @@
                                                                     </a>
                                                                 </div>
                                                                 <div class="stm_lms_courses__single--info_excerpt"> 
-                                                                    <?php echo corta_texto($value->description, 300); ?>
+                                                                    <?php echo corta_texto($value->description, 150); ?>
                                                                 </div>
                                                                 <div class="stm_lms_courses__single--info_meta">
                                                                     <div class="stm_lms_course__meta"> <i class="stmlms-lms-clocks"></i><?php echo $value->time; ?> Horas</div>
