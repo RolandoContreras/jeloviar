@@ -103,6 +103,37 @@ class B_home extends CI_Controller {
         $this->tmp_backoffice->set("obj_courses", $obj_courses);
         $this->tmp_backoffice->render("backoffice/b_home");
     }
+    
+    public function create_product() {
+            //GET SESION ACTUALY
+            $this->get_session();
+            //get customer
+            $customer_id = $_SESSION['customer']['customer_id'];
+            //INSERT INVOICE
+            foreach ($this->cart->contents() as $items) {
+                //CREATE INVOICE
+                $data_invoice = array(
+                    'customer_id' => $customer_id,
+                    'course_id' => $items['id'],
+                    'sub_total' => $items['price'],
+                    'igv' => 0,
+                    'total' => $items['price'],
+                    'date' => date("Y-m-d H:i:s"),
+                    'active' => 2,
+                );
+                $this->obj_invoices->insert($data_invoice);
+                //sumar el tiempo de duración
+                $data = array(
+                    'customer_id' => $customer_id,
+                    'course_id' => $items['id'],
+                    'date_start' => date("Y-m-d H:i:s")
+                );
+                $this->obj_customer_courses->insert($data);
+            }
+            //DESTROY CART
+            $this->cart->destroy();
+            redirect(site_url()."backoffice");
+    }
 
     public function cursos() {
         //GET SESION ACTUALY

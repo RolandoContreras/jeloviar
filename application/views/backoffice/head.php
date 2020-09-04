@@ -31,5 +31,6 @@
     <script>
         var site = "<?php echo site_url(); ?>"
     </script>
-    <script src="https://checkout.culqi.com/js/v3"></script>
+    <!-- Load Stripe.js on your website. -->
+    <script src="https://js.stripe.com/v3"></script>
 </head>

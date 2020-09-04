@@ -89,11 +89,12 @@
                                         </label>
                                     </div>
                                     <div id="stripe" style="display: none;">
-                                        <button type="button" class="btn shadow-2 btn-success btn-lg" id="buyButton" data-price="<?php echo tipo_cambio($this->cart->format_number($this->cart->total())); ?>"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp; Pagar</button>
-                                        <button class="btn btn shadow-2 btn-success btn-lg" type="button" style="display: none;" id="spinner">
-                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                            Verificando ...
+                                        <button class="btn shadow-2 btn-success btn-lg" style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+                                            id="checkout-button-price_1HNmmxHzZI37AgqNG15vTaA9"
+                                            role="link" type="button" >
+                                            Pagar
                                         </button>
+                                        <div id="error-message"></div>
                                     </div>
                                     <!---->
                                 </div>
@@ -109,88 +110,37 @@
         </div>
     </div>
 </div>
+
+
 <script>
-    $("#buyButton").click(function () {
-        $("#spinner").show();
-        $("#buyButton").hide();
-    });
-    Culqi.publicKey = 'pk_test_5ecc48a58fd7f33e';
-    var price = "";
-    $('#buyButton').on('click', function (e) {
-        price = $(this).attr('data-price');
-        Culqi.options({
-            lang: 'auto',
-            modal: true,
-            style: {
-                logo: '<?php echo site_url() . 'assets/page_front/images/logo/icono.png'; ?>',
-                maincolor: '#0ec1c1',
-                buttontext: '#ffffff',
-                maintext: '#4A4A4A',
-                desctext: '#4A4A4A'
-            }
-        });
-        Culqi.settings({
-            title: 'Jeloviar Online',
-            currency: 'PEN',
-            description: 'Venta de Cursos',
-            amount: price
-        });
-        Culqi.open();
-        e.preventDefault();
-    });
+(function() {
+  var stripe = Stripe('pk_test_51HIgnXHzZI37AgqNVMWLwNU8CQVwljQsg79GXLxPBDshjfrZvuOwB5aL8e6VZZPeJjwCKuet4ovSnIZfPWsg6EFu00m8hM4J1t');
 
-    function culqi() {
-        if (Culqi.token) { // ¡Objeto Token creado exitosamente!
-            var token = Culqi.token.id;
-            var email = Culqi.token.email;
-            var url = site + "backoffice/active_course";
-            $.ajax({
-                url: url,
-                method: 'post',
-                data: {
-                    price: price,
-                    email: email,
-                    token: token
-                },
-                dataType: 'JSON',
-                success: function (data) {
-                    if (data.object == "charge") {
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'Pago realizado',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        window.setTimeout(function () {
-                            window.location = site + "backoffice";
-                        }, 1500);
-                    } else {
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'error',
-                            title: 'Pago no realizado',
-                            footer: 'El pago no fue procesado, verifique los datos de la tarjeta'
-                        });
-                        $("#spinner").hide();
-                        $("#buyButton").show();
-                    }
-                },
-                error: function (data) {
-                    alert(data.user_message);
-                    $("#spinner").hide();
-                    $("#buyButton").show();
-                }
-            });
-        } else {
-            console.log(Culqi.error);
-            alert(Culqi.error.user_message);
-            $("#spinner").hide();
-            $("#buyButton").show();
-        }
-    }
-    ;
-
+  var checkoutButton = document.getElementById('checkout-button-price_1HNmmxHzZI37AgqNG15vTaA9');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1HNmmxHzZI37AgqNG15vTaA9', quantity: 1}],
+      mode: 'payment',
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'https://your-website.com/success',
+      cancelUrl: 'https://your-website.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
 </script>
 
 <script src="<?php echo site_url() . 'assets/backoffice/js/script/pay_order.js'; ?>"></script>
