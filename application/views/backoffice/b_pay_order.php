@@ -37,6 +37,7 @@
                     <div id="stm_lms_checkout">
                         <div class="stm_lms_checkout__payment clearfix">
                             <h3>Total: &euro;<?php echo $this->cart->format_number($this->cart->total()); ?></h3>
+                            <div id="error-message"></div>
                             <div class="stm-lms-payment-methods">
                                 <div id="bank_style" class="stm-lms-payment-method active">
                                     <div class="stm-lms-payment-method__name">
@@ -94,7 +95,6 @@
                                             role="link" type="button" >
                                             Pagar
                                         </button>
-                                        <div id="error-message"></div>
                                     </div>
                                     <!---->
                                 </div>
@@ -128,8 +128,8 @@
       // a successful payment.
       // Instead use one of the strategies described in
       // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'https://your-website.com/success',
-      cancelUrl: 'https://your-website.com/canceled',
+      successUrl: 'https://jeloviaronline.com/backoffice/success',
+      cancelUrl: 'https://jeloviaronline.com/backoffice/pay_order'
     })
     .then(function (result) {
       if (result.error) {
