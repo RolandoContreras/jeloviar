@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat%3A200%2C500%2C600%2C400%2C700%7COpen+Sans%3A300%2C400%2C600%2C700%2C800%2C300italic%2C400italic%2C600italic%2C700italic%2C800italic&#038;subset=latin&#038;ver=1586935180'  type='text/css' media="none" onload="if(media!='all')media='all'" />
     <script type='text/javascript' src='<?php echo site_url().'assets/page_front/js/jquery/jquery.js?ver=1.12.4-wp';?>'></script>
     
-    <link rel="stylesheet" href="<?php echo site_url().'assets/page_front/css/autoptimize_8aaef.css';?>" media="none" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="<?php echo site_url().'assets/page_front/css/autoptimize_8aaef.css';?>" media="all">
     <link rel="stylesheet" href="<?php echo site_url().'assets/page_front/css/autoptimize_da4b.css';?>" media="none" onload="if(media!='all')media='all'">
     <link rel="stylesheet" href="<?php echo site_url().'assets/page_front/css/my_style.css';?>" media="all">
     <style type="text/css" title="dynamic-css" class="options-output">
