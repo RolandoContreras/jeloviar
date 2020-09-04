@@ -59,7 +59,6 @@ class Forget extends CI_Controller {
                 "where" => "email = '$email'");
             //GET DATA FROM INVOICES
             $obj_customer = $this->obj_customer->get_search_row($params);
-
             if ($obj_customer != null) {
                 //enviar mensaje con contraseña
                 $this->message($obj_customer->name, $email, $obj_customer->password);
@@ -112,7 +111,7 @@ class Forget extends CI_Controller {
                           <p style='margin:0;padding-bottom:20px;color:#333333;line-height:22px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
                           Accede a tu oficina virtual a través del siguiente enlace  <a href='https://jeloviaronline.com/iniciar-sesion' target='_blank' data-saferedirecturl='https://www.google.com/url?q=https://jeloviaronline.com/iniciar-sesion&amp;source=gmail&amp;ust=1575431368630000&amp;usg=AFQjCNE2bxZM6aRU9Ckhj6hvz9ZXHzwzyA'>jeloviaronline.com/iniciar-sesion</a></p>
                           <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
-                          <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Usuario: </span><strong>$pwd</strong></span>
+                          <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Usuario: </span><strong>$email</strong></span>
                           </p> 
                           <p style='margin:0 0 24px;padding:16px;border-radius:5px;padding-bottom:20px;background:#f7f7f7;color:#333333;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-size:14px'>
                           <span style='display:block;padding-bottom:8px'><span style='width:101px;display:inline-block'>Contraseña: </span><strong>$pwd</strong></span>
