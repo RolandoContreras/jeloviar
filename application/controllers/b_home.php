@@ -4,6 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class B_home extends CI_Controller {
+
     function __construct() {
         parent::__construct();
         $this->load->model("customer_model", "obj_customer");
@@ -103,36 +104,36 @@ class B_home extends CI_Controller {
         $this->tmp_backoffice->set("obj_courses", $obj_courses);
         $this->tmp_backoffice->render("backoffice/b_home");
     }
-    
+
     public function create_product() {
-            //GET SESION ACTUALY
-            $this->get_session();
-            //get customer
-            $customer_id = $_SESSION['customer']['customer_id'];
-            //INSERT INVOICE
-            foreach ($this->cart->contents() as $items) {
-                //CREATE INVOICE
-                $data_invoice = array(
-                    'customer_id' => $customer_id,
-                    'course_id' => $items['id'],
-                    'sub_total' => $items['price'],
-                    'igv' => 0,
-                    'total' => $items['price'],
-                    'date' => date("Y-m-d H:i:s"),
-                    'active' => 2,
-                );
-                $this->obj_invoices->insert($data_invoice);
-                //sumar el tiempo de duración
-                $data = array(
-                    'customer_id' => $customer_id,
-                    'course_id' => $items['id'],
-                    'date_start' => date("Y-m-d H:i:s")
-                );
-                $this->obj_customer_courses->insert($data);
-            }
-            //DESTROY CART
-            $this->cart->destroy();
-            redirect(site_url()."backoffice");
+        //GET SESION ACTUALY
+        $this->get_session();
+        //get customer
+        $customer_id = $_SESSION['customer']['customer_id'];
+        //INSERT INVOICE
+        foreach ($this->cart->contents() as $items) {
+            //CREATE INVOICE
+            $data_invoice = array(
+                'customer_id' => $customer_id,
+                'course_id' => $items['id'],
+                'sub_total' => $items['price'],
+                'igv' => 0,
+                'total' => $items['price'],
+                'date' => date("Y-m-d H:i:s"),
+                'active' => 2,
+            );
+            $this->obj_invoices->insert($data_invoice);
+            //sumar el tiempo de duración
+            $data = array(
+                'customer_id' => $customer_id,
+                'course_id' => $items['id'],
+                'date_start' => date("Y-m-d H:i:s")
+            );
+            $this->obj_customer_courses->insert($data);
+        }
+        //DESTROY CART
+        $this->cart->destroy();
+        redirect(site_url() . "backoffice");
     }
 
     public function cursos() {
@@ -417,26 +418,36 @@ class B_home extends CI_Controller {
         $count = count($this->cart->contents());
         if ($count == 1) {
             foreach ($this->cart->contents() as $items) {
-                if ($items['free'] == 1) {
-                    //CREATE INVOICE
-                    $data_invoice = array(
-                        'customer_id' => $customer_id,
-                        'course_id' => $items['id'],
-                        'sub_total' => $items['price'],
-                        'igv' => 0,
-                        'total' => $items['price'],
-                        'date' => date("Y-m-d H:i:s"),
-                        'active' => 2,
-                    );
-                    $this->obj_invoices->insert($data_invoice);
-                    //inser on customer_course
-                    $data = array(
-                        'customer_id' => $customer_id,
-                        'course_id' => $items['id'],
-                        'date_start' => date("Y-m-d H:i:s")
-                    );
-                    $this->obj_customer_courses->insert($data);
-                    redirect(site_url().'backoffice');
+                //verify course comprado
+                $result = $this->verify_course_comprado_free($items['id'], $customer_id);
+                if ($result == 0) {
+                    if ($items['free'] == 1) {
+                        //CREATE INVOICE
+                        $data_invoice = array(
+                            'customer_id' => $customer_id,
+                            'course_id' => $items['id'],
+                            'sub_total' => $items['price'],
+                            'igv' => 0,
+                            'total' => $items['price'],
+                            'date' => date("Y-m-d H:i:s"),
+                            'active' => 2,
+                        );
+                        $this->obj_invoices->insert($data_invoice);
+                        //inser on customer_course
+                        $data = array(
+                            'customer_id' => $customer_id,
+                            'course_id' => $items['id'],
+                            'date_start' => date("Y-m-d H:i:s")
+                        );
+                        $this->obj_customer_courses->insert($data);
+                        //DESTROY CART
+                        $this->cart->destroy();
+                        //redirect
+                        redirect(site_url() . 'backoffice');
+                    }
+                }else{
+                    //redirect
+                    redirect(site_url() . 'backoffice');
                 }
             }
         }
@@ -567,6 +578,14 @@ class B_home extends CI_Controller {
         );
         //GET DATA COMMENTS
         return $obj_customer = $this->obj_customer->get_search_row($params_category);
+    }
+
+    public function verify_course_comprado_free($course_id, $customer_id) {
+        $params_customer_courses = array(
+            "select" => "customer_course_id",
+            "where" => "customer_id = $customer_id and course_id = $course_id"
+        );
+        return $obj_customer_courses = $this->obj_customer_courses->total_records($params_customer_courses);
     }
 
     public function courses_by_customer($customer_id) {
