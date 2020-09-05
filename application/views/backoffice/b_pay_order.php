@@ -73,7 +73,7 @@
                                         </table>
                                         <div class="alert alert-primary" role="alert">
                                             Luego de hacer la transferencia, enviar la imagen del envio al correo:
-                                            <b>contacto@jeloviaronline.com</b>, indicando el curso que desea adquirir, su nombre completo y el email con el cual se registró.
+                                            <b>jeloviar.online@yahoo.com</b>, indicando el curso que desea adquirir, su nombre completo y el email con el cual se registró.
                                             En pocas horas estaremos activando su pedido.
                                         </div>
                                     </div>

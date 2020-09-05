@@ -1,6 +1,9 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Register extends CI_Controller {
+
     function __construct() {
         parent::__construct();
         $this->load->model("customer_model", "obj_customer");
@@ -65,8 +68,14 @@ class Register extends CI_Controller {
                     $data_customer_session['logged_customer'] = "TRUE";
                     $_SESSION['customer'] = $data_customer_session;
                     //redirect
-                    redirect(site_url() . "backoffice");
-                    return true;
+                    $cart = count($this->cart->contents());
+                    if ($cart > 0) {
+                        redirect(site_url() . "backoffice/pay_order");
+                        return true;
+                    } else {
+                        redirect(site_url() . "backoffice");
+                        return true;
+                    }
                 } else {
                     //insert data
                     $user_data = array(
@@ -92,8 +101,13 @@ class Register extends CI_Controller {
                     $_SESSION['customer'] = $data_customer_session;
                     $this->message($customer_id, $userData['name'], $userData['email']);
                     //redirect
-                    redirect(site_url() . "backoffice");
-                    return true;
+                    if ($cart > 0) {
+                        redirect(site_url() . "backoffice/pay_order");
+                        return true;
+                    } else {
+                        redirect(site_url() . "backoffice");
+                        return true;
+                    }
                 }
             } else {
                 // Facebook authentication url 
@@ -105,14 +119,14 @@ class Register extends CI_Controller {
             $data['userData'] = array();
             $data['authURL'] = $this->facebook->login_url();
         }
-        
+
         $google_client = new Google_Client();
         $google_client->setClientId("854470080737-pd0ua8aeno1afqrs340sc8pvtd6j9mnr.apps.googleusercontent.com");
         $google_client->setClientSecret("2JiX9KmOf3_SCEpAFJyCv93T");
         $google_client->setRedirectUri(site_url() . "registro");
         $google_client->addScope('email');
         $google_client->addScope('profile');
-        
+
         //google
         if (isset($_GET["code"])) {
             $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
@@ -167,13 +181,20 @@ class Register extends CI_Controller {
                 $this->session->set_userdata('user_data', $user_data);
             }
         }
-        
+
         $login_button = '';
         if (!$this->session->userdata('access_token')) {
             $login_button = '<a href="' . $google_client->createAuthUrl() . '"><img src="' . site_url() . 'assets/page_front/images/google_login.png" width="230"/></a>';
             $data['login_button'] = $login_button;
         } else {
-            redirect(site_url() . "backoffice");
+            $cart = count($this->cart->contents());
+            if ($cart > 0) {
+                redirect(site_url() . "backoffice/pay_order");
+                return true;
+            } else {
+                redirect(site_url() . "backoffice");
+                return true;
+            }
         }
         //Select params
         $data['obj_paises'] = $this->list_pais();

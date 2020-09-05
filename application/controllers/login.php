@@ -48,9 +48,15 @@ class Login extends CI_Controller {
                     $data_customer_session['active'] = 1;
                     $data_customer_session['logged_customer'] = "TRUE";
                     $_SESSION['customer'] = $data_customer_session;
-                    //redirect
-                    redirect(site_url() . "backoffice");
-                    return true;
+                    //verify is isset cart
+                    $cart = count($this->cart->contents());
+                    if($cart > 0){
+                        redirect(site_url() . "backoffice/pay_order");
+                        return true;
+                    }else{
+                        redirect(site_url() . "backoffice");
+                        return true;
+                    }
                 } else {
                     //insert data
                     $user_data = array(
@@ -76,8 +82,14 @@ class Login extends CI_Controller {
                     $_SESSION['customer'] = $data_customer_session;
                     $this->message($customer_id, $userData['name'], $userData['email']);
                     //redirect
-                    redirect(site_url() . "backoffice");
-                    return true;
+                    $cart = count($this->cart->contents());
+                    if($cart > 0){
+                        redirect(site_url() . "backoffice/pay_order");
+                        return true;
+                    }else{
+                        redirect(site_url() . "backoffice");
+                        return true;
+                    }
                 }
             } else {
                 // Facebook authentication url 
@@ -157,7 +169,14 @@ class Login extends CI_Controller {
             $login_button = '<a href="' . $google_client->createAuthUrl() . '"><img src="' . site_url() . 'assets/page_front/images/google_login.png" width="230"/></a>';
             $data['login_button'] = $login_button;
         } else {
-            redirect(site_url() . "backoffice");
+            $cart = count($this->cart->contents());
+            if($cart > 0){
+                redirect(site_url() . "backoffice/pay_order");
+                return true;
+            }else{
+                redirect(site_url() . "backoffice");
+                return true;
+            }
         }
         
         //send meta title
