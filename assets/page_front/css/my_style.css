@@ -172,7 +172,7 @@
     background-repeat: no-repeat !important;
 }
 .vc_custom_1536053689227 {
-    
+
 }
 .animate-style{
     background-image: url(../images/animation/header.jpg?id=1144) !important;
@@ -281,7 +281,7 @@
     text-align: center;
 }
 .bg_suscriber{
-   background-color: #0168b5 !important;
+    background-color: #0168b5 !important;
 }
 @media print {
     .pmpro_a-print {
@@ -396,6 +396,47 @@
         height: 30px !important;
     }
 }
+
+
+@media ( max-width: 320px ) {
+    .hide-boton{
+        display: none;        
+    }
+}
+@media ( max-width: 480px ) {
+    .hide-boton{
+    display: none;        
+    }
+}
+
+@media (max-width: 515px) {
+    .hide-boton{
+        display: none;        
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .hide-boton{
+        display: none;        
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .capacitacion-title {
+        font-size: 44px;
+    }
+    .header-plataforma {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+
 @media (max-width: 1024px) { .a3b8602d12208927a4a9a27379b1014ff { height : 40px !important; } }
 @media (max-width: 768px) { .a3b8602d12208927a4a9a27379b1014ff { height : 30px !important; } }
 @media (max-width: 968px) { .vc_row.a9ff1d1a9908abebc8fc1ee6b5f2d9096 { background-image: none !important; } }
@@ -425,3 +466,4 @@
 .btn-success:hover {
     color: white !important;
 }
+
