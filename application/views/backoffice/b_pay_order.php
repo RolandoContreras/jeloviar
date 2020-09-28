@@ -79,6 +79,46 @@
                                     </div>
                                     <!---->
                                 </div>
+                                <div id="eth_style" class="stm-lms-payment-method">
+                                    <div class="stm-lms-payment-method__name">
+                                        <label>
+                                            <span class="stm_lms_radio">
+                                                <input onclick="show_eth();" type="radio" name="payment_method"> 
+                                                <span class="stm_lms_radio__fake"></span>
+
+                                            </span> 
+                                            <h4>Pago con Ethereum</h4>
+                                        </label>
+                                    </div>
+                                    <div id="eth" style="overflow: auto;display: none;">
+                                        <div class="stm-lms-payment-method__name"></div>    
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Wallet</th>
+                                                    <th>Descripción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="pmpro_account-invoice-3B9914E266">
+                                                    <td>0xedc4f442eb591cd7ecdb18f564419ddfbb9a1fcf</td>
+                                                    <td>Pago con ETH</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="text-align: center">
+                                                        <img src="<?php echo site_url()."assets/backoffice/images/eth_qr.jpg"?>" alt="eth" width="200"/>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="alert alert-primary" role="alert">
+                                            Luego de hacer la transferencia, enviar la imagen del envio al correo:
+                                            <b>jeloviar.online@yahoo.com</b>, indicando el curso que desea adquirir, su nombre completo y el email con el cual se registró.
+                                            En pocas horas estaremos activando su pedido.
+                                        </div>
+                                    </div>
+                                    <!---->
+                                </div>
                                 <div id="stripe_style" class="stm-lms-payment-method  active">
                                     <div class="stm-lms-payment-method__name">
                                         <label>
