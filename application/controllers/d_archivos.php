@@ -78,57 +78,35 @@ class D_archivos extends CI_Controller {
             $archive_id = $this->input->post("archive_id");
             $course_id = $this->input->post("course_id");
             $name = $this->input->post("name");
+            $content = $this->input->post("content");
             //inser on table
             if ($archive_id != null) {
                 $data_param = array(
                     'course_id' => $course_id,
                     'name' => $name,
+                    'content' => $content,
                     'date' => date("Y-m-d H:i:s"),
                     'active' => $this->input->post('active'),
                 );
                 $result = $this->obj_archives->update($archive_id, $data_param);
-                if ($result != null) {
-                    $data['status'] = true;
-                    $data['url'] = $course_id;
-                } else {
-                    $data['status'] = false;
-                }
+                
             } else {
                 //SAVE DATA IN TABLE    
                 $data_param = array(
                     'course_id' => $course_id,
                     'name' => $name,
+                    'content' => $content,
                     'date' => date("Y-m-d H:i:s"),
                     'active' => $this->input->post('active'),
                 );
-                $archive_id = $this->obj_archives->insert($data_param);
-                if ($archive_id != null) {
+                $result = $this->obj_archives->insert($data_param);
+            }
+            if ($result != null) {
                     $data['status'] = true;
                     $data['url'] = $course_id;
                 } else {
                     $data['status'] = false;
                 }
-            }
-
-            //save image
-            $img = $_FILES['file'];
-            $templocation = $img["tmp_name"];
-            $name = $img["name"];
-            if ($name != null) {
-                if (!is_dir("./assets/cms/archives/$course_id")) {
-                    mkdir("./assets/cms/archives/$course_id", 0777);
-                }
-                if (!$templocation) {
-                    die("No se ha seleccionado ningun archivos");
-                }
-                if (move_uploaded_file($templocation, "./assets/cms/archives/$course_id/$name")) {
-                    $param = array(
-                        'content' => $name,
-                    );
-                    //SAVE DATA IN TABLE    
-                    $this->obj_archives->update($archive_id, $param);
-                }
-            }
             echo json_encode($data);
         }
     }

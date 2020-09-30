@@ -47,14 +47,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Contenido</label><br/>
-                                                        <?php if (isset($obj_archives)) { ?>
-                                                            <div class="form-control">
-                                                                <i class="far fa-file-alt"></i>
-                                                                <span>Archivo: <strong><?php echo $obj_archives->content; ?></strong></span>
-                                                            </div>
-                                                            <br/>   
-                                                        <?php } ?>
-                                                        <input type="file" name="file" class="form-control" placeholder="Ingrese Archivo" <?php echo isset($obj_archives) ? "" : "required"; ?>>
+                                                        <input class="form-control" type="text" id="content" name="content" value="<?php echo isset($obj_archives->content) ? $obj_archives->content : ""; ?>" class="input-xlarge-fluid" placeholder="Contenido" required="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-6">

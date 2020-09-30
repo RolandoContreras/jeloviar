@@ -93,7 +93,7 @@
                                                             </div>
                                                             <div class="stm_lms_downloadable_content__right">
                                                                 <div class="stm_lms_downloadable_content__size heading_font"> <span>Descargar:</span></div>
-                                                                <a class="stm_lms_downloadable_content__url" href="<?php echo site_url()."assets/cms/archives/$value->course_id/$value->content";?>" target="_blank" download="<?php echo $value->content;?>"> 
+                                                                <a class="stm_lms_downloadable_content__url" href="<?php echo $value->content;?>" target="_blank"> 
                                                                     <i class="lnricons lnricons-download2"></i> </a>
                                                                 </a>
                                                             </div>
