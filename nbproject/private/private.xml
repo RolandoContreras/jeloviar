@@ -20,7 +20,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/jeloviar/assets/backoffice/js/script/pay_order.js</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/config/routes.php</file>
+            <file>file:/C:/wamp64/www/jeloviar/assets/cms/js/cursos.js</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/views/dashboard/cursos/course_list.php</file>
+            <file>file:/C:/wamp64/www/jeloviar/application/controllers/d_archivos.php</file>
         </group>
     </open-files>
 </project-private>

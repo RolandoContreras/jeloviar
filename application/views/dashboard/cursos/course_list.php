@@ -114,6 +114,7 @@
                                                                                     <button class="btn btn-secondary" type="button" onclick="edit_course('<?php echo $value->course_id; ?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
                                                                                     <button class="btn btn-secondary" type="button" onclick="view_modulos('<?php echo $value->course_id; ?>');"><span><span class="pcoded-micon"><i data-feather="eye"></i></span> Módulos</span></button>
                                                                                     <button class="btn btn-secondary" type="button" onclick="view_videos('<?php echo $value->course_id; ?>');"><span><span class="pcoded-micon"><i data-feather="eye"></i></span> Vídeos</span></button>
+                                                                                    <button class="btn btn-secondary" type="button" onclick="view_archivos('<?php echo $value->course_id; ?>');"><span><span class="pcoded-micon"><i data-feather="eye"></i></span> Archivos</span></button>
                                                                                 </div>
                                                                             </div>
                                                                         </td>

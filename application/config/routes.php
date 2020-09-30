@@ -145,6 +145,14 @@ $route['dashboard/videos/([0-9]+)/validate'] = "d_videos/validate";
 $route['dashboard/videos/delete'] = "d_videos/delete";
 $route['dashboard/videos/verificar_curso'] = "d_videos/verificar_curso";
 
+$route['dashboard/archivos/([0-9]+)'] = "d_archivos";
+$route['dashboard/archivos/([0-9]+)/load'] = "d_archivos/load";
+$route['dashboard/archivos/([0-9]+)/load/([0-9]+)'] = "d_archivos/load/$1";
+$route['dashboard/archivos/validate'] = "d_archivos/validate";
+$route['dashboard/archivos/delete'] = "d_archivos/delete";
+$route['dashboard/archivos/verificar_curso'] = "d_archivos/verificar_curso";
+
+
 
 $route['dashboard/facturas'] = "d_invoices"; 
 $route['dashboard/facturas/load/([0-9]+)'] = "d_invoices/load/$1";
