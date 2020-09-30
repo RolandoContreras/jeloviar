@@ -270,6 +270,7 @@ class Courses extends CI_Controller {
         $params = array(
             "select" => "archive_id,
                          name,
+                         course_id,
                          content",
             "where" => "course_id = $course_id and active = 1",
         );
