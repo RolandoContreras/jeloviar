@@ -42,27 +42,22 @@ class D_archivos extends CI_Controller {
         $url = explode("/", uri_string());
         $archive_id = isset($url[4]) ? $url[4] : "";
         $course_id = isset($course_id) ? $course_id : $url[2];
-        if ($video_id != "") {
+        //verify
+        if ($archive_id != "") {
             /// PARAM FOR SELECT 
             $params = array(
-                "select" => "videos.video_id,
-                                    videos.name,
-                                    videos.type,
-                                    videos.description,
-                                    videos.video,
-                                    videos.time,
-                                    videos.active,
-                                    modules.module_id,
-                                    modules.name as module_name,
+                "select" => "archives.archive_id,
+                                    archives.name,
+                                    archives.content,
+                                    archives.date,
+                                    archives.active,
                                     courses.course_id,
                                     courses.name as course_name",
-                "join" => array('modules, videos.module_id = modules.module_id',
-                    'courses, modules.course_id = courses.course_id'),
-                "where" => "video_id = $video_id",
-            );
-            $obj_videos = $this->obj_videos->get_search_row($params);
+            "join" => array('courses, courses.course_id = archives.course_id'),
+            "where" => "archives.archive_id = $archive_id");
+            $obj_archives = $this->obj_archives->get_search_row($params);
             //RENDER
-            $this->tmp_mastercms->set("obj_videos", $obj_videos);
+            $this->tmp_mastercms->set("obj_archives", $obj_archives);
         }
         //obtener curso y nombre
         $params = array(

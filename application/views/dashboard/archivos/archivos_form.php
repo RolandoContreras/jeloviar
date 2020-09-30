@@ -32,29 +32,35 @@
                                         <form enctype="multipart/form-data" method="post" action="javascript:void(0);" onsubmit="validate_archivos();" id="form-archives">
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <?php if (isset($obj_videos)) { ?>
+                                                    <?php if (isset($obj_archives)) { ?>
                                                         <div class="form-group">
                                                             <label>ID</label>
-                                                            <input class="form-control" type="text" value="<?php echo isset($obj_videos->video_id) ? $obj_videos->video_id : ""; ?>" class="input-xlarge-fluid" placeholder="ID" disabled="">
+                                                            <input class="form-control" type="text" value="<?php echo isset($obj_archives->archive_id) ? $obj_archives->archive_id : ""; ?>" class="input-xlarge-fluid" placeholder="ID" disabled="">
                                                         </div>
                                                     <?php } ?>
-                                                    <input type="hidden" id="archive_id" name="archive_id" value="<?php echo isset($obj_videos->video_id) ? $obj_videos->video_id : ""; ?>">
+                                                    <input type="hidden" id="archive_id" name="archive_id" value="<?php echo isset($obj_archives->archive_id) ? $obj_archives->archive_id : ""; ?>">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <div class="form-group">
                                                         <label>Nombre</label>
-                                                        <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_videos->name) ? $obj_videos->name : ""; ?>" class="input-xlarge-fluid" placeholder="Titulo" required="">
+                                                        <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_archives->name) ? $obj_archives->name : ""; ?>" class="input-xlarge-fluid" placeholder="Titulo" required="">
                                                     </div>
                                                     <div class="form-group">
+
                                                         <label>Contenido</label><br/>
-                                                        <input type="file" name="file" class="form-control" placeholder="Ingrese Archivo">
+                                                        <div class="form-control">
+                                                            <i class="far fa-file-alt"></i>
+                                                            <span>Archivo: <strong><?php echo $obj_archives->content; ?></strong></span>
+                                                        </div>
+                                                        <br/>    
+                                                        <input type="file" name="file" class="form-control" placeholder="Ingrese Archivo" <?php echo isset($obj_archives)?"":"required";?>>
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <div class="form-group">
                                                         <label for="inputState">Curso</label>
                                                         <select name="course_id" id="course_id" class="form-control" >
-                                                            <option selected="" value="<?php echo $obj_courses->course_id;?>"><?php echo $obj_courses->name;?></option>
+                                                            <option selected="" value="<?php echo $obj_courses->course_id; ?>"><?php echo $obj_courses->name; ?></option>
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
@@ -62,8 +68,8 @@
                                                         <select name="active" id="active" class="form-control" required="">
                                                             <option value="">[ Seleccionar ]</option>
                                                             <option value="1" <?php
-                                                            if (isset($obj_videos)) {
-                                                                if ($obj_videos->active == 1) {
+                                                            if (isset($obj_archives)) {
+                                                                if ($obj_archives->active == 1) {
                                                                     echo "selected";
                                                                 }
                                                             } else {
@@ -71,8 +77,8 @@
                                                             }
                                                             ?>>Activo</option>
                                                             <option value="0" <?php
-                                                            if (isset($obj_videos)) {
-                                                                if ($obj_videos->active == 0) {
+                                                            if (isset($obj_archives)) {
+                                                                if ($obj_archives->active == 0) {
                                                                     echo "selected";
                                                                 }
                                                             } else {
