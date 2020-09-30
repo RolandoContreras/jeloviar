@@ -46,14 +46,15 @@
                                                         <input class="form-control" type="text" id="name" name="name" value="<?php echo isset($obj_archives->name) ? $obj_archives->name : ""; ?>" class="input-xlarge-fluid" placeholder="Titulo" required="">
                                                     </div>
                                                     <div class="form-group">
-
                                                         <label>Contenido</label><br/>
-                                                        <div class="form-control">
-                                                            <i class="far fa-file-alt"></i>
-                                                            <span>Archivo: <strong><?php echo $obj_archives->content; ?></strong></span>
-                                                        </div>
-                                                        <br/>    
-                                                        <input type="file" name="file" class="form-control" placeholder="Ingrese Archivo" <?php echo isset($obj_archives)?"":"required";?>>
+                                                        <?php if (isset($obj_archives)) { ?>
+                                                            <div class="form-control">
+                                                                <i class="far fa-file-alt"></i>
+                                                                <span>Archivo: <strong><?php echo $obj_archives->content; ?></strong></span>
+                                                            </div>
+                                                            <br/>   
+                                                        <?php } ?>
+                                                        <input type="file" name="file" class="form-control" placeholder="Ingrese Archivo" <?php echo isset($obj_archives) ? "" : "required"; ?>>
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -68,14 +69,14 @@
                                                         <select name="active" id="active" class="form-control" required="">
                                                             <option value="">[ Seleccionar ]</option>
                                                             <option value="1" <?php
-                                                            if (isset($obj_archives)) {
-                                                                if ($obj_archives->active == 1) {
-                                                                    echo "selected";
-                                                                }
-                                                            } else {
-                                                                echo "";
+                                                        if (isset($obj_archives)) {
+                                                            if ($obj_archives->active == 1) {
+                                                                echo "selected";
                                                             }
-                                                            ?>>Activo</option>
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        ?>>Activo</option>
                                                             <option value="0" <?php
                                                             if (isset($obj_archives)) {
                                                                 if ($obj_archives->active == 0) {
@@ -84,7 +85,7 @@
                                                             } else {
                                                                 echo "";
                                                             }
-                                                            ?>>Inactivo</option>
+                                                        ?>>Inactivo</option>
                                                         </select>
                                                     </div>
                                                 </div>

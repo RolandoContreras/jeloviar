@@ -11,6 +11,7 @@ class Courses extends CI_Controller {
         $this->load->model("modules_model", "obj_modules");
         $this->load->model("videos_model", "obj_videos");
         $this->load->model("textos_model", "obj_textos");
+        $this->load->model("archives_model", "obj_archives");
     }
 
     /**
@@ -185,7 +186,6 @@ class Courses extends CI_Controller {
         //GET COURSE
         $url = explode("/", uri_string());
         $slug_2 = $url[2];
-
         //select curso_id
         $params = array(
             "select" => "course_id",
@@ -266,7 +266,15 @@ class Courses extends CI_Controller {
             "order" => "RAND()"
         );
         $data['obj_courses_related'] = $this->obj_courses->search($params);
-        //get data   
+        //get archives
+        $params = array(
+            "select" => "archive_id,
+                         name,
+                         content",
+            "where" => "course_id = $course_id and active = 1",
+        );
+        $data['obj_archives'] = $this->obj_archives->search($params);
+        //meta title
         $obj_courses_meta = $data['obj_courses'];
         //SEND DATA META OG: FACEBOOK
         $data['title'] = "Cursos | $obj_courses_meta->category_name | $obj_courses_meta->name";
